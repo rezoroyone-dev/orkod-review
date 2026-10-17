@@ -193,13 +193,13 @@ content-fingerprinted name is what busts the service worker's CacheFirst copy.
   (CC0) but deliberately free of surface detail, so its surface read as a
   featureless mannequin.
 - **Grab3D "Human Muscles" (retired).** A genuine anatomical écorché under a
-  CC0 public-domain release. It shipped un-decimated at 601,188 triangles but
-  carried three JPEG textures (only the normal map was ever used) and, as a
-  muscle-relief study, read as exposed anatomy rather than a person.
+  CC0 public-domain release. It was the previous shipped shell
+  (the retired `orkod-human-body.0db6962c.glb`) at 601,188 triangles and
+  carried three JPEG textures; it has been replaced by the Mandrake base mesh.
 - **Mandrake "Male body base mesh (highpoly)" (shipped).** A detailed CC BY 4.0
   sculpt with the outer skin surface, decimated once to 300,000 triangles,
   fitted to the organs, and shipped Meshopt-compressed with **no textures at
-  all** — 1,117 KB where the écorché needed 9,185 KB, and the surface relief now
+  all** — 1,117 KB where the retired écorché needed 9,185 KB, and the surface relief now
   comes from real geometry rather than a baked map. CC BY 4.0 requires
   attribution, so the credit is rendered on the `/body` stage.
 
