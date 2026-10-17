@@ -137,9 +137,12 @@ included in this repository.** All secrets have been replaced with placeholders.
 
 The body experience loads a real anatomical mesh (not a screenshot):
 
-- `frontend/public/models/orkod/orkod-human-body.0db6962c.glb` — adult male écorché figure,
-  Meshopt-compressed (~9 MB). Requires the Three.js **Meshopt decoder** (already wired in
-  `HumanBody3D.vue`).
+- `frontend/public/models/orkod/orkod-human-body.8521db4e.glb` — adult male base mesh
+  ("Male body base mesh (highpoly)" by Mandrake, **CC BY 4.0**, attribution required;
+  see `ORKOD-ASSETS.md`). A smooth, neutral anatomical surface — no exposed muscle, no
+  clothing, no external genital geometry. Meshopt-compressed + KHR_mesh_quantization
+  (~1.1 MB, 300k triangles, 150k vertices, single closed shell, geometry only, no textures).
+  Requires the Three.js **Meshopt decoder** (already wired in `HumanBody3D.vue`).
 - `frontend/public/models/anatomy/anatomy.json`, `organs.bin.gz`, `skeleton.bin.gz` — organ and
   skeleton geometry.
 - Attribution and licensing: `frontend/public/models/ORKOD-ASSETS.md` and
