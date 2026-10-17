@@ -18,9 +18,9 @@ const argOf = (n, d) => {
   const i = argv.indexOf(`--${n}`);
   return i !== -1 && argv[i + 1] ? argv[i + 1] : d;
 };
-const GLB = resolve(argOf('glb', 'public/models/orkod/orkod-human-body.0db6962c.glb'));
+const GLB = resolve(argOf('glb', 'public/models/orkod/orkod-human-body.8521db4e.glb'));
 
-const g = readGlb(GLB);
+const g = await readGlb(GLB);
 const [minX, minY, minZ, maxX, maxY, maxZ] = g.bbox;
 const size = [maxX - minX, maxY - minY, maxZ - minZ];
 const centre = [(minX + maxX) / 2, (minY + maxY) / 2, (minZ + maxZ) / 2];
@@ -87,9 +87,9 @@ function frame(vw, vh, bottomInset = 0, topInset = 0) {
     }
   }
   // The hands are the widest part, so report them separately from the corners.
-  // Grab3D A-pose: the fingers hang a little out from the thighs, ~0.47 m
-  // outboard at hand height (see ORKOD-ASSETS.md).
-  const handNdc = project([0.47, 1.05, 0.02]);
+  // Mandrake A-pose: the hands hang a little out from the thighs, ~0.50 m
+  // outboard just below hip height (see ORKOD-ASSETS.md).
+  const handNdc = project([0.5, 0.9, 0.03]);
 
   // Where the lowest point of the figure lands, in pixels from the stage bottom.
   const feetPx = ((bottom + 1) / 2) * vh;

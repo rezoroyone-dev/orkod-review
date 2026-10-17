@@ -1,4 +1,4 @@
-﻿import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { setActivePinia, createPinia } from 'pinia';
 import SuperUserService from '@/services/SuperUserService';
 import UserService from '@/services/UserService';
@@ -8,7 +8,7 @@ import { getAdminUser } from './testAuth';
 
 describe('Authentication Integration Flow', () => {
   // Real credentials from your .env
-  const adminCreds: SuperUser = { userName: 'admin', passWord: (process.env.TEST_ADMIN_PASSWORD ?? 'test-admin-password') };
+  const adminCreds: SuperUser = { userName: 'admin', passWord: 'R8g9f6T@21/N' };
 
   beforeEach(() => {
     setActivePinia(createPinia());

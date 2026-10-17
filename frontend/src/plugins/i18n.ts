@@ -1,4 +1,5 @@
 import { createI18n } from 'vue-i18n'
+import { readStoredLocale } from '../utilities/locale'
 
 // Dynamically load locales
 const messages = Object.fromEntries(
@@ -15,7 +16,11 @@ export default createI18n({
   // Vite only exposes VITE_-prefixed vars on import.meta.env. The old
   // VUE_APP_-prefixed reads never resolved, so the configured default locale
   // was silently ignored. Read the VITE_-prefixed names the .env files declare.
-  locale: import.meta.env.VITE_I18N_LOCALE || 'en',
+  //
+  // A previously chosen language is restored first, so the very first render is
+  // already in the visitor's language (no flash of the build default). The
+  // stored value is validated against the shipped locales in `readStoredLocale`.
+  locale: readStoredLocale() || import.meta.env.VITE_I18N_LOCALE || 'en',
   fallbackLocale: import.meta.env.VITE_I18N_FALLBACK_LOCALE || 'en',
   messages,
   silentTranslationWarn: import.meta.env.PROD,

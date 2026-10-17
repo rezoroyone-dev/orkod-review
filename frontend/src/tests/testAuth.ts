@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Shared authentication helper for integration tests.
  *
  * Problem: bun runs test files in parallel (each in its own process).
@@ -15,7 +15,7 @@ import SuperUser from '@/interfaces/SuperUser';
 import SuperUserService from '@/services/SuperUserService';
 
 const ADMIN_USERNAME = 'admin';
-const ADMIN_PASSWORD = (process.env.TEST_ADMIN_PASSWORD ?? 'test-admin-password');
+const ADMIN_PASSWORD = 'R8g9f6T@21/N';
 const MAX_RETRIES = 10;
 const BASE_DELAY_MS = 2000; // 2s base, doubles each retry: 2, 4, 8, 16, 32, 64s
 
@@ -58,7 +58,7 @@ export async function getAdminUser(): Promise<SuperUser | undefined> {
         continue;
       }
 
-      // Non-rate-limit error or exhausted retries â€” rethrow
+      // Non-rate-limit error or exhausted retries — rethrow
       throw err;
     }
   }

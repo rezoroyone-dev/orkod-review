@@ -261,8 +261,8 @@ describe('moderation: no unclothed human body is shipped', () => {
     }
     expect(modelRefs.length, 'no 3D model is referenced at all, which is suspicious').toBeGreaterThan(0);
     const unique = [...new Set(modelRefs)];
-    // Exactly one body shell: the Grab3D CC0 muscle figure. The trailing hash
-    // is a content fingerprint so a rebuilt shell busts the service-worker
+    // Exactly one body shell: the Mandrake CC BY 4.0 male body. The trailing
+    // hash is a content fingerprint so a rebuilt shell busts the service-worker
     // cache instead of being pinned forever.
     expect(
       unique.some((r) => /orkod\/orkod-human-body\.[0-9a-f]{8}\.glb/.test(r)),

@@ -48,6 +48,7 @@ import { useRoute, useRouter } from 'vue-router';
 import { langsEnum } from './enumerators/enums';
 import SicknessNatureService from './services/SicknessNatureService';
 import Language from './utilities/Language';
+import { persistLocale } from './utilities/locale';
 
 const router = useRouter();
 const route = useRoute();
@@ -73,12 +74,20 @@ function isAdminRoute(): boolean {
 
 // Keep <html> lang/dir in sync with the active locale so RTL and the
 // direction-aware typography (Cairo for Arabic, Inter for Latin) apply.
+// This is also the single write point for language persistence: every switcher
+// already drives the i18n locale, so remembering it here (and mirroring it into
+// the store for the admin services) keeps all three in step. `immediate` means a
+// restored language is persisted back and pushed to the store on first paint.
 watch(
   () => locale.value,
   (l) => {
     const value = l || 'en';
     document.documentElement.lang = value;
     document.documentElement.dir = value === 'ar' ? 'rtl' : 'ltr';
+    persistLocale(value);
+    if (appStore.locale !== value) {
+      appStore.setLocale(value);
+    }
   },
   { immediate: true }
 );

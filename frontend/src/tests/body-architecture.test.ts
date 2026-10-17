@@ -12,7 +12,7 @@ import { resolve } from 'node:path';
 
 const SRC = resolve(process.cwd(), 'src/components/body/HumanBody3D.vue');
 const PAGE = resolve(process.cwd(), 'src/views/public/BodyExplorer3D.vue');
-const GLB = resolve(process.cwd(), 'public/models/orkod/orkod-human-body.0db6962c.glb');
+const GLB = resolve(process.cwd(), 'public/models/orkod/orkod-human-body.8521db4e.glb');
 const MODELS = resolve(process.cwd(), 'public/models');
 
 const src = readFileSync(SRC, 'utf8');
@@ -226,16 +226,15 @@ describe('body shell architecture', () => {
 });
 
 describe('shipped assets', () => {
-  it('ships exactly one body GLB, the Grab3D CC0 male muscle figure', () => {
+  it('ships exactly one body GLB, the Mandrake male body', () => {
     expect(existsSync(GLB)).toBe(true);
     const { bytes, json } = glbJson(GLB);
 
-    // The full-quality 601k-triangle sculpt, Meshopt-compressed for transport:
-    // 23.7 MB -> 9.0 MB. The triangles and vertices are unchanged; only the
-    // buffer encoding differs (lossless for the rendered result).
+    // The decimated 300k-triangle male body, Meshopt-compressed (with vertex
+    // quantisation) for transport: 7.2 MB raw -> 1.1 MB shipped. No textures.
     expect(statSync(GLB).size).toBe(bytes);
-    expect(bytes).toBeGreaterThan(8_000_000);
-    expect(bytes).toBeLessThan(12_000_000);
+    expect(bytes).toBeGreaterThan(800_000);
+    expect(bytes).toBeLessThan(3_000_000);
 
     // Static and unrigged: no skeleton and no animation. Geometry is Meshopt-
     // compressed, so the loader MUST install the Meshopt decoder — and still
@@ -243,19 +242,18 @@ describe('shipped assets', () => {
     expect(json.skins).toBeUndefined();
     expect(json.animations).toBeUndefined();
     expect(json.extensionsUsed).toContain('EXT_meshopt_compression');
+    expect(json.extensionsUsed).toContain('KHR_mesh_quantization');
     expect(src).toMatch(/setMeshoptDecoder\(MeshoptDecoder\)/);
     // The body loader must not pull in a Draco decoder, even though the repo
     // still ships one for other assets.
     expect(src).not.toMatch(/DRACOLoader|draco_decoder|setDecoderPath/);
 
-    // Anatomical detail is preserved: it ships its muscle textures (base colour,
-    // normal and metallic-roughness) rather than a flat untextured solid.
-    expect(Array.isArray(json.images)).toBe(true);
-    expect(json.images.length).toBeGreaterThanOrEqual(2);
-    expect(Array.isArray(json.textures)).toBe(true);
-    expect(json.textures.length).toBeGreaterThanOrEqual(2);
+    // Geometry-only: no textures at all. The relief comes from the mesh shaded
+    // by vertex normals, not from a baked normal map.
+    expect(json.images).toBeUndefined();
+    expect(json.textures).toBeUndefined();
 
-    // 323,048 vertices on a single merged primitive in one material group.
+    // 150,002 vertices on a single merged primitive in one material group.
     let triangles = 0;
     let vertices = 0;
     for (const mesh of json.meshes) {
@@ -267,9 +265,10 @@ describe('shipped assets', () => {
         vertices += json.accessors[prim.attributes.POSITION].count;
       }
     }
-    expect(vertices).toBe(323048);
-    expect(triangles).toBe(601188);
+    expect(vertices).toBe(150002);
+    expect(triangles).toBe(300000);
     expect(json.materials.length).toBe(1);
+    expect(json.materials[0].name).toBe('skin');
   });
 
   it('does not ship the retired body assets', () => {
@@ -279,14 +278,14 @@ describe('shipped assets', () => {
 
   it('documents the body asset provenance', () => {
     const doc = readFileSync(resolve(MODELS, 'ORKOD-ASSETS.md'), 'utf8');
-    expect(doc).toContain('Grab3D');
-    expect(doc).toContain('CC0');
+    expect(doc).toContain('Mandrake');
+    expect(doc).toContain('CC BY 4.0');
     expect(doc).not.toContain('Low Poly Civilian');
     expect(doc).not.toContain('3DAssets.dev');
-    expect(doc).toContain('601,188');
-    expect(doc).toContain('0DB6962C607C96CBDDFAA90DE957BA826178E0A7D224E8C34CA6B985B68417D4');
-    // CC0 asks for no attribution, but the record still states the provenance.
-    expect(doc).toMatch(/public domain|no attribution/i);
+    expect(doc).toContain('300,000');
+    expect(doc).toContain('8521DB4ED793923C7CF49127C71685127F16C48D23B1920EDEC8950CF15462BD');
+    // CC BY 4.0 requires attribution, so the record states the obligation.
+    expect(doc).toMatch(/attribution/i);
   });
 });
 

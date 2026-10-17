@@ -1,4 +1,4 @@
-﻿import { beforeAll, afterAll } from 'vitest';
+import { beforeAll, afterAll } from 'vitest';
 import SuperUserService from '@/services/SuperUserService';
 import SuperUser from '@/interfaces/SuperUser';
 
@@ -15,7 +15,7 @@ export async function setupTestAuth() {
 
   try {
     // Use real credentials from the test
-    const adminCreds: SuperUser = { userName: 'admin', passWord: (process.env.TEST_ADMIN_PASSWORD ?? 'test-admin-password') };
+    const adminCreds: SuperUser = { userName: 'admin', passWord: 'R8g9f6T@21/N' };
     
     console.log('Setting up test authentication...');
     authenticatedUser = await SuperUserService.authenticate(
