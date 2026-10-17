@@ -1,0 +1,22 @@
+- Use JWt Authentication with API token https://github.com/appleboy/gin-jwt
+- Update gorm to v2 for better performance and usability
+- To check TLS/https use a generated self trusted certificate using openssl
+- https://github.com/mikespook/gorbac
+
+Best Practices and notes:
+Always use small letters with underscores in Database table names and columns
+Use camelCase in other places 
+
+NSI:
+Check if destination folder is empty or not and echo an alarm to use or MSGBox asking to clean it first or take a backup for the database from the old software version
+OK=> Copy the database portable install folder to subdir of main installer loadpoint, i.e C:\apps\phealing\postgres10 we have also the server on C:\apps\phealing\server
+https://stackoverflow.com/questions/488717/detecting-if-a-program-is-already-installed-with-nsis
+
+
+Static assets in the final binary executable:
+https://github.com/rakyll/statik
+https://github.com/markbates/pkger
+OR:
+https://gist.github.com/kasvith/926d125320d94ff24cdba2fecd1b8d6a#file-gen-go
+https://gist.github.com/kasvith/d85df583c89231dada777a6d48ea2d56#file-defaults-go
+https://levelup.gitconnected.com/how-i-embedded-resources-in-go-514b72f6ef0a

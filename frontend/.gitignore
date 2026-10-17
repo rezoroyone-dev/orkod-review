@@ -1,0 +1,35 @@
+.DS_Store
+node_modules
+/dist/*
+/dev-dist/*
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+debug.log
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Generated verification output (preview-body-glb.mjs, shot.mjs, ...)
+/preview/
+
+#Electron-builder output
+/dist_electron
+
+#yarn
+.yarn
+.yarnrc
+yarn-debug.log*
+yarn-error.log*
+
+
+AIAgents

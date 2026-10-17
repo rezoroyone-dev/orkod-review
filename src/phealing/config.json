@@ -1,0 +1,26 @@
+﻿{
+    "AppRoot": "./volumes/pranicHealing",
+    "HTTPS_ENABLED": "false",
+    "HttpPort": "9091",
+    "HttpsPort": "8443",
+    "TLSKeyLocation": "./volumes/caddy/data/caddy/certificates/local/localhost/localhost.key",
+    "TLSCertLocation": "./volumes/caddy/data/caddy/certificates/local/localhost/localhost.crt",
+    "DatabaseUser": "phealing",
+    "DatabaseName": "phealing",
+    "DatabasePassword": "CHANGE_ME",
+    "DatabaseHost": "localhost",
+    "DatabasePort": "5432",
+    "prodConfigs": {
+        "AppRoot": ".",
+        "HTTPS_ENABLED": "true",
+        "HttpPort": "80",
+        "HttpsPort": "443",
+        "TLSKeyLocation": "./devssl/server.key",
+        "TLSCertLocation": "./devssl/server.pem",
+        "DatabaseUser": "phealing",
+        "DatabaseName": "phealing",
+        "DatabasePassword": "CHANGE_ME",
+        "DatabaseHost": "localhost",
+        "DatabasePort": "5439"
+    }
+}

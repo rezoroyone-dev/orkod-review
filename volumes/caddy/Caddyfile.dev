@@ -1,0 +1,86 @@
+﻿{
+	# Disable admin API in production for security
+    admin off
+
+	debug
+	email admin@example.com
+
+	log {
+		output stdout
+	}
+}
+
+# ---------- reusable snippets ----------
+
+(cacheStaticFiles) {
+	@static {
+		file
+		path *.ico *.css *.js *.gif *.webp *.avif *.jpg *.jpeg *.png *.svg *.woff *.woff2 *.ogg
+	}
+	handle @static {
+	}
+}
+
+# All the route & proxy logic lives here
+(siteConfig) {
+	# Enable compression
+	encode zstd gzip
+
+	# HSTS (harmless on .local, important for public domain)
+	header Strict-Transport-Security max-age=0;
+
+	@api {
+		path /api/*
+	}
+	handle @api {
+		reverse_proxy app:9091 
+		# {
+		# 	transport http {
+		# 		tls
+		# 		tls_insecure_skip_verify
+		# 	}
+		# }
+	}
+
+	handle /ZenAgenda/api/* {
+		uri strip_prefix /ZenAgenda
+		reverse_proxy zenAgenda:9091
+	}
+
+	# Vite dev server
+	handle {
+		reverse_proxy frontend:5173
+	}
+}
+
+# ---------- domain blocks ----------
+
+# Main frontend dev
+https://localhost {
+	tls internal
+	import siteConfig
+}
+
+http://localhost {
+	redir https://{host}{uri} permanent
+}
+
+# Second app dev
+https://localhost:8443 {
+	tls internal
+
+	handle /api/* {
+		reverse_proxy api:8080
+	}
+
+	handle /documents/storage/* {
+		uri strip_prefix /documents/storage
+		reverse_proxy minio:9000
+	}
+
+	handle {
+		root * /srv/rental
+		import cacheStaticFiles
+		file_server
+	}
+}

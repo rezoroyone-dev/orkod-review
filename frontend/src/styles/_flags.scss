@@ -1,0 +1,29 @@
+// =====================================================================================
+// Orkod — language flag sprites
+//
+// Only the four languages Orkod ships with are included, as individual SVG assets.
+//
+// Why not the `flag-icons` package stylesheet: its CSS references every country's
+// SVG via `url(../flags/4x3/*.svg)` (542 rules), so importing it made the bundler
+// emit ~250 unused flag files (~4 MB) that the PWA then precached on every install.
+// The four SVGs actually used total ~10 KB.
+// =====================================================================================
+
+.fi {
+  position: relative;
+  display: inline-block;
+  width: 1.333333em;
+  line-height: 1em;
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+// Relative (not the `@` alias) so SCSS url() resolution never depends on Vite's
+// CSS alias handling. Paths are relative to this file: src/styles/_flags.scss.
+.fi-gb { background-image: url('../assets/flags/gb.svg'); }
+.fi-fr { background-image: url('../assets/flags/fr.svg'); }
+.fi-id { background-image: url('../assets/flags/id.svg'); }
+.fi-sa { background-image: url('../assets/flags/sa.svg'); }

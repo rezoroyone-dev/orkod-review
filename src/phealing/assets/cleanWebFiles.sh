@@ -1,0 +1,1 @@
+rm -fr js css fonts img media favicon.ico index.html

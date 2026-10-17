@@ -1,0 +1,210 @@
+Use this link to improve click outside on the Scheduler custom details popup window
+https://vuetifyjs.com/en/directives/click-outside/
+
+
+For RichText display and edit consider replacing 
+https://github.com/surmon-china/vue-quill-editor
+By
+https://editorjs.io
+https://github.com/scrumpy/tiptap
+--------------
+Documentations and Help pages creation 
+https://vuepress.vuejs.org/guide/#why-not
+-------------------------------------
+PDF reader
+https://github.com/FranckFreiburger/vue-pdf#readme
+-----------------------
+in Meditation.vue Add a toggle button to opt for playing in a detached window (dialog current behavior) or embedded window at the top right
+
+--------------------------
+Front End:
+Server 1200 /year
+Domain name 120/year
+HTML + JS
+110/month for both
+
+---------------
+FrameWorks:
+
+https://github.com/qor/qor
+https://wagtail.io/
+Wagtail Headless CMS Workshop (with Vue.js)
+
+https://github.com/gin-gonic/gin
+https://github.com/ponzu-cms/ponzu
+
+HUGO templates
+https://themes.gohugo.io/hargo-hugo-ecommerce-theme/
+https://themes.gohugo.io/hugo-sodium-theme/
+https://themes.gohugo.io/infinity-hugo/
+https://themes.gohugo.io/educenter-hugo/
+https://themes.gohugo.io/Academia-hugo/
+
+-------------------------------
+For audio and video playing in Meditation use one of below libraries:
+
+video.js:
+https://github.com/videojs/video.js 28k stars
+https://docs.videojs.com/tutorial-vue.html
+https://www.arroyolabs.com/2018/09/videojs-component-with-vuejs/
+https://github.com/surmon-china/vue-video-player 3K stars
+
+https://github.com/mediaelement/mediaelement 7k stars
+
+https://github.com/redxtech/vue-plyr 426 stars
+https://github.com/MoePlayer/vue-aplayer 359 stars
+https://github.com/savokiss/vue-videojs-demo 238 stars
+https://github.com/core-player/vue-core-video-player 59 stars
+https://github.com/dongido001/vue-viaudio 17 stars
+https://github.com/algoz098/vue-player 14 stars
+
+-----------------
+Deployment:(See Chapter 14 Going Live from the book "Django 3 By Example - Third Edition")
+https://learning.oreilly.com/library/view/django-3-by/9781838981952/Text/Chapter_14.xhtml#_idParaDest-311
+Setup NGINX to dispatch and filter the requests to either Wagtail or /app requests to Gin and also serves static files
+
+OK=> PostgreSQL unattended/silent installer
+OK=>  Installation pre-requests for postgresql: VC++ 2013 redistributable x86 package 32bit
+-------------------------------------------------------------
+Brown Tiger, For your hosting requirements on a VPS with 24/7 support and high uptime, you should go with A2Hosting. 
+Here is a link to them: https://hostadvice.com/go/host/vps/771.
+For 34% discount on managed VPS, you can use our coupon 'HOSTADVICEVPS'
+
+And if you are looking for a light speed Cloud VPS with a little higher prices then FastComet will be even better for your needs: https://hostadvice.com/go/host/vps/3955.
+They currently have a special 15% OFF on their website so it's a good time to purchase. Use the code HA15CLOUD
+
+Their reviews are really good and they are getting a lot of love from the industry lately.
+
+---------------------------------
+1- Schedule event popup:
+  OK=> Patient Group list => If more than one Patient (group) then hide sickness (Treatment) selection
+  OK => Sickness (Treatment) list multiple selection and Diagnostics
+  OK => Meditation name list
+  OK=> Single Healer
+
+OK=> Meditations are sound files stored in youtube, 
+OK=> we can embed them in the app if they are small 
+OK=> or use links to youtube
+ok=> They can add delete or modify file and name (*.mp3)
+  
+OK=> 4- SMS 
+OK=><Patient_Name>
+OK=><Healer_Name>
+OK=><Treatment> sub category
+OK=><Center_Name>
+OK=> <Time>
+OK=> <Meditation> name + Youtube link
+
+5- Check server code for any c.JSON or abortwithError statment and make sure it is followed by return statment, also replace with c.AbortWithStatusJSON if appropriate
+OK=> 5- The Bill add payment mode : input text add + remove
+OK=> 6- Export to Excel use one of below Go libraries in server side:
+   https://github.com/360EntSecGroup-Skylar/excelize  
+   https://github.com/tealeg/xlsx
+    
+
+- Server side Documents.vue Save Files with unique name (check file already exists before uploading it and try to rename file maybe adding the file ID or hexa string as the name then when downloading it use the FileName text)
+- Remove the store module Documents as it only communicates insdie a single component and use a similar technique to what is in Healers.vue table to delete and populate objects
+
+Styles: <h1 class="display-2 headline subheading font-weight-regular font-weight-bold mx-3 mb-3 ">I'm a dialofgdfs</h1>
+
+-1000 Asmaa https://www.cgtrader.com/3d-models?keywords=exhibition&sort_by=highest_price
+
+https://apexcharts.com/vue-chart-demos => Use this chart library for reporting payments or compare healers along time with closed treatments total cost for last quarter
+  
+  Next steps:
+- Replace all "console.log(error);" in ts files with "throw error" and in vue files with error message box
+- Alarm before deleting a schedule
+- Don't allow deleting a user if it was added to the healers group
+- Licensing feature
+- Translation with ASMAA
+- Apply server side, License restrictions after the license being expired on (Create + Update + Delete) only with a clear error message in the client
+- Use mixins to avoid repeated methods, properties, and most of repeated code for (FoldersOpen, Closed) Components and (downloadWithAxios, forceFileDownload) functions see https://vuejs.org/v2/guide/mixins.html
+- SMS android app => add logic to remove spaces in ServerIP
+
+Healers.vue
+    Add a column to healer indicating healer level (as a list )   string $t("Level 1" "Level 2" "Level 3"
+
+New page for statistics:
+        list of healers and their closed/open treatments
+        persons
+
+Report: filterable table by date range, person or healer, closed or open treatments         
+
+License File request should not be public:(move it from below group to a new one with BasicAuth but no license check)
+        public := r.Group("/public")
+        public.Use(auth.BasicAuth(auth.BasicAuthEmptyRealm))
+        public.Static("/licenseFiles", "./licenseFiles")
+
+Low Priorety:
+- No perminant deletion for healers, users, etc and add a new tab for managing disabled objects(healers, users,etc)
+- List of inactive/disabled healers
+- When deploying to a server accessible by internet For security reasons set the CORS AllowOrigins policy to only the server domain in main.go file => "AllowOrigins: []string{"http://localhost:8080","*"},"
+
+License:
+    - schedule a task to check license validity every 12 hours
+    - Add license alarm before expiration with two weeks in the alarms(Notifications), and footer or header
+    - detect correct time set in PC to prevent time change and license stolen
+- Create new super User and possibility to delete his account
+- Whatsapp interface
+- Send SMS => gnokii OR gammu with golang
+- Enable below environment variable to see verbose messages about the build failure
+set NODE_OPTIONS='--unhandled-rejections=strict --trace-warnings'
+- add error checking for executed sql queries like below in person.go
+    to insure the received ID is found or delete statment succeeded 
+    d := db.Where("id = ?", id).Delete(&person)
+        fmt.Println(d)
+        c.JSON(200, gin.H{"id #" + id: "deleted"})
+- Electron should figure out if port is already used or not, if used then it specify another port and send it to server startup command below to be used
+-----------------
+/**
+ * Starting the back end server to server requests and connect to Database
+ */
+var child = require('child_process').execFile;
+var executablePath = "./goServer/ginGo.exe";
+child(executablePath, function (err, data) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    console.log(data.toString());
+});
+
+-------------------------
+vue create clinic
+vue add electron-builder
+vue add vuetify
+
+
+https://stackoverflow.com/questions/47305564/wix-installer-can-one-msi-have-one-windows-app-and-one-windows-service-using
+
+To disable GA, include tui-code-snippet.js and then immediately write the options as follows:
+tui.usageStatistics = false;
+
+-------------------------------------
+nwjs Build with source protection:
+
+index.html file has script tag with:
+<script>
+        nw.Window.get().evalNWBin(null, './dist/js/app.bin');
+        nw.Window.get().evalNWBin(null, './dist/js/Scheduler.bin');
+        nw.Window.get().evalNWBin(null, './dist/js/Bill.bin');
+        nw.Window.get().evalNWBin(null, './dist/js/Healers.bin');
+        nw.Window.get().evalNWBin(null, './dist/js/License.bin');
+        nw.Window.get().evalNWBin(null, './dist/js/People.bin');
+        nw.Window.get().evalNWBin(null, './dist/js/Profile.bin');
+        nw.Window.get().evalNWBin(null, './dist/js/Test.bin');
+        nw.Window.get().evalNWBin(null, './dist/js/ToolBar.bin');
+        nw.Window.get().evalNWBin(null, './dist/js/Sms.bin');
+</script>
+    
+Also comment all js links in the header tag 
+ <!-- <link href=js/Bill.6216129f.js rel=prefetch> -->
+---------------------
+Android certificate
+pass: MAROCPERptc1980
+key: key
+key pass: MAROCPERptc1980
+--------------------------
+Live streaming
+https://benwilber.github.io/nginx/rtmp/live/video/streaming/2018/03/25/building-a-live-video-streaming-website-part-1-start-streaming.html
+----------------------

@@ -1,0 +1,8 @@
+FROM alpine:latest
+# FROM debian:10-slim
+LABEL name="PhealingServer"
+
+# COPY ./src/phealing/bin/PranicServer /opt/PhealingServer/bin/PranicServer
+WORKDIR /opt/PhealingServer
+
+CMD [ "/opt/PhealingServer/bin/PranicServer", "-config=/opt/PhealingServer/dataRoot/config.json" ]

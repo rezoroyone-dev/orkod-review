@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "exclude": [
+    ".get",
+    "build",
+    "goServer",
+    "tmp",
+    "dist",
+    "dist_electron",
+    "node_modules"
+  ],
+  "include": [
+    "src/**/*",
+    "public/**/*"
+  ]
+}

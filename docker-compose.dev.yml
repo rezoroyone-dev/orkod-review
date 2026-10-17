@@ -1,0 +1,33 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+    restart: unless-stopped
+    container_name: Phealing_frontend-dev
+    command: sh -c "bun install && bun run dev --host 0.0.0.0"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    expose:
+      - 5173
+    networks:
+      - shared_network
+
+  caddy:
+    ports:
+      - 80:80
+      - 443:443
+      - 8443:8443
+    volumes:
+      - ./volumes/caddy/Caddyfile.dev:/etc/caddy/Caddyfile
+    networks:
+      - shared_network
+
+networks:
+  shared_network:
+    external: true # to use external shared_network, create it first using command: docker network create shared_network

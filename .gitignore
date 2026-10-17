@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.bun/
+
+# Build output
+dist/
+dev-dist/
+preview/
+*.tsbuildinfo
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+*.env
+kanboard.env
+!frontend/.env.example
+
+# Runtime data & volumes (keep caddy config only)
+volumes/**/*
+!volumes/caddy/
+!volumes/caddy/Caddyfile.dev
+
+# Logs
+*.log
+logs/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+.code-workspace
+.favorites.json
+
+# Go build artifacts
+bin/
+*.exe
+*.test
+src/phealing/tmp/

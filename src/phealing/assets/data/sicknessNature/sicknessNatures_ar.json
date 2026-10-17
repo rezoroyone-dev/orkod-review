@@ -1,0 +1,614 @@
+[
+  {
+    "id": 1,
+    "description": "IMMUNE SYSTEM",
+    "items": [
+      {
+        "id": 1,
+        "description": "Immune system",
+        "healingFrequency": "-",
+        "protocol": "-"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "description": "أمراض العيون",
+    "items": [
+      {
+        "id": 1,
+        "description": "Chronic redness in the eyes ",
+        "healingFrequency": "Repeat the treatment three times a week for as long as necessary",
+        "protocol": "PAGE 151"
+      },
+      {
+        "id": 2,
+        "description": "vitreous floaters ( Eye Floaters )",
+        "healingFrequency": "Repeat the treatment two to three times a week",
+        "protocol": "PAGE 151 and 152"
+      },
+      {
+        "id": 3,
+        "description": "Myopia, presbyopia, astigmatism, convergent strabismus, divergent strabismus",
+        "healingFrequency": "Repeat the entire treatment once a day for several days",
+        "protocol": "Page 148 and 149"
+      },
+      {
+        "id": 4,
+        "description": "Eye infections",
+        "healingFrequency": "Repeat the entire treatment once a day for several days",
+        "protocol": "PAGE 150"
+      },
+      {
+        "id": 5,
+        "description": "Glaucoma",
+        "healingFrequency": "Repeat the treatment three times a week for about two, three months",
+        "protocol": "PAGE 152 and 153"
+      },
+      {
+        "id": 6,
+        "description": "Cataract",
+        "healingFrequency": "Repeat the treatment three times a weeke",
+        "protocol": "PAGE 153 and 154"
+      },
+      {
+        "id": 7,
+        "description": "Deafness, ruptured eardrum, blocked ear",
+        "healingFrequency": "Repeat the treatment three times a week",
+        "protocol": "PAGE 156, 157 and 158"
+      },
+      {
+        "id": 8,
+        "description": "Sensorineural deafness",
+        "healingFrequency": "Repeat the treatment three times a week for several months",
+        "protocol": "PAGE 158 and 159"
+      },
+      {
+        "id": 9,
+        "description": "Ear Ringing or tinnitus",
+        "healingFrequency": "Repeat the treatment three times a week",
+        "protocol": "PAGE 159"
+      },
+      {
+        "id": 10,
+        "description": "Pain: migraine, toothache",
+        "healingFrequency": "Repeat treatment if necessary",
+        "protocol": ""
+      },
+      {
+        "id": 11,
+        "description": "Dizziness",
+        "healingFrequency": "Repeat the treatment three times a week",
+        "protocol": "PAGE 160"
+      },
+      {
+        "id": 12,
+        "description": "Pyorrhea",
+        "healingFrequency": "Repeat the treatment two to three times a day",
+        "protocol": "a. Apply a general sweep two or three times.\nb.Apply localized and thorough cleaning and energize the affected area.\nc.Apply localized cleaning and energize the throat, secondary throat chakras and minor jaw chakras.Stabilized the projected pranic energy.\nd.Since the consumption speed is very fast, steps b and c can be repeated two or three times a day.\ne.To intensify the defense mechanism of the body.Follow the instructions given under strengthening the body 's immune system by increasing its energy level.\nf.Ask the patient to go to a dentist."
+      },
+      {
+        "id": 13,
+        "description": "Pharyngitis, laryngitis, epidemic parotitis, tonsillitis",
+        "healingFrequency": "Repeat the entire treatment once or twice a day",
+        "protocol": "PAGE 160 and 161"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "description": "SKIN DISEASES",
+    "items": [
+      {
+        "id": 1,
+        "description": "Recent burns",
+        "healingFrequency": "Repeat the treatment for several days",
+        "protocol": "Green and light blue prana "
+      },
+      {
+        "id": 2,
+        "description": "Old Minor burns",
+        "healingFrequency": "Repeat the treatment for several days",
+        "protocol": "Prana vert et rouge "
+      },
+      {
+        "id": 3,
+        "description": "Old serious burns",
+        "healingFrequency": "Repeat the treatment once or twice a day for as long as necessary",
+        "protocol": "Green and red prana"
+      },
+      {
+        "id": 4,
+        "description": "Eczema or dermatitis, non-severe boils",
+        "healingFrequency": "Repeat treatment if necessary",
+        "protocol": "PAGE 164, 165 and 166 "
+      },
+      {
+        "id": 5,
+        "description": "Severe acne",
+        "healingFrequency": "Repeat the treatment three times a week for as long as necessary",
+        "protocol": "PAGE 167"
+      },
+      {
+        "id": 6,
+        "description": "Skin allergies",
+        "healingFrequency": "Repeat the treatment several times a week",
+        "protocol": "PAGE 167 and 168"
+      },
+      {
+        "id": 7,
+        "description": "Psoriasis",
+        "healingFrequency": "Repeat the treatment three times a week for as long as necessary",
+        "protocol": "PAGE 168 and 169"
+      },
+      {
+        "id": 8,
+        "description": "Thinning hair",
+        "healingFrequency": "Repeat the treatment several times a week",
+        "protocol": "PAGE 169 and 170"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "description": "HEART AND CIRCULATORY AILMENTS",
+    "items": [
+      {
+        "id": 1,
+        "description": "HEART AND CIRCULATORY AILMENTS",
+        "healingFrequency": "-",
+        "protocol": "-"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "description": "RESPIRATORY AILMENTS",
+    "items": [
+      {
+        "id": 1,
+        "description": "RESPIRATORY AILMENTS",
+        "healingFrequency": "-",
+        "protocol": "-"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "description": "GASTRO INTESTINAL AILMENTS",
+    "items": [
+      {
+        "id": 1,
+        "description": "vomiting and diarrhoea",
+        "healingFrequency": "Repeat treatment 3 to 4 times a day if necessary",
+        "protocol": "PAGE 203 "
+      },
+      {
+        "id": 2,
+        "description": "constipation",
+        "healingFrequency": "Repeat treatment two to three times a week",
+        "protocol": "PAGE 204"
+      },
+      {
+        "id": 3,
+        "description": "Abdominal pain",
+        "healingFrequency": "Repeat treatment two to three times a week",
+        "protocol": "PAGE 205"
+      },
+      {
+        "id": 4,
+        "description": "Indigestion",
+        "healingFrequency": "Repeat treatment two to three times a week",
+        "protocol": "PAGE 205"
+      },
+      {
+        "id": 5,
+        "description": "Gastrointestinal ulcer",
+        "healingFrequency": "Repeat treatment two to three times a week",
+        "protocol": "PAGE 206"
+      },
+      {
+        "id": 6,
+        "description": "hemorrhoids",
+        "healingFrequency": "Repeat treatment two to three times a week",
+        "protocol": "PAGE 207"
+      },
+      {
+        "id": 7,
+        "description": "Hernia",
+        "healingFrequency": "Repeat treatment two to three times a week",
+        "protocol": "PAGE 207 and 208"
+      },
+      {
+        "id": 8,
+        "description": "High cholesterol",
+        "healingFrequency": "Repeat treatment three times a week for as long as necessary",
+        "protocol": "PAGE 208"
+      },
+      {
+        "id": 9,
+        "description": "Gastrointestinal infections",
+        "healingFrequency": "Repeat pranic treatment 3 times a day if necessary",
+        "protocol": "PAGE 209"
+      },
+      {
+        "id": 10,
+        "description": "Acute appendicitis",
+        "healingFrequency": "Repeat treatment about three times a day for the next few days",
+        "protocol": "PAGE 210 and 211"
+      },
+      {
+        "id": 11,
+        "description": "Acute pancreatitis",
+        "healingFrequency": "Repeat treatment about three times a day for the next few days",
+        "protocol": "PAGE 212"
+      },
+      {
+        "id": 12,
+        "description": "Gallstones",
+        "healingFrequency": "Repeat treatment three times a week for as long as necessary",
+        "protocol": "PAGE 212 and 213"
+      },
+      {
+        "id": 13,
+        "description": "Hepatitis",
+        "healingFrequency": "Repeat treatment several times a week",
+        "protocol": "PAGE 213 and 214 "
+      },
+      {
+        "id": 14,
+        "description": "assimilation problems",
+        "healingFrequency": "Repeat treatment several times a week",
+        "protocol": "PAGE 214"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "description": "URINARY AILMENTS",
+    "items": [
+      {
+        "id": 1,
+        "description": "URINARY AILMENTS",
+        "healingFrequency": "-",
+        "protocol": "-"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "description": "REPRODUCTIVE AILMENTS",
+    "items": [
+      {
+        "id": 1,
+        "description": "Reproductive system",
+        "healingFrequency": "Repeat treatment if necessary",
+        "protocol": "-"
+      },
+      {
+        "id": 2,
+        "description": "Dysmenorrhea",
+        "healingFrequency": "Repeat treatment if necessary",
+        "protocol": "PAGE 224"
+      },
+      {
+        "id": 3,
+        "description": "Irregular menstruation or no menstruation",
+        "healingFrequency": "Repeat treatment if necessary",
+        "protocol": "PAGE 225"
+      },
+      {
+        "id": 4,
+        "description": "vulvitis vaginitis cervictis",
+        "healingFrequency": "Repeat treatment for the next few days",
+        "protocol": "PAGE 226"
+      },
+      {
+        "id": 5,
+        "description": "Ovarian cyst",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 225 and 227"
+      },
+      {
+        "id": 6,
+        "description": "Myoma",
+        "healingFrequency": "Repeat treatment three times a week for as long as necessary",
+        "protocol": "PAGE 228"
+      },
+      {
+        "id": 7,
+        "description": "Enlarged prostate",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 229"
+      },
+      {
+        "id": 8,
+        "description": "Sexual impotence",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 230"
+      },
+      {
+        "id": 9,
+        "description": "Sterillity",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 230"
+      },
+      {
+        "id": 10,
+        "description": "Venereal disease",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 231 and 232"
+      },
+      {
+        "id": 11,
+        "description": "Pregnant women",
+        "healingFrequency": "Repeat treatment three times a week for about one month",
+        "protocol": "PAGE 233"
+      },
+      {
+        "id": 12,
+        "description": "Avoiding miscarriage",
+        "healingFrequency": "Repeat treatment three times a week for about one month",
+        "protocol": "PAGE 234"
+      },
+      {
+        "id": 13,
+        "description": "Preventing miscarriage",
+        "healingFrequency": "Repeat treatment if necessary",
+        "protocol": "PAGE 234 and 235"
+      },
+      {
+        "id": 14,
+        "description": "Facilitating the birthing process",
+        "healingFrequency": "The whole procedure can be repeated after one or two hours",
+        "protocol": "PAGE 235"
+      },
+      {
+        "id": 15,
+        "description": "Hastening recovery after giving birth",
+        "healingFrequency": "Repeat the treatment twice a day for about a week.",
+        "protocol": "PAGE 236"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "description": "ENDOCRINE AILMENTS",
+    "items": [
+      {
+        "id": 1,
+        "description": "endocrine system",
+        "healingFrequency": "Repeat treatment twice a week",
+        "protocol": "-"
+      },
+      {
+        "id": 2,
+        "description": "Diabetes due to the body's inabillity to make use of insulin",
+        "healingFrequency": "Repeat treatment twice a week",
+        "protocol": "PAGE 239 and 240 "
+      },
+      {
+        "id": 3,
+        "description": "Pancreatic diabetes due to insufficient insulin",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 241"
+      },
+      {
+        "id": 4,
+        "description": "Hyperthyroidism",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 242"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "description": "SKELETAL AND MUSCULAR DISORDERS",
+    "items": [
+      {
+        "id": 1,
+        "description": "Skeletal and muscular system, lower back pain sciatica and herniated disk",
+        "healingFrequency": "Repeat treatment two to three times a day for the first days",
+        "protocol": "PAGE 246 and 247"
+      },
+      {
+        "id": 2,
+        "description": "Back ache",
+        "healingFrequency": "Repeat the treatment three times a week",
+        "protocol": "-"
+      },
+      {
+        "id": 3,
+        "description": "Scoliosis",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 248"
+      },
+      {
+        "id": 4,
+        "description": "Arthritis or rheumatism",
+        "healingFrequency": "Repeat treatment if necessary",
+        "protocol": "PAGE 248 and 249"
+      },
+      {
+        "id": 5,
+        "description": "Stiff neck",
+        "healingFrequency": "Repeat treatment if necessary",
+        "protocol": "PAGE 250 and 251"
+      },
+      {
+        "id": 6,
+        "description": "Painful shoulder",
+        "healingFrequency": "Repeat treatment if necessary",
+        "protocol": "PAGE 251"
+      },
+      {
+        "id": 7,
+        "description": "Gout",
+        "healingFrequency": "Repeat treatment once a day for the next several days",
+        "protocol": "PAGE 252"
+      },
+      {
+        "id": 8,
+        "description": "Degenerative arthritis osteoarthritis",
+        "healingFrequency": "Repeat treatment thrice a week",
+        "protocol": "PAGE 253"
+      },
+      {
+        "id": 9,
+        "description": "Rheumatoid arthritis",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 254"
+      },
+      {
+        "id": 10,
+        "description": "Systemic lupus erythematosus",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 255 and 256"
+      },
+      {
+        "id": 11,
+        "description": "Sports injuries",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 257"
+      },
+      {
+        "id": 12,
+        "description": "Muscle gramps",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 257"
+      },
+      {
+        "id": 13,
+        "description": "Bursitis",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 257"
+      },
+      {
+        "id": 14,
+        "description": "Strain",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 258"
+      },
+      {
+        "id": 15,
+        "description": "Sprain",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 258"
+      },
+      {
+        "id": 16,
+        "description": "Lacération des tendons",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "PAGE 259"
+      },
+      {
+        "id": 17,
+        "description": "Dislocation",
+        "healingFrequency": "Repeat treatment  three times a week",
+        "protocol": "PAGE 260"
+      },
+      {
+        "id": 18,
+        "description": "Bursitis",
+        "healingFrequency": "Repeat treatment three times a week",
+        "protocol": "-"
+      },
+      {
+        "id": 19,
+        "description": "Regeneration",
+        "healingFrequency": "Repeat the treatment three times a week for as long as necessary",
+        "protocol": "Prana green-yellow and green-purple or light green-white, light orange-white and light red-white "
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "description": "BLOOD DISORDERS",
+    "items": [
+      {
+        "id": 1,
+        "description": "Anemia",
+        "healingFrequency": "Repeat treatment three times a week for as long as necessary.",
+        "protocol": "PAGE 262 and 263"
+      },
+      {
+        "id": 2,
+        "description": "Acute allergy",
+        "healingFrequency": "Repeat treatment three times a week for as long as necessary.",
+        "protocol": "PAGE 264"
+      },
+      {
+        "id": 3,
+        "description": "Auto immune ailment",
+        "healingFrequency": "Repeat treatment three times a week for as long as necessary.",
+        "protocol": "PAGE 265 and 266"
+      },
+      {
+        "id": 4,
+        "description": "Leukemia",
+        "healingFrequency": "Repeat treatment three times a week for as long as necessary.",
+        "protocol": "PAGE 267, 268 and 269"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "description": "DISORDERS OF THE BRAIN AND NERVOUS SYSTEM",
+    "items": [
+      {
+        "id": 1,
+        "description": "Bell's palsy",
+        "healingFrequency": "Repeat the treatment once a day for as long as necessary.",
+        "protocol": "PAGE 272, 273 and 274"
+      },
+      {
+        "id": 2,
+        "description": "Facial tics",
+        "healingFrequency": "Repeat treatment three times a week.",
+        "protocol": "PAGE 274 and 275"
+      },
+      {
+        "id": 3,
+        "description": "Epilepsy",
+        "healingFrequency": "Repeat treatment three times a week .",
+        "protocol": "PAGE 275 and 276"
+      },
+      {
+        "id": 4,
+        "description": "Parkinson's disease",
+        "healingFrequency": "Repeat treatment once day for as long as necessary.",
+        "protocol": "PAGE 276, 277 and 278"
+      },
+      {
+        "id": 5,
+        "description": "Encephalitis and meningitis",
+        "healingFrequency": "Repeat treatment once day for as long as necessary.",
+        "protocol": "PAGE 279"
+      },
+      {
+        "id": 6,
+        "description": "Mental retardation",
+        "healingFrequency": "Repeat treatment three times a week for the next several years.",
+        "protocol": "PAGE 280"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "description": "TUMORS AND CANCER",
+    "items": [
+      {
+        "id": 1,
+        "description": "Benign tumors",
+        "healingFrequency": "repeat treatement twice or thrice a week for as long as necessary.",
+        "protocol": "PAGE 282"
+      },
+      {
+        "id": 2,
+        "description": "Cancer",
+        "healingFrequency": "See note.",
+        "protocol": "PAGE 283"
+      }
+    ]
+  }
+]

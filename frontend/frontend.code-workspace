@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"i18n-ally.localesPaths": [
+			"src/locales"
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"type": "firefox",
+				"request": "launch",
+				"reAttach": true,
+				"name": "Launch localhost",
+				"url": "http://localhost:5173",
+				"webRoot": "${workspaceFolder}"
+			}
+		],
+		"compounds": []
+	}
+}

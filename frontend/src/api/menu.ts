@@ -1,0 +1,126 @@
+const Menu = [{
+    header: 'Apps'
+  },
+  {
+    title: 'Dashboard',
+    group: 'apps',
+    icon: 'mdi-view-dashboard',
+    name: 'Dashboard',
+    component: 'Dashboard',
+  },
+  {
+    title: 'People',
+    group: 'apps',
+    icon: 'mdi-account-multiple',
+    name: 'People',
+  },
+  {
+    title: 'Scheduler',
+    group: 'apps',
+    icon: 'mdi-calendar-clock',
+    name: 'Scheduler',
+    component: 'Scheduler',
+  },
+  {
+    title: 'Healers',
+    group: 'apps',
+    icon: 'mdi-account-tie',
+    name: 'healers',
+    component: 'Healers',
+  },
+  {
+    title: 'Center',
+    group: 'apps',
+    icon: 'mdi-office-building',
+    name: 'Center',
+    component: 'Center',
+  },
+  {
+    title: 'Meditations',
+    group: 'apps',
+    icon: 'mdi-meditation',
+    name: 'Meditations',
+    component: 'Meditations',
+  },
+  {
+    title: 'Inbox',
+    group: 'apps',
+    icon: 'mdi-email-outline',
+    name: 'Inbox',
+    component: 'Inbox',
+  },
+  {
+    title: 'Sms',
+    group: 'apps',
+    icon: 'mdi-message-text',
+    name: 'sms',
+    component: 'Sms',
+  },
+  {
+    title: 'Bill',
+    group: 'apps',
+    icon: 'mdi-cash-multiple',
+    name: 'bill',
+    component: 'Bill',
+  },
+  {
+    title: 'Reporting',
+    group: 'apps',
+    icon: 'mdi-chart-bar',
+    name: 'report',
+    component: 'Report',
+  },
+  {
+    title: 'User_Management',
+    group: 'apps',
+    icon: 'mdi-account-cog',
+    name: 'Users',
+    component: 'UserManagement',
+  },
+  {
+    title: 'Role_Management',
+    group: 'apps',
+    icon: 'mdi-shield-account',
+    name: 'Roles',
+    component: 'RoleManagement',
+  },
+  {
+    title: 'My_Availability',
+    group: 'apps',
+    icon: 'mdi-clock-check',
+    name: 'Availability',
+    component: 'HealerAvailability',
+  },
+  {
+    title: 'License',
+    group: 'apps',
+    icon: 'mdi-license',
+    name: 'license',
+    component: 'License',
+  },
+  {
+    title: 'Audit_Logs',
+    group: 'apps',
+    icon: 'mdi-history',
+    name: 'AuditLogs',
+    component: 'AuditLogs',
+  },
+  {
+    title: 'ToolBox',
+    group: 'apps',
+    icon: 'mdi-toolbox',
+    name: 'ToolBox',
+    component: 'ToolBox',
+  },
+  
+  {
+    title: 'Help',
+    href:"/docs",
+    group: 'apps',
+    icon: 'mdi-help-circle',
+    name: 'Help',
+    component: 'Help',
+    target: '_blank'
+  }
+];
+export default Menu;

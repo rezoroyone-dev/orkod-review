@@ -1,0 +1,167 @@
+﻿services:
+  db:
+    image: postgres:15-alpine
+    restart: always
+    container_name: Phealing_DB
+    volumes:
+      - ./volumes/data/db:/var/lib/postgresql/data:rw
+    # ports:
+    #   - 5432:5432
+    expose:
+      - 5432
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_DB=${DB_NAME:-phealing}
+      - POSTGRES_PORT=${DB_PORT:-5432}
+      - POSTGRES_USER=${DB_USER:?DB_USER must be set}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:?DB_PASSWORD must be set}
+    healthcheck:
+      test:
+        ["CMD", "pg_isready", "-U", "${DB_USER}", "-d", "${DB_NAME:-phealing}"]
+      interval: 2s
+      timeout: 2s
+      retries: 30
+    networks:
+      - shared_network
+
+  app:
+    image: phealing-server:1.25
+    build:
+      context: ./
+      # dockerfile: Dockerfile.app-prod
+      dockerfile: Dockerfile.app-dev
+    restart: no
+    container_name: Phealing_Server
+    # command: /opt/PhealingServer/bin/PranicServer -config=/opt/PhealingServer/dataRoot/config.json
+    # command: ping 192.168.5.136
+    env_file:
+      - .env
+    volumes:
+      - ./volumes/pranicHealing/dataRoot:/opt/PhealingServer/dataRoot
+      - ./volumes/caddy/data/caddy/certificates/local/orkodcenter.local:/opt/certificates:ro
+      # - ./volumes/certbot/conf/archive/orkodcenter.com/:/opt/certbot/:ro
+      # - ./src/phealing/bin/PranicServer:/opt/PhealingServer/bin/PranicServer
+    # ports:
+    # - 443:443
+    # - 9091:9091
+    expose:
+      - 9091
+      - 443
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - shared_network
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: caddy
+    restart: unless-stopped
+    # command: ["ping", "192.168.5.136"]
+    ports:
+      - 80:80
+      - 443:443
+      - 8443:8443
+      # - "443:443/udp"
+      # - "2019:2019"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    env_file:
+      - ./frontend/.env.dev
+    volumes:
+      - ./volumes/sites:/srv
+      - ./volumes/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ./volumes/caddy/data:/data
+      - ./volumes/caddy/config:/config
+      - ./volumes/caddy/logs:/logs
+    depends_on:
+      - app
+    networks:
+      - shared_network
+
+  # zenAgenda:
+  #   image: zen_agenda_server:1.15.7
+  #   # To enable this app remove below two lines for profiles
+  #   # profiles:
+  #   # - donotstart
+  #   build:
+  #     context: ./
+  #     dockerfile: Dockerfile.agenda
+  #   restart: always
+  #   container_name: zenAgenda
+  #   # command: /opt/PhealingServer/bin/PranicServer -config=/opt/PhealingServer/dataRoot/config.json
+  #   # command: ping 192.168.5.136
+  #   volumes:
+  #     - ./volumes/zenAgendaServer/dataRoot:/opt/zenAgenda/bin/dataRoot
+  #   # ports:
+  #   #   - "9091:9091"
+  #   expose:
+  #     - 9091
+
+  # web:
+  #   image: nginx:alpine
+  #   # build:
+  #   #   context: ./
+  #   #   dockerfile: Dockerfile.web
+  #   restart: always
+  #   container_name: Phealing_nginx
+  #   volumes:
+  #     - ./volumes/nginx/nginx.conf:/etc/nginx/nginx.conf
+  #     - ./volumes/nginx/sites-enabled:/etc/nginx/sites-enabled
+  #     # - ./volumes/nginx/sites-enabled/default:/opt/nginx_sites_default
+  #     - ./volumes/sites:/opt/sites
+  #     - ./volumes/nginx/logs:/var/log/nginx
+  #     - ./volumes/certbot/www/:/var/www/certbot/:ro
+  #     - ./volumes/certbot/conf/:/etc/nginx/ssl/:ro
+  #   expose:
+  #     - 80
+  #     - 443
+  #   # environment:
+  #   #   - PORT=80
+  #   # command: sh -c "envsubst < /opt/nginx_sites_default > /etc/nginx/sites-enabled/default && exec nginx -g 'daemon off;'"
+  #   # depends_on:
+  #   #     - app
+  #   links:
+  #     - app
+
+  # certbot:
+  #   image: certbot/certbot:latest
+  #   container_name: Phealing_certbot
+  #   volumes:
+  #     - ./volumes/certbot/www/:/var/www/certbot/:rw
+  #     - ./volumes/certbot/conf/:/etc/letsencrypt/:rw
+  #     # Use below commands to generate or renew certificates, try to automate it using cron job or another method when you have time
+  #     # docker-compose run --rm  certbot certonly --webroot --webroot-path /var/www/certbot/ --staple-ocsp -m admin@example.com --agree-tos -v -d orkodcenter.com -d www.orkodcenter.com
+  #     # docker-compose run --rm  certbot renew --dry-run -v
+
+  # kanboard:
+  #   image: kanboard/kanboard:v1.2.33
+  #   container_name: kanboard_app
+  #   restart: unless-stopped
+  #   expose:
+  #     - 80
+  #     - 443
+  #   env_file: kanboard.env
+  #   volumes:
+  #     - ./volumes/kanboard/kanboard_data:/var/www/app/data
+  #     - ./volumes/kanboard/kanboard_plugins:/var/www/app/plugins
+  #     - ./volumes/kanboard/kanboard_ssl:/etc/nginx/ssl
+  #     - ./volumes/kanboard/nginx/logs:/var/log/nginx
+  #   depends_on:
+  #     - kan_db
+
+  # kan_db:
+  #   image: postgres:15-alpine
+  #   container_name: kanboard_db
+  #   user: postgres
+  #   restart: unless-stopped
+  #   expose:
+  #     - 5432
+  #   env_file: kanboard.env
+  #   volumes:
+  #     - ./volumes/kanboard/db/data:/var/lib/postgresql/data
+
+networks:
+  shared_network:
+    external: true # to use external shared_network, create it first using command: docker network create shared_network

@@ -1,0 +1,1 @@
+// This mixin is deprecated. Its functionality should be replaced by the useLicense composable.

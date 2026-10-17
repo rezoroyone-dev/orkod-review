@@ -1,0 +1,284 @@
+// =====================================================================================
+// Orkod CSS Custom Properties — Purple & Gold Design System
+// Mapped per theme (light / dark).
+// =====================================================================================
+
+@use './tokens' as *;
+
+// ── Shared (both themes) ─────────────────────────────────────────────────────────────
+:root {
+  // Brand — Purple & Gold
+  --color-purple-deepest:   #{$color-purple-deepest};
+  --color-purple-dark:      #{$color-purple-dark};
+  --color-purple-deep:      #{$color-purple-deep};
+  --color-purple-primary:   #{$color-purple-primary};
+  --color-purple-bright:    #{$color-purple-bright};
+  --color-purple-lavender:  #{$color-purple-lavender};
+  --color-purple-pale:      #{$color-purple-pale};
+  --color-purple-vlight:    #{$color-purple-vlight};
+
+  --color-gold-deep:        #{$color-gold-deep};
+  --color-gold-primary:     #{$color-gold-primary};
+  --color-gold-champagne:   #{$color-gold-champagne};
+  --color-gold-light:       #{$color-gold-light};
+
+  // Neutrals
+  --color-white:            #{$color-white};
+  --color-text-primary:     #{$color-text-primary};
+  --color-text-muted:       #{$color-text-muted};
+  --color-text-disabled:    #{$color-text-disabled};
+  --color-border:           #{$color-border};
+  --color-border-strong:    #{$color-border-strong};
+  --color-surface:          #{$color-surface};
+  --color-surface-alt:      #{$color-surface-alt};
+  --color-bg-page:          #{$color-bg-page};
+  --color-bg-page-alt:      #{$color-bg-page-alt};
+
+  // ── Spec design tokens (Orkod visual system) ──────────────────────────────────────
+  // Canonical names used by the redesign spec. Existing tokens above are kept as the
+  // implementation detail; these are the contract the design is built against.
+  --color-black:            #020204;
+  --color-background:       #0B0718;
+  --color-surface-raised:   #160D2B;
+  --color-purple:           #6D28D9;
+  --color-purple-bright:    #8B5CF6;
+  --color-lavender:         #C4B5FD;
+  --color-gold-deep:        #8C6A24;
+  --color-gold:             #D4AF37;
+  --color-gold-soft:        #F1D27A;
+  --color-border-active:    rgba(212, 175, 55, 0.55);
+
+  // Status (semantic — medical/validation)
+  --color-success:          #{$color-success};
+  --color-success-bg:       #{$color-success-bg};
+  --color-warning:          #{$color-warning};
+  --color-warning-bg:       #{$color-warning-bg};
+  --color-error:            #{$color-error};
+  --color-error-bg:         #{$color-error-bg};
+  --color-info:             #{$color-info};
+
+  // Gradients
+  --gradient-purple-primary: #{$gradient-purple-primary};
+  --gradient-purple-hero:    #{$gradient-purple-hero};
+  --gradient-purple-soft:    #{$gradient-purple-soft};
+  --gradient-gold-primary:   #{$gradient-gold-primary};
+  --gradient-gold-soft:      #{$gradient-gold-soft};
+  --gradient-surface:        #{$gradient-surface};
+  --gradient-purple-gold:    #{$gradient-purple-gold};
+  --gradient-ring-gold:      #{$gradient-ring-gold};
+
+  // Referenced-but-previously-undefined tokens. These aliases were used across
+  // the site (the header's Book button fill, the eyebrow gold rule, the
+  // icon-chip tiles, the public footer's base gradient) but never declared, so
+  // the declarations silently resolved to transparent and the elements rendered
+  // with no background at all — the footer's white text sat on the page colour.
+  --color-green:             #{$color-success};
+  --color-green-dark:        #15803d;
+  --color-green-soft:        #{$color-success-bg};
+  --color-off-white:         #{$color-purple-vlight};
+  --color-purple:            #{$color-purple-primary};
+  --color-purple-soft:       #{$color-purple-pale};
+  --font-family-heading:     #{$font-family-display};
+  --gradient-gold:           #{$gradient-gold-primary};
+  --gradient-turquoise:      #{$gradient-purple-primary};
+  --gradient-green:          linear-gradient(135deg, #16A34A 0%, #22C55E 100%);
+  --gradient-hero-deep:      #{$gradient-purple-hero};
+  --gradient-body-stage:     #{$gradient-body-void};
+  --gradient-hairline-gold:  linear-gradient(90deg, rgba(212, 175, 55, 0) 0%, rgba(241, 210, 122, 0.7) 50%, rgba(212, 175, 55, 0) 100%);
+  --spacing-md:              16px;
+  --spacing-lg:              24px;
+  --spacing-xl:              32px;
+
+  // Body Explorer Stage (dedicated dark environment)
+  --gradient-body-void:      #{$gradient-body-void};
+  --gradient-body-purple:    #{$gradient-body-purple};
+  --gradient-body-gold-core: #{$gradient-body-gold-core};
+  --gradient-body-violet:    #{$gradient-body-violet};
+
+  // Elevation
+  --shadow-sm:     #{$shadow-sm};
+  --shadow-md:     #{$shadow-md};
+  --shadow-lg:     #{$shadow-lg};
+  --shadow-xl:     #{$shadow-xl};
+  --shadow-purple: #{$shadow-purple};
+  --shadow-purple-sm: #{$shadow-purple-sm};
+  --shadow-purple-glow: #{$shadow-purple-glow};
+  --shadow-gold:   #{$shadow-gold};
+  --shadow-gold-sm:#{$shadow-gold-sm};
+  --shadow-card:   #{$shadow-card};
+  --shadow-card-hover: #{$shadow-card-hover};
+  --shadow-inner:  #{$shadow-inner};
+
+  // Radius scale
+  --radius-sm:     #{$radius-sm};
+  --radius-md:     #{$radius-md};
+  --radius-lg:     #{$radius-lg};
+  --radius-xl:     #{$radius-xl};
+  --radius-2xl:    #{$radius-2xl};
+  --radius-3xl:    #{$radius-3xl};
+  --radius-full:   #{$radius-full};
+
+  // Typography
+  --font-family-latin:     #{$font-family-latin};
+  --font-family-arabic:    #{$font-family-arabic};
+  --font-family-display:   #{$font-family-display};
+  --font-family-mono:      #{$font-family-mono};
+
+  // Motion tokens
+  --ease-out:      #{$ease-out};
+  --ease-in-out:   #{$ease-in-out};
+  --ease-spring:   #{$ease-spring};
+  --duration-fast: #{$duration-fast};
+  --duration-base: #{$duration-base};
+  --duration-slow: #{$duration-slow};
+}
+
+// ── Light theme ──────────────────────────────────────────────────────────────────────
+.theme--light,
+:root[data-theme="light"],
+:root:not([data-theme]) {
+  // Primary brand colors
+  --color-primary:        #{$color-purple-primary};
+  --color-primary-darken: #{$color-purple-deep};
+  --color-primary-light:  #{$color-purple-bright};
+  --color-primary-soft:   #{$color-purple-pale};
+  --color-secondary:      #{$color-gold-primary};
+  --color-secondary-dark: #{$color-gold-deep};
+  --color-accent:         #{$color-gold-champagne};
+  --color-background:     #{$color-bg-page};
+  --color-surface:        #{$color-surface};
+  --color-surface-alt:    #{$color-surface-alt};
+  --color-border:         #{$color-border};
+  --color-border-strong:  #{$color-border-strong};
+  --color-text-primary:   #{$color-text-primary};
+  --color-text-secondary: #{$color-text-muted};
+  --color-text-muted:     #{$color-text-muted};
+
+  // Semantic aliases
+  --color-success:        #{$color-success};
+  --color-success-bg:     #{$color-success-bg};
+  --color-warning:        #{$color-warning};
+  --color-warning-bg:     #{$color-warning-bg};
+  --color-error:          #{$color-error};
+  --color-error-bg:       #{$color-error-bg};
+  --color-info:           #{$color-info};
+
+  // Brand component aliases (purple/gold)
+  --color-brand-purple:       #{$color-purple-primary};
+  --color-brand-purple-dark:  #{$color-purple-deep};
+  --color-brand-purple-light: #{$color-purple-bright};
+  --color-brand-purple-soft:  #{$color-purple-pale};
+  --color-brand-gold:         #{$color-gold-primary};
+  --color-brand-gold-deep:    #{$color-gold-deep};
+  --color-brand-gold-champagne: #{$color-gold-champagne};
+  --color-brand-gold-light:   #{$color-gold-light};
+  --color-brand-muted:        #{$color-text-muted};
+  --color-hero-purple:        #{$color-purple-deepest};
+  --color-hero-deep:          #{$color-purple-dark};
+  --color-deep-purple:        #{$color-purple-deep};
+  --color-gradient-purple:    #{$gradient-purple-primary};
+  --color-gradient-gold:      #{$gradient-gold-primary};
+
+  // Legacy mappings (components using old bronze/turquoise tokens)
+  --color-turquoise:       #{$color-purple-primary};
+  --color-turquoise-dark:  #{$color-purple-deep};
+  --color-turquoise-light: #{$color-purple-bright};
+  --color-turquoise-soft:  #{$color-purple-pale};
+  --color-teal:            #{$color-purple-deep};
+  --color-gold:            #{$color-gold-primary};
+  --color-gold-strong:     #{$color-gold-deep};
+  --color-gold-light:      #{$color-gold-champagne};
+  --color-gold-soft:       #{$color-gold-light};
+  --color-gold-ink:        #{$color-gold-deep};
+  --color-charcoal:        #{$color-text-primary};
+  --color-charcoal-light:  #{$color-text-muted};
+  --color-charcoal-muted:  #{$color-text-muted};
+  --color-deep-teal:       #{$color-purple-deep};
+  --color-mid-teal:        #{$color-purple-primary};
+  --color-cream:           #{$color-purple-vlight};
+  --color-light-gold:      #{$color-gold-champagne};
+  --color-gold-deep:       #{$color-gold-deep};
+  --color-gold-bright:     #{$color-gold-champagne};
+  --color-gold-mid:        #{$color-gold-primary};
+  --color-gold-bg:         #{$color-gold-soft};
+  --gradient-purple:       #{$gradient-purple-primary};
+}
+
+// ── Dark theme ───────────────────────────────────────────────────────────────────────
+.theme--dark,
+:root[data-theme="dark"] {
+  --color-primary:        #{$color-purple-bright};
+  --color-primary-darken: #{$color-purple-primary};
+  --color-primary-light:  #{$color-purple-lavender};
+  --color-primary-soft:   #{$color-purple-deep};
+  --color-secondary:      #{$color-gold-champagne};
+  --color-secondary-dark: #{$color-gold-primary};
+  --color-accent:         #{$color-gold-champagne};
+  --color-background:     #0B0718;
+  --color-surface:        #100B1E;
+  --color-surface-alt:    #100B1E;
+  --color-surface-raised: #160D2B;
+  --color-border:         rgba(196, 181, 253, 0.14);
+  --color-border-strong:  #{$color-purple-deep};
+  --color-border-active:  rgba(212, 175, 55, 0.55);
+  --color-text-primary:   #F7F4FC;
+  --color-text-secondary: #C4BDD3;
+  --color-text-muted:     #91879F;
+
+  --color-success:        #{$color-success};
+  --color-warning:        #{$color-gold-champagne};
+  --color-error:          #{$color-error};
+  --color-info:           #{$color-info};
+
+  // Brand component aliases (dark)
+  --color-brand-purple:       #{$color-purple-bright};
+  --color-brand-purple-dark:  #{$color-purple-primary};
+  --color-brand-purple-light: #{$color-purple-lavender};
+  --color-brand-purple-soft:  #{$color-purple-deep};
+  --color-brand-gold:         #{$color-gold-champagne};
+  --color-brand-gold-deep:    #{$color-gold-primary};
+  --color-brand-gold-champagne: #{$color-gold-light};
+  --color-brand-gold-light:   #{$color-gold-light};
+  --color-brand-muted:        #{$color-purple-lavender};
+  --color-hero-purple:        #{$color-white};
+  --color-hero-deep:          #{$color-purple-deepest};
+  --color-deep-purple:        #{$color-purple-dark};
+  --color-gradient-purple:    #{$gradient-purple-hero};
+  --color-gradient-gold:      #{$gradient-gold-primary};
+
+  // Legacy mappings (dark)
+  --color-turquoise:       #{$color-purple-bright};
+  --color-turquoise-dark:  #{$color-purple-primary};
+  --color-turquoise-light: #{$color-purple-lavender};
+  --color-turquoise-soft:  #{$color-purple-deep};
+  --color-teal:            #{$color-purple-deep};
+  --color-gold:            #{$color-gold-champagne};
+  --color-gold-strong:     #{$color-gold-primary};
+  --color-gold-light:      #{$color-gold-light};
+  --color-gold-soft:       #{$color-gold-soft-dark};
+  --color-gold-ink:        #{$color-white};
+  --color-charcoal:        #{$color-white};
+  --color-charcoal-light:  #{$color-purple-pale};
+  --color-charcoal-muted:  #{$color-purple-lavender};
+  --color-deep-teal:       #{$color-purple-deep};
+  --color-mid-teal:        #{$color-purple-bright};
+  --color-cream:           #{$color-purple-dark};
+  --color-light-gold:      #{$color-gold-champagne};
+  --color-gold-deep:       #{$color-gold-primary};
+  --color-gold-bright:     #{$color-gold-champagne};
+  --color-gold-mid:        #{$color-gold-champagne};
+  --color-gold-bg:         #{$color-gold-soft-dark};
+  --gradient-purple:       #{$gradient-purple-hero};
+}
+
+// Font family switching
+:root {
+  html { font-family: var(--font-family-latin); }
+}
+
+html[dir="rtl"] { font-family: var(--font-family-arabic); }
+html[dir="ltr"] { font-family: var(--font-family-latin); }
+
+// Heading face follows the writing direction: the display serif is Latin-only.
+html[dir="rtl"] { --font-family-heading: #{$font-family-arabic}; }
+html[dir="ltr"] { --font-family-heading: #{$font-family-display}; }

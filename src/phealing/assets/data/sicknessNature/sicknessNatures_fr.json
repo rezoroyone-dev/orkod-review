@@ -1,0 +1,928 @@
+[
+    {
+        "id": 1,
+        "description": "Systèmes immunitaire, lymphatique et infections",
+        "items": [
+            {
+                "id": 1,
+                "description": "Systèmes immunitaire",
+                "healingFrequency": "-",
+                "protocol": "1-1.pdf"
+            },
+            {
+                "id": 2,
+                "description": "Système lymphatique",
+                "healingFrequency": "-",
+                "protocol": "1-2.pdf"
+            },
+            {
+                "id": 3,
+                "description": "Infections et inflammations",
+                "healingFrequency": "Répéter le traitement trois à quatre fois par jour, pendant plusieurs jours, ou jusqu’à ce que l’état se stabilise",
+                "protocol": "1-3.pdf"
+            }, 
+            {
+                "id": 4,
+                "description": "Stimuler et renforcer la moelle des os",
+                "healingFrequency": "-",
+                "protocol": "1-4.pdf"
+            }, 
+            {
+                "id": 5,
+                "description": "Stimuler et renforcer la rate",
+                "healingFrequency": "-",
+                "protocol": "1-5.pdf"
+            },
+            {
+                "id": 6,
+                "description": "Stimuler et renforcer le thymus",
+                "healingFrequency": "-",
+                "protocol": "1-6.pdf"
+            },  
+            {
+                "id": 7,
+                "description": "Purifier le sang",
+                "healingFrequency": "-",
+                "protocol": "1-7.pdf"
+            }, 
+            {
+                "id": 8,
+                "description": "Renforcer le système immunitaire",
+                "healingFrequency": "-",
+                "protocol": "1-8.pdf"
+            }, 
+            {
+                "id": 9,
+                "description": "Infections bénignes et graves",
+                "healingFrequency": "répétez le traitement environ trois à quatre fois par jour, jusqu’a ce que l’état se stabilise ou s’améliore considérablement.",
+                "protocol": "1-9.pdf"
+            },
+            {
+                "id": 10,
+                "description": "Infections de la peau",
+                "healingFrequency": "-",
+                "protocol": "1-10.pdf"
+            },
+            {
+                "id": 11,
+                "description": "Infections des yeux",
+                "healingFrequency": "-",
+                "protocol": "1-11.pdf"
+            },
+            {
+                "id": 12,
+                "description": "Infections des oreilles",
+                "healingFrequency": "-",
+                "protocol": "1-12.pdf"
+            },   
+            {
+                "id": 13,
+                "description": "Amygdalite et oreillons",
+                "healingFrequency": "-",
+                "protocol": "1-13.pdf"
+            },
+            {
+                "id": 14,
+                "description": "Infections respiratoires",
+                "healingFrequency": "-",
+                "protocol": "1-14.pdf"
+            },
+            {
+                "id": 15,
+                "description": "Infections gastro intestinales",
+                "healingFrequency": "-",
+                "protocol": "1-15.pdf"
+            },
+            {
+                "id": 16,
+                "description": "Infections hépatiques",
+                "healingFrequency": "-",
+                "protocol": "1-16.pdf"
+            },
+            {
+                "id": 17,
+                "description": "Infections urinaires",
+                "healingFrequency": "-",
+                "protocol": "1-17.pdf"
+            },
+            {
+                "id": 18,
+                "description": "Maladies sexuellement transmissibles",
+                "healingFrequency": "-",
+                "protocol": "1-17.pdf"
+            }
+            ]
+    },
+    {
+        "id": 2,
+        "description": "Les douleurs",
+        "items": [
+            {
+                "id": 1,
+                "description": "Maux de tête",
+                "healingFrequency": "Répétez le traitement si nécessaire.",
+                "protocol": "2-1.pdf"
+            },
+            {
+                "id": 2,
+                "description": "Migraine",
+                "healingFrequency": "Répétez le traitement si nécessaire.",
+                "protocol": "2-2.pdf"
+            },
+            {
+                "id": 3,
+                "description": "Maux de dents",
+                "healingFrequency": "Répétez le traitement si nécessaire.",
+                "protocol": "2-3.pdf"
+            },
+            {
+                "id": 4,
+                "description": "Pyorrhée ",
+                "healingFrequency": "Répétez le traitement deux à trois fois par jour, pendant les jours suivants, ou aussi longtemps que nécessaire.",
+                "protocol": "2-4.pdf"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "description": "Problèmes aux yeux et oreilles",
+        "items": [
+            {
+                "id": 1,
+                "description": "Rougeur chronique aux yeux",
+                "healingFrequency": "Répéter le traitement trois fois par semaine pour tout le temps nécessaire",
+                "protocol": "3-1.pdf"
+            },
+            {
+                "id": 2,
+                "description": "Opacité vitrée ( mouches volantes aux yeux )",
+                "healingFrequency": "Répéter le traitement deux à trois fois par semaine",
+                "protocol": "3-2.pdf"
+            },
+            {
+                "id": 3,
+                "description": "Myopie,presbytie,astigmatisme,strabisme convergeant,strabisme divergeant",
+                "healingFrequency": "Répéter le traitement entier une fois par jour pendant plusieurs jours",
+                "protocol": "3-4.pdf"
+            },
+            {
+                "id": 4,
+                "description": "Infections aux yeux",
+                "healingFrequency": "Répéter le traitement entier une fois par jour pendant plusieurs jours",
+                "protocol": "3-4.pdf"
+            },
+            {
+                "id": 5,
+                "description": "Glaucome",
+                "healingFrequency": "Répéter le traitement trois fois par semaine pendant environ deux , trois mois",
+                "protocol": "3-5.pdf"
+            },
+            {
+                "id": 6,
+                "description": "Cataracte",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "3-6.pdf"
+            },
+            {
+                "id": 7,
+                "description": "Infections de l’oreille externe",
+                "healingFrequency": "Répéter le traitement une fois par jour pendant plusieurs jours.",
+                "protocol": "3-7.pdf"
+            },
+            {
+                "id": 8,
+                "description": "Infections de l’oreille moyenne et interne",
+                "healingFrequency": "Répéter le traitement une fois par jour pendant plusieurs jours.",
+                "protocol": "3-8.pdf"
+            },                        
+            {
+                "id": 9,
+                "description": "Surdité,rupture du tympan",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "3-9.pdf"
+            },
+            {
+                "id": 10,
+                "description": "Oreille bouchée",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "3-10.pdf"
+            },            
+            {
+                "id": 11,
+                "description": "Surdité nerveuse",
+                "healingFrequency": "Répéter le traiternent trois fois par semaine pour plusieurs mois.",
+                "protocol": "3-11.pdf"
+            },
+            {
+                "id": 12,
+                "description": "Bourdonnements auriculaires ou acouphène ",
+                "healingFrequency": "Répéter le traitement trois fois par semaine ",
+                "protocol": "3-12.pdf"
+            },
+            {
+                "id": 13,
+                "description": "Vertiges",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "3-13.pdf"
+            },
+            {
+                "id": 14,
+                "description": "Pharyngite,laryngite, Parotidite épidémique,amygdalite",
+                "healingFrequency": "Répéter le traitement entier une ou deux fois par jour pendant plusieurs jours",
+                "protocol": "3-14.pdf"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "description": "Maladies de la peau",
+        "items": [
+            {
+                "id": 1,
+                "description": "Brûlures récentes",
+                "healingFrequency": "Répéter le traitement pendant plusieurs jours",
+                "protocol": "4-1.pdf"
+            },
+            {
+                "id": 2,
+                "description": "Vieilles brulures non graves ",
+                "healingFrequency": "Répéter le traitement pendant plusieurs jours",
+                "protocol": "4-2.pdf"
+            },
+            {
+                "id": 3,
+                "description": "Vieilles brulures graves",
+                "healingFrequency": "Répétez le traitement une ou deux fois par jour, aussi longtemps que nécessaire. ",
+                "protocol": "4-3.pdf"
+            },
+            {
+                "id": 4,
+                "description": "Eczéma ou dermatite",
+                "healingFrequency": "Répétez le traitement trois fois par semaine durant tout le temps nécessaire.",
+                "protocol": "4-4.pdf"
+            },
+            {
+                "id": 5,
+                "description": "Furoncles non graves",
+                "healingFrequency": "Si nécessaire répétez le traitement.",
+                "protocol": "4-5.pdf"
+            },
+            {
+                "id": 6,
+                "description": "Furoncles chroniques graves",
+                "healingFrequency": "Répétez le traitement trois fois par semaine durant le temps nécessaire.",
+                "protocol": "4-6.pdf"
+            },                        
+            {
+                "id": 7,
+                "description": "Boutons graves ",
+                "healingFrequency": "Répétez le traitement trois fois par semaine durant le temps nécessaire.",
+                "protocol": "4-7.pdf"
+            },
+            {
+                "id": 8,
+                "description": "Allergies de la peau ",
+                "healingFrequency": "Répétez le traitement plusieurs fois par semaine.",
+                "protocol": "4-8.pdf"
+            },
+            {
+                "id": 9,
+                "description": "Psoriasis  ",
+                "healingFrequency": "Répétez le traitement trois fois par semaine durant le temps nécessaire.",
+                "protocol": "4-9.pdf"
+            },
+            {
+                "id": 10,
+                "description": "Cheveux clairsemés ",
+                "healingFrequency": "Répétez le traitement plusieurs fois par semaine durant le temps nécessaire.",
+                "protocol": "4-10.pdf"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "description": "Problèmes cardiaques et circulatoires",
+        "items": [
+            {
+                "id": 1,
+                "description": "Blocage cardiaque partiel, maladies coronariennes",
+                "healingFrequency": "Répéter le traitement trois fois par semaine.",
+                "protocol": "5-1.pdf"
+            },
+            {
+                "id": 2,
+                "description": "Battement irrégulier ou arythmie cardiaque",
+                "healingFrequency": "Répéter le traitement trois fois par semaine.",
+                "protocol": "5-2.pdf"
+            },
+            {
+                "id": 3,
+                "description": "Inflammation du cœur ou rhumatisme cardiaque",
+                "healingFrequency": "Répéter le traitement trois fois par semaine ou plus, jusqu’à ce que la condition du patient s’améliore ou qu’il guérisse complètement.",
+                "protocol": "5-3.pdf"
+            },
+            {
+                "id": 4,
+                "description": "Cœur grossi, valvule cardiaque défectueuse",
+                "healingFrequency": "Répéter le traitement trois fois par semaine.",
+                "protocol": "5-4.pdf"
+            },
+            {
+                "id": 5,
+                "description": "Problèmes cardiaques congénitaux ",
+                "healingFrequency": "Répéter le traitement plusieurs fois par semaine durant tout le temps nécessaire.",
+                "protocol": "5-5.pdf"
+            },
+            {
+                "id": 6,
+                "description": "Artériosclérose ou athérosclérosé",
+                "healingFrequency": "Répéter le traitement deux fois par semaine durant tout le temps nécessaire.",
+                "protocol": "5-6.pdf"
+            },
+            {
+                "id": 7,
+                "description": "Veines variqueuses",
+                "healingFrequency": "Répéter le traitement plusieurs fois.",
+                "protocol": "5-7.pdf"
+            },
+            {
+                "id": 8,
+                "description": "Hypertension",
+                "healingFrequency": "Répéter le traitement plusieurs fois par semaine si nécessaire.",
+                "protocol": "5-8.pdf"
+            },
+            {
+                "id": 9,
+                "description": "Hypotension",
+                "healingFrequency": "Répéter le traitement plusieurs fois par semaine.",
+                "protocol": "5-9"
+            },
+            {
+                "id": 10,
+                "description": " Ictus ",
+                "healingFrequency": "Répéter le traitement trois fois par semaine.",
+                "protocol": "5-10.pdf"
+            }
+                                           
+        ]
+    },
+    {
+        "id": 6,
+        "description": "Maladies respiratoires",
+        "items": [
+            {
+                "id": 1,
+                "description": "Sinusite chronique",
+                "healingFrequency": "Répéter le traitement deux ou trois fois par semaine.",
+                "protocol": "6-1.pdf"
+            },
+            {
+                "id": 2,
+                "description": "Toux chronique",
+                "healingFrequency": "Répétez le traitement si nécessaire.",
+                "protocol": "6-2.pdf"
+            },
+            {
+                "id": 3,
+                "description": "Infections pulmonaires : bronchite, grippe et pneumonie",
+                "healingFrequency": "-",
+                "protocol": "6-3.pdf"
+            },
+            {
+                "id": 4,
+                "description": "Tuberculose",
+                "healingFrequency": "Répétez le traitement trois fois par semaine.",
+                "protocol": "6-4.pdf"
+            },
+            {
+                "id": 5,
+                "description": "Asthme",
+                "healingFrequency": "Répétez le traitement trois fois par semaine pendant environ un ou deux mois.",
+                "protocol": "6-5.pdf"
+            },
+            {
+                "id": 6,
+                "description": "Emphysème",
+                "healingFrequency": "Le traitement peut être effectué plusieurs fois dans les premiers jours. Ensuite, répétez-le au moins trois fois par semaine pendant environ cinq mois ou durant tout le temps nécessaire.",
+                "protocol": "6-6.pdf"
+            }                                                            
+        ]
+    },
+    {
+        "id": 7,
+        "description": "Maladies gastro-intestinales",
+        "items": [
+            {
+                "id": 1,
+                "description": "Vomissement et diarrhée",
+                "healingFrequency": "Répéter le traitement 3 à 4 fois si nécessaire",
+                "protocol": "7-1.pdf"
+            },
+            {
+                "id": 2,
+                "description": "Constipation",
+                "healingFrequency": "Répéter le traitement deux ou trois fois par semaine",
+                "protocol": "7-2.pdf"
+            },
+            {
+                "id": 3,
+                "description": "Douleurs abdominales",
+                "healingFrequency": "Normalement un ou deux traitements seront suffisants. Si le symptôme persiste, conseillez au patient de consulter un médecin et un Guérisseur Pranique Avancé.",
+                "protocol": "7-3.pdf"
+            },
+            {
+                "id": 4,
+                "description": "Indigestion",
+                "healingFrequency": "Répéter le traitement deux ou trois fois par semaine",
+                "protocol": "7-4.pdf"
+            },
+            {
+                "id": 5,
+                "description": "Uicére gastro-intestinale",
+                "healingFrequency": "Répéter le traitement deux ou trois fois par semaine",
+                "protocol": "7-5.pdf"
+            },
+            {
+                "id": 6,
+                "description": "Hémorroïdes",
+                "healingFrequency": "Répéter le traitement deux ou trois fois par semaine",
+                "protocol": "7-6.pdf"
+            },
+            {
+                "id": 7,
+                "description": "Hernie",
+                "healingFrequency": "Répéter le traitement deux ou trois fois par semaine",
+                "protocol": "7-7.pdf"
+            },
+            {
+                "id": 8,
+                "description": "Niveau élevé de cholestérol",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "7-8.pdf"
+            },
+            {
+                "id": 9,
+                "description": "Infections gastro-intestinales",
+                "healingFrequency": "Si nécessaire répétez le traitement 3 fois par jour.",
+                "protocol": "7-9.pdf"
+            },
+            {
+                "id": 10,
+                "description": "Appendicite aiguë",
+                "healingFrequency": "Répéter le traitement environ trois fois par jour",
+                "protocol": "7-10.pdf"
+            },
+            {
+                "id": 11,
+                "description": "Pancréatite aiguë",
+                "healingFrequency": "Répéter le traitement environ trois fois par jour",
+                "protocol": "7-11.pdf"
+            },
+            {
+                "id": 12,
+                "description": "Calculs biliaires",
+                "healingFrequency": "Répétez le traitement trois fois par semaine durant tout le temps nécessaire.",
+                "protocol": "7-12.pdf"
+            },
+            {
+                "id": 13,
+                "description": "Hépatite",
+                "healingFrequency": "Répéter le traitement trois fois ou plus par semaine",
+                "protocol": "7-13.pdf"
+            },
+            {
+                "id": 14,
+                "description": "Problèmes d'assimilation",
+                "healingFrequency": "Répéter le traitement plusieurs fois par semaine",
+                "protocol": "7-14.pdf"
+            },
+            {
+                "id": 15,
+                "description": "Difficultés de déglutition",
+                "healingFrequency": "Répétez le traitement si nécessaire.",
+                "protocol": "7-15.pdf"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "description": "Maladies de l'appareil urinaire",
+        "items": [
+            {
+                "id": 1,
+                "description": "Infections des voies urinaires et de la vessie",
+                "healingFrequency": "Répéter le traitement pour environ deux ou trois fois par jour dans les jours successifs.",
+                "protocol": "8-1.pdf"
+            },
+            {
+                "id": 2,
+                "description": "Infections et inflammation du rein",
+                "healingFrequency": "Répéter le traitement jusqu’á la guérison du patient.",
+                "protocol": "8-2.pdf"
+            },
+            {
+                "id": 3,
+                "description": "Calculs rénaux",
+                "healingFrequency": "Répétez le traitement plusieurs fois par jours dans les jours suivants.",
+                "protocol": "8-3.pdf"
+            },
+            {
+                "id": 4,
+                "description": "Stimulations à la miction",
+                "healingFrequency": "-",
+                "protocol": "8-4.pdf"
+            },
+            {
+                "id": 5,
+                "description": "Régénération des reins",
+                "healingFrequency": "Répétez le traitement trois fois par semaine dc six mois à un an.",
+                "protocol": "8-5.pdf"
+            }
+        ]
+    },
+    {
+        "id": 9,
+        "description": "Problèmes de l'appareil reproductif",
+        "items": [
+            {
+                "id": 1,
+                "description": "Appareil reproductif ",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "9-1.pdf"
+            },
+            {
+                "id": 2,
+                "description": "Dysménorrhée",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "9-2.pdf"
+            },
+            {
+                "id": 3,
+                "description": "Régles irréguliéres ou aménorrhée",
+                "healingFrequency": "Répétez le traitement trois fois par semaine, puis interrompez le et attendez les résultats.",
+                "protocol": "9-3.pdf"
+            },
+            {
+                "id": 4,
+                "description": "Vulvite,vaginite et cervicite",
+                "healingFrequency": "Dans les jours successifs répétez le traitement.",
+                "protocol": "9-4.pdf"
+            },
+            {
+                "id": 5,
+                "description": "Kystes ovariens",
+                "healingFrequency": "Répétez le traitement trois fois par semaine. Environ trois mois ou plus de traitements pourraient être nécessaires. ",
+                "protocol": "9-5.pdf"
+            },
+            {
+                "id": 6,
+                "description": "Myome",
+                "healingFrequency": "Répétez le traitement trois fois par semaine pour tout le temps nécessaire. Il pourrait falloir environ trois mois ou plus de traitements.",
+                "protocol": "9-6.pdf"
+            },
+            {
+                "id": 7,
+                "description": "Prolapsus de l'utérus",
+                "healingFrequency": "Répétez le traitement trois fois par semaine.",
+                "protocol": "9-7.pdf"
+            },            
+            {
+                "id": 8,
+                "description": "Prostate grossie",
+                "healingFrequency": "Répéter le traitement trois fois par semaine.",
+                "protocol": "9-8.pdf"
+            },
+            {
+                "id": 9,
+                "description": "Impotence sexuelle",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "9-9.pdf"
+            },
+            {
+                "id": 10,
+                "description": "Stérilité",
+                "healingFrequency": "Répétez le traitement trois fois par semaine pour environ un mois, puis interrompez le. Attendez et observez pour environ deux mois.",
+                "protocol": "9-10.pdf"
+            },
+            {
+                "id": 11,
+                "description": "Maladies vénériennes",
+                "healingFrequency": "Répéter le traitement trois fois par semaine.",
+                "protocol": "9-11.pdf"
+            },
+            {
+                "id": 12,
+                "description": "Femmes en état de grossesse ",
+                "healingFrequency": "Répéter le traitement trois fois par semaine pour environ un mois",
+                "protocol": "9-12.pdf"
+            },
+            {
+                "id": 13,
+                "description": "Eviter l'avortement",
+                "healingFrequency": "Répéter le traitement trois fois par semaine pour environ un mois",
+                "protocol": "9-13.pdf"
+            },
+            {
+                "id": 14,
+                "description": "Prévenir l'avortement",
+                "healingFrequency": "Si nécessaire répétez le traitement.",
+                "protocol": "9-14.pdf"
+            },
+            {
+                "id": 15,
+                "description": "Faciliter l'accouchement",
+                "healingFrequency": "La procédure entière peut être suivie même trois fois par semaine, durant les deux semaines précédentes au jour prévu pour l’accouchement.",
+                "protocol": "9-15.pdf"
+            },
+            {
+                "id": 16,
+                "description": "Accélérer la guérison après l'accouchement",
+                "healingFrequency": "Répéter le traitement deux fois par jour pour environ une semaine.",
+                "protocol": "9-16.pdf"
+            }
+        ]
+    },
+    {
+        "id": 10,
+        "description": "Maladies Endocriniennes",
+        "items": [
+            {
+                "id": 1,
+                "description": "Diabète causé par l'incapacité du corps d'utiliser l'insuline",
+                "healingFrequency": "Répéter le traitement deux fois par semaine",
+                "protocol": "10-1.pdf"
+            },
+            {
+                "id": 2,
+                "description": "Diabète pancréatique causé par l'insuffisance d'insuline",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "10-2.pdf"
+            },
+            {
+                "id": 3,
+                "description": "Hyperthyroïdie",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "10-3.pdf"
+            },
+            {
+                "id": 4,
+                "description": "Maladies des glandes endocrines",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "10-4.pdf"
+            }
+        ]
+    },
+    {
+        "id": 11,
+        "description": "Maladies de l'appareil squelettique et Musculaire",
+        "items": [
+            {
+                "id": 1,
+                "description": "Douleurs à la partie inférieure du dos,sciatique et hernie du disque",
+                "healingFrequency": "Le traitement peut être répété deux ou trois fois par jour durant les premiers jours, spécialement sur la partie affectée.",
+                "protocol": "11-1.pdf"
+            },
+            {
+                "id": 2,
+                "description": "scoliose",
+                "healingFrequency": "Répétez le traitement trois fois par semaine. Après le premier traitement, d'habitude, le patient se sentira décidément mieux.",
+                "protocol": "11-2.pdf"
+            },
+            {
+                "id": 3,
+                "description": "Arthrite et rhumatismes",
+                "healingFrequency": "Si nécessaire répéter le traitement dés le premier traitement",
+                "protocol": "11-3.pdf"
+            },
+            {
+                "id": 4,
+                "description": "Inflammation des muscles et des tendons",
+                "healingFrequency": "Si nécessaire, répétez le traitement. Dès le premier traitement, d’habitude, le patient peut guérir partiellement ou complétement.",
+                "protocol": "11-4.pdf"
+            },            
+            {
+                "id": 5,
+                "description": "Torticolis",
+                "healingFrequency": "Si nécassaire répéter le traitement ",
+                "protocol": "11-5.pdf"
+            },
+            {
+                "id": 6,
+                "description": "Douleur à l'épaule",
+                "healingFrequency": "Si nécassaire répéter le traitement",
+                "protocol": "11-6.pdf"
+            },
+            {
+                "id": 7,
+                "description": "Goutte",
+                "healingFrequency": "Répéter le traitement une fois par jour pendant plusieurs jours",
+                "protocol": "11-7.pdf"
+            },
+            {
+                "id": 8,
+                "description": "Arthrite dégénérative,ostéo arthrite",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "11-8.pdf"
+            },
+            {
+                "id": 9,
+                "description": "Arthrite rhumatoïde",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "11-9.pdf"
+            },
+            {
+                "id": 10,
+                "description": "Lupus systémique d'erythéme",
+                "healingFrequency": "Répétez le traitement trois fois par semaine. Le traitement peut durer quelques mois ou un an environ.",
+                "protocol": "11-10.pdf"
+            },
+            {
+                "id": 11,
+                "description": "Traumatismes sportifs",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "11-11.pdf"
+            },
+            {
+                "id": 12,
+                "description": "Grampes musculaires",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "11-12.pdf"
+            },
+            {
+                "id": 13,
+                "description": "Bursites",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "11-13.pdf"
+            },
+            {
+                "id": 14,
+                "description": "Etirement",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "11-14.pdf"
+            },
+            {
+                "id": 15,
+                "description": "Distorsion",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "11-15.pdf"
+            },
+            {
+                "id": 16,
+                "description": "Hernie",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "11-16.pdf"
+            },            
+            {
+                "id": 17,
+                "description": "Lacération des tendons",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "11-17.pdf"
+            },
+            {
+                "id": 18,
+                "description": "Luxation",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "11-18.pdf"
+            },
+            {
+                "id": 19,
+                "description": "Contusions",
+                "healingFrequency": "Répéter le traitement une ou deux fois par jour pendant plusieurs jours. Pour les contusions récentes, le rythme de guérison sera assez rapide. ",
+                "protocol": "11-19.pdf"
+            }
+
+        ]
+    },
+    {
+        "id": 12,
+        "description": "Maladies du sang",
+        "items": [
+            {
+                "id": 1,
+                "description": "Anémie",
+                "healingFrequency": "Répéter le traitement trois fois par semaine durant tout le temps nécessaire.",
+                "protocol": "12-1.pdf"
+            },
+            {
+                "id": 2,
+                "description": "Allergie aiguë",
+                "healingFrequency": "Répéter le traitement trois fois par semaine pour tout le temps nécessaire.",
+                "protocol": "12-2.pdf"
+            },
+            {
+                "id": 3,
+                "description": "Maladies auto-immunes",
+                "healingFrequency": "Répéter le traitement trois fois par semaine pour tout le temps nécessaire.",
+                "protocol": "12-3.pdf"
+            },
+            {
+                "id": 4,
+                "description": "Leucémie",
+                "healingFrequency": "Répéter le traitement trois fois par semaine durant tout le temps nécessaire.",
+                "protocol": "12-4.pdf"
+            }
+        ]
+    },
+    {
+        "id": 13,
+        "description": "Maladies du cerveau et du système nerveux",
+        "items": [
+            {
+                "id": 1,
+                "description": "Paralysie de bell ",
+                "healingFrequency": "Répéter le traitement une fois par jour durant le temps nécessaire.",
+                "protocol": "13-1.pdf"
+            },
+            {
+                "id": 2,
+                "description": "Tics faciaux",
+                "healingFrequency": "Répéter le traitement trois fois par semaine",
+                "protocol": "13-2.pdf"
+            },
+            {
+                "id": 3,
+                "description": "Torpeur",
+                "healingFrequency": "Selon la situation.",
+                "protocol": "13-3.pdf"
+            },            
+            {
+                "id": 4,
+                "description": "Epilepsie",
+                "healingFrequency": "Répéter le traitement trois fois par semaine.",
+                "protocol": "13-4.pdf"
+            },            
+            {
+                "id": 5,
+                "description": "Maladie de parkinson ",
+                "healingFrequency": "Répétez le traitement tous les jours pour les premières semaines. Ensuite, répétez le traitement trois fois par semaine pour tout le temps nécessaire. En général, il y aura une amélioration considérable après quelques semaines de traitement qui doit être continué au moins plusieurs mois.",
+                "protocol": "13-5.pdf"
+            },
+            {
+                "id": 6,
+                "description": "Encéphatie et méningite",
+                "healingFrequency": "Répétez le traitement une fois par jour durant tout le temps nécessaire.",
+                "protocol": "13-6.pdf"
+            },
+            {
+                "id": 7,
+                "description": "Retard mental",
+                "healingFrequency": "Répétez le traitement trois fois par semaine pendant plusieurs années. Le traitement doit être intégré par un programme spécial de ré-éducation.",
+                "protocol": "13-7.pdf"
+            }
+        ]
+    },
+    {
+        "id": 14,
+        "description": "Tumeurs et Cancer",
+        "items": [
+            {
+                "id": 1,
+                "description": "Tumeurs bénignes",
+                "healingFrequency": "Répéter le traitement deux ou trois fois par semaine durant tout le temps nécessaire.",
+                "protocol": "14-1.pdf"
+            },
+            {
+                "id": 2,
+                "description": "Cancer ",
+                "healingFrequency": "Voir note.",
+                "protocol": "14-2.pdf"
+            },
+            {
+                "id": 3,
+                "description": "Cancer aux poumons ",
+                "healingFrequency": "Voir note.",
+                "protocol": "14-3.pdf"
+            }, 
+            {
+                "id": 4,
+                "description": "Cancer au sein ",
+                "healingFrequency": "Voir note.",
+                "protocol": "14-4.pdf"
+            },
+            {
+                "id": 5,
+                "description": "Cancer au foie ",
+                "healingFrequency": "Voir note.",
+                "protocol": "14-5.pdf"
+            },
+            {
+                "id": 6,
+                "description": "Cancer au côlon ",
+                "healingFrequency": "Voir note.",
+                "protocol": "14-6.pdf"
+            },
+            {
+                "id": 7,
+                "description": "Cancer au cerveau ",
+                "healingFrequency": "Voir note.",
+                "protocol": "14-7.pdf"
+            }, 
+            {
+                "id": 8,
+                "description": "Cancer aux yeux ",
+                "healingFrequency": "Voir note.",
+                "protocol": "14-8"
+            }                                                                      
+        ]
+    }
+]

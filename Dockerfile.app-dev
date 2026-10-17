@@ -1,0 +1,39 @@
+### Build and install packages
+FROM golang:1.25-alpine AS build-go
+RUN apk add --no-cache git
+
+WORKDIR /opt/PhealingServer/code
+
+# Copy go mod files first for better caching
+COPY ./src/phealing/go.mod ./src/phealing/go.sum ./
+
+# Download dependencies (cached unless go.mod/go.sum change)
+RUN go mod download
+
+# Now copy the source code
+COPY ./src/phealing ./
+
+# Create output directory
+RUN mkdir -p /opt/PhealingServer/bin
+
+# Build with cache mount for faster rebuilds
+RUN --mount=type=cache,target=/root/.cache/go-build \
+    --mount=type=cache,target=/go/pkg/mod \
+    go build -ldflags "-s -w" -o /opt/PhealingServer/bin/PranicServer
+
+### Final image
+FROM alpine:latest
+LABEL name="PhealingServer"
+
+# Install ca-certificates for HTTPS and tzdata for timezone support
+RUN apk add --no-cache ca-certificates tzdata
+
+# Copy only the binary from build stage
+COPY --from=build-go /opt/PhealingServer/bin/PranicServer /opt/PhealingServer/bin/PranicServer
+
+# Copy runtime data
+COPY ./volumes/pranicHealing/dataRoot /opt/PhealingServer/dataRoot
+
+WORKDIR /opt/PhealingServer
+
+CMD [ "/opt/PhealingServer/bin/PranicServer", "-config=/opt/PhealingServer/dataRoot/config.json" ]
