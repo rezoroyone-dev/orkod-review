@@ -1,0 +1,37 @@
+gate: {"rows":["en","ar","fr","id"],"bgImage":"url(\"https://localhost/images/language-gate-nature.png\")","logoRadius":"50%","searchInput":true}
+gate search "indon" -> ["id"]
+gate keyboard ArrowDown -> highlighted row: id
+gate choose -> url: https://localhost/start
+start neutral: {"panels":2,"previews":2,"previewLoaded":[true,true],"previewOpacity":["0","0"],"skipHref":"/home"}
+start left hover preview: {"opacity":"0.5","natural":1440}
+start right hover preview: {"opacity":"0.62","natural":1440}
+start left FOCUS preview opacity: 0.5
+start left click -> https://localhost/body
+start right click -> https://localhost/quiz
+start skip -> https://localhost/home
+home ch1: {"chapters":3,"navDots":3,"pos":"01 / 03","photoLoaded":true,"startCta":true}
+home ch2: {"pos":"02 / 03","bookingHref":true,"goldCta":true}
+home ch3: {"pos":"03 / 03","familyHref":true,"donationsHref":true}
+body selectors: {"selectors":["Brain","Lungs & breath","Heart","Liver","Stomach","Intestines","Kidneys"],"callouts":0}
+body organ 1 click -> {"hasDetail":true,"title":"Brain"}
+body organ 2 click -> {"hasDetail":true,"title":"Lungs & breath"}
+body organ 3 click -> {"hasDetail":true,"title":"Heart"}
+body organ 4 click -> {"hasDetail":true,"title":"Liver"}
+body organ 5 click -> {"hasDetail":true,"title":"Stomach"}
+body organ 6 click -> {"hasDetail":true,"title":"Intestines"}
+body organ 7 click -> {"hasDetail":true,"title":"Kidneys"}
+quiz intro: {"whoPicks":1,"nextReady":true,"progress":null}
+quiz next-ready after who-pick: true
+quiz questions: {"options":6,"step":"Step 1 of 4 Preparing a plan for Myself"}
+practitioners: {"cards":3,"golds":0}
+doctors search input: false
+booking: {"cards":1,"payGold":false,"url":"/booking"}
+donations: {"amounts":0,"hasGold":false,"url":"/donations"}
+login: {"cardExists":true,"cardBg":"rgba(20, 51, 36, 0.94)","audioAutoplay":false,"headerBg":"linear-gradient(135deg, rgb(33, 75, 53) 0%, rgb(20, 51, 36) 100%)"}
+mobile /body: {"overflow":0,"selectors":7}
+arabic home: {"dir":"rtl","lang":"ar","h1":"رعاية لطيفة لطاقة جسمك"}
+arabic /start: {"dir":"rtl","titles":["أعرف لماذا أنا مريض","لا أعرف لماذا أنا مريض"]}
+overflow matrix: PASS (all routes, all viewports)
+purple scan: PASS (no purple found on any route)
+raw-key scan: PASS
+console/page errors: none
