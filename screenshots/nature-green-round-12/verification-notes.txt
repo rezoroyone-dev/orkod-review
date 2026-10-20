@@ -1,0 +1,52 @@
+gate: {"rows":["en","ar","fr","id"],"bgImage":"url(\"https://localhost/images/language-gate-nature.webp\")","logoRadius":"50%","searchInput":true}
+gate search "indon" -> ["id"]
+gate keyboard ArrowDown -> highlighted row: id
+gate choose -> url: https://localhost/start
+start neutral: {"panels":2,"previews":2,"previewLoaded":[true,true],"previewOpacity":["0.08","0"],"skipHref":"/home"}
+start left hover preview: {"opacity":"0.9","scrim":"0.72","natural":900,"fullWidth":true,"belowCopy":true,"boxHeight":481,"feathered":true}
+start right hover preview: {"opacity":"0.78","scrim":"0.7","natural":1428,"coversPanel":true,"feathered":true}
+start left FOCUS preview opacity: 0.9
+start left click -> https://localhost/body
+start right click -> https://localhost/quiz
+start skip -> https://localhost/home
+home ch1: {"chapters":3,"navDots":3,"pos":"01 / 03","photoLoaded":true,"startCta":true}
+home ch2 (rail expanded): {"pos":"02 / 03","bookingHref":true,"goldCta":true,"navWidth":169,"navLeft":1249,"servicesRight":1080,"overlap":false,"labelsVisible":true,"bookStatus":"In preparation — not yet on sale","bookDemoPrice":false}
+home ch3: {"pos":"03 / 03","familyHref":true,"donationsHref":true}
+body selectors: {"selectors":["Brain","Lungs & breath","Heart","Liver","Stomach","Intestines","Kidneys"],"callouts":0,"pageBottom":900,"scrollH":900,"winH":900,"studioDisplay":"grid","studioCols":"210px 874px 260px"}
+body organ 1 click -> {"hasDetail":true,"title":"Brain"}
+body organ 2 click -> {"hasDetail":true,"title":"Lungs & breath"}
+body organ 3 click -> {"hasDetail":true,"title":"Heart"}
+body organ 4 click -> {"hasDetail":true,"title":"Liver"}
+body organ 5 click -> {"hasDetail":true,"title":"Stomach"}
+body organ 6 click -> {"hasDetail":true,"title":"Intestines"}
+body organ 7 click -> {"hasDetail":true,"title":"Kidneys"}
+16 kidney selection: {"title":"Kidneys","dotInsideCanvas":true,"dotY":423,"dotYFrac":0.368,"pillOverCentre":false}
+Brain selection: {"title":"Brain","activeRows":1,"dotInsideCanvas":true}
+Heart selection: {"title":"Heart","activeRows":1,"dotInsideCanvas":true}
+Lungs & breath selection: {"title":"Lungs & breath","activeRows":1,"dotInsideCanvas":true}
+Liver selection: {"title":"Liver","activeRows":1,"dotInsideCanvas":true}
+Stomach selection: {"title":"Stomach","activeRows":1,"dotInsideCanvas":true}
+Intestines selection: {"title":"Intestines","activeRows":1,"dotInsideCanvas":true}
+body reset to default: {"active":0,"detailTitle":null,"hint":"Click any area to learn more","hoveredRow":false}
+quiz intro: {"whoPicks":1,"nextReady":true,"progress":null}
+quiz next-ready after who-pick: true
+quiz questions: {"options":6,"step":"Step 1 of 4 Preparing a plan for Myself"}
+practitioners: {"cards":3,"golds":0}
+doctors search input: false
+booking: {"cards":1,"payGold":false,"url":"/booking"}
+donations: {"amounts":0,"hasGold":false,"url":"/donations"}
+login: {"cardExists":true,"cardBg":"rgba(20, 51, 36, 0.94)","audioAutoplay":false,"headerBg":"linear-gradient(135deg, rgb(33, 75, 53) 0%, rgb(20, 51, 36) 100%)"}
+mobile /body: {"overflow":0,"selectors":7,"pageBottom":844,"winH":844,"scrollH":844,"studioDisplay":"grid"}
+mobile /home: {"navBottom":828,"navTop":776,"winH":844,"scrollerScrolls":true,"pageScroll":true,"pos":"01 / 03"}
+mobile /home ch2 boundary: {"pos":"02 / 03","posWhiteSpace":"nowrap","posLines":1,"alignedTop":0,"headingBottom":159,"navTop":776,"overlap":false}
+mobile /home ch3: {"pos":"03 / 03","alignedTop":0}
+mobile /start: {"panels":2,"previewOpacity":["0.68","0.78"],"scrimOpacity":["0.7","0.68"],"headerPresent":false,"overflow":0,"pics":[{"shadow":"none","border":"none 0px","radius":"0px","bg":"none|rgba(0, 0, 0, 0)"},{"shadow":"none","border":"none 0px","radius":"0px","bg":"none|rgba(0, 0, 0, 0)"}]}
+mobile /start geometry: {"pics":[[55,430,281,310],[55,1054,281,246]],"skip":[248,788,372,828],"contained":true,"skipClear":true,"skipBottomAnchored":true}
+mobile /body callout after select: none
+arabic home: {"dir":"rtl","lang":"ar","h1":"رعاية لطيفة لطاقة جسمك"}
+arabic /start: {"dir":"rtl","titles":["أعرف لماذا أنا مريض","لا أعرف لماذا أنا مريض"]}
+nature asset: {"status":200,"type":"image/webp"}
+overflow matrix: PASS (all routes, all viewports)
+purple scan: PASS (no purple found on any route)
+raw-key scan: PASS
+console/page errors: none
