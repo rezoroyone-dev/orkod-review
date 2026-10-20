@@ -1,0 +1,56 @@
+gate: {"rows":["en","ar","fr","id"],"bgImage":"url(\"https://localhost/images/language-gate-nature.webp\")","logoRadius":"50%","searchInput":true}
+gate search "indon" -> ["id"]
+gate keyboard ArrowDown -> highlighted row: id
+gate choose -> url: https://localhost/start
+start neutral: {"panels":2,"previews":2,"previewLoaded":[true,true],"previewOpacity":["0.08","0"],"skipHref":"/home"}
+start left hover preview: {"opacity":"0.9","scrim":"0.72","natural":900,"fullWidth":true,"belowCopy":true,"boxHeight":481,"feathered":true}
+start right hover preview: {"opacity":"0.78","scrim":"0.7","natural":1428,"coversPanel":true,"feathered":true}
+start left FOCUS preview opacity: 0.9
+start left click -> https://localhost/body
+start right click -> https://localhost/login?redirect=/quiz
+start skip -> https://localhost/home
+home section 1: {"sections":2,"navDots":2,"pos":"01 / 02","navArrows":2,"photoLoaded":true,"photoSrc":"/images/nature/home-forest.jpg","photoCovers":true,"startCta":true,"h1":"Gentle care for your body's energy"}
+home section 1 height: {"h":828,"win":900}
+home section 2 (rail expanded): {"pos":"02 / 02","bookHref":true,"bookCover":true,"bookStatus":"In preparation — not yet on sale","servicesGone":true,"navWidth":184,"navLeft":1234,"infoRight":1226,"overlap":false,"labelsVisible":true}
+header (guest): {"startBtn":true,"loginBtn":true,"donateBtn":true,"dashboardBtn":false,"logoutBtn":false,"bookSessionGone":true}
+header (signed in): {"url":"/home","loginBtn":false,"dashboardBtn":true,"logoutBtn":true}
+body selectors: {"selectors":["Brain","Lungs & breath","Heart","Liver","Stomach","Intestines","Kidneys"],"callouts":0,"pageBottom":900,"scrollH":900,"winH":900,"studioDisplay":"grid","studioCols":"210px 874px 260px"}
+body organ 1 click -> {"hasDetail":true,"title":"Brain"}
+body organ 2 click -> {"hasDetail":true,"title":"Lungs & breath"}
+body organ 3 click -> {"hasDetail":true,"title":"Heart"}
+body organ 4 click -> {"hasDetail":true,"title":"Liver"}
+body organ 5 click -> {"hasDetail":true,"title":"Stomach"}
+body organ 6 click -> {"hasDetail":true,"title":"Intestines"}
+body organ 7 click -> {"hasDetail":true,"title":"Kidneys"}
+16 kidney selection: {"title":"Kidneys","dotInsideCanvas":true,"dotY":428,"dotYFrac":0.376,"pillOverCentre":false}
+Brain selection: {"title":"Brain","activeRows":1,"dotInsideCanvas":true}
+Heart selection: {"title":"Heart","activeRows":1,"dotInsideCanvas":true}
+Lungs & breath selection: {"title":"Lungs & breath","activeRows":1,"dotInsideCanvas":true}
+Liver selection: {"title":"Liver","activeRows":1,"dotInsideCanvas":true}
+Stomach selection: {"title":"Stomach","activeRows":1,"dotInsideCanvas":true}
+Intestines selection: {"title":"Intestines","activeRows":1,"dotInsideCanvas":true}
+body reset to default: {"active":0,"detailTitle":null,"hint":"Click any area to learn more","hoveredRow":false}
+quiz gate: {"url":"/login","query":"?redirect=/quiz","gateNotice":true,"loginCard":true,"backLink":"/home"}
+quiz intro (signed in): {"whoPicks":1,"nextReady":true,"progress":null}
+quiz next-ready after who-pick: true
+quiz questions: {"options":6,"step":"Step 1 of 4 Preparing a plan for Myself"}
+practitioners: {"cards":3,"golds":0}
+doctors search input: false
+booking gate: {"url":"/login","query":"?redirect=/booking","gateNotice":true}
+booking (signed in): {"cards":0,"url":"/booking"}
+specialty gate: {"url":"/login","query":"?redirect=/specialty/heart"}
+donations: {"amounts":0,"hasGold":false,"url":"/donations"}
+login: {"cardExists":true,"cardBg":"rgba(20, 51, 36, 0.94)","audioAutoplay":false,"headerBg":"linear-gradient(135deg, rgb(33, 75, 53) 0%, rgb(20, 51, 36) 100%)"}
+mobile /body: {"overflow":0,"selectors":7,"pageBottom":844,"winH":844,"scrollH":844,"studioDisplay":"grid"}
+mobile /home: {"navBottom":828,"navTop":770,"winH":844,"innerScrolls":false,"pageScroll":true,"ch1Height":787,"pos":"01 / 02"}
+mobile /home section 2 boundary: {"pos":"02 / 02","posWhiteSpace":"nowrap","posLines":1,"ch2Top":1,"navTop":770,"winH":844}
+mobile /start: {"panels":2,"previewOpacity":["0.68","0.78"],"scrimOpacity":["0.7","0.68"],"headerPresent":false,"overflow":0,"pics":[{"shadow":"none","border":"none 0px","radius":"0px","bg":"none|rgba(0, 0, 0, 0)"},{"shadow":"none","border":"none 0px","radius":"0px","bg":"none|rgba(0, 0, 0, 0)"}]}
+mobile /start geometry: {"pics":[[55,430,281,310],[55,1054,281,246]],"skip":[248,788,372,828],"contained":true,"skipClear":true,"skipBottomAnchored":true}
+mobile /body callout after select: none
+arabic home: {"dir":"rtl","lang":"ar","h1":"رعاية لطيفة لطاقة جسمك"}
+arabic /start: {"dir":"rtl","titles":["أعرف لماذا أنا مريض","لا أعرف لماذا أنا مريض"]}
+nature asset: {"status":200,"type":"image/webp"}
+overflow matrix: PASS (all routes, all viewports)
+purple scan: PASS (no purple found on any route)
+raw-key scan: PASS
+console/page errors: none
