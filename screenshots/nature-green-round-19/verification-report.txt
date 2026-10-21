@@ -1,0 +1,71 @@
+warm-up: visited 23 routes (dev-server optimiser settled)
+  gate: {"rows":["en","ar","fr","id"],"bgImage":"url(\"https://localhost/images/language-gate-nature.webp\")","logoRadius":"50%","searchInput":true}
+  gate search "indon" -> ["id"]
+  gate keyboard ArrowDown -> highlighted row: ar
+[PASS] G1 language gate (5.2s)
+  start neutral: {"panels":2,"bodyLoaded":true,"bodyOpacity":0.46,"bodyFit":"contain","quizOpacity":0,"quizText":"Étape 1 sur 4Où se situe principalement l'inconfort ?Tête et espritPoitrine et cœurAbdomenJambes et articulationsChoisissez une réponse pour continuer.","quizAriaHidden":"true","quizFocusables":0,"plateImage":"linear-gradient(rgba(6, 20, 13, 0.82) 0%, rgba(6, 20, 13, 0.55) 26%, rgba(6, 20, 13, 0.22) 52%, rgba(6, 20, 13, 0.58) 100%), radial-gradient(90% 58% at 50% 18%, rgba(6, 20, 13, 0.62), rgba(6, 20, 13, 0) 72%), url(\"https://localhost/images/nature/start-forest.webp\")","skipHref":"/home","panelIsButton":"BUTTON"}
+  start body hover: {"opacity":0.92,"panelOverflow":"hidden","layoutInside":true,"panelBox":[0,0,714,900]}
+  start quiz hover: {"opacity":1,"text":"Étape 1 sur 4Où se situe principalement l'inconfort ?Tête et espritPoitrine et cœurAbdomenJambes et articulationsChoisissez une réponse pour continuer.","cardInsidePanel":true,"fontSize":"21px"}
+  start quiz FOCUS preview opacity: 1
+[PASS] G2 /start states (16.9s)
+  en: {"lang":"en","dir":"ltr","question":"Where is the discomfort mainly located?","options":["Head & mind","Chest & heart","Abdomen","Legs & joints"],"step":"Step 1 of 4","foot":"Select an answer to continue.","titles":["I know why I'm sick","I don't know why I'm sick"]}
+  ar: {"lang":"ar","dir":"rtl","question":"أين يقع الانزعاج بشكل أساسي؟","options":["الرأس والذهن","الصدر والقلب","البطن","الساقان والمفاصل"],"step":"الخطوة 1 من 4","foot":"اختر إجابة للمتابعة.","titles":["أعرف لماذا أنا مريض","لا أعرف لماذا أنا مريض"]}
+  fr: {"lang":"fr","dir":"ltr","question":"Où se situe principalement l'inconfort ?","options":["Tête et esprit","Poitrine et cœur","Abdomen","Jambes et articulations"],"step":"Étape 1 sur 4","foot":"Choisissez une réponse pour continuer.","titles":["Je sais pourquoi je suis malade","Je ne sais pas pourquoi je suis malade"]}
+  id: {"lang":"id","dir":"ltr","question":"Di mana ketidaknyamanan terutama berada?","options":["Kepala & pikiran","Dada & jantung","Perut","Kaki & persendian"],"step":"Langkah 1 dari 4","foot":"Pilih jawaban untuk melanjutkan.","titles":["Saya tahu kenapa saya sakit","Saya tidak tahu kenapa saya sakit"]}
+[PASS] G3 /start localisation (12.3s)
+  home section 1: {"sections":2,"navDots":2,"photoLoaded":true,"startCta":true,"h1":"Un soin en douceur pour l'énergie de votre corps"}
+  home section 2: {"lang":"fr","bookHref":true,"bookCover":true,"bookCoverTitle":"Les secrets d'Orkod","bookStatus":"En préparation — pas encore en vente","bookStatusColor":"rgb(220, 232, 216)","servicesGone":true,"navLeft":1192,"navRight":1418,"infoRight":1080,"railCoveredLines":0,"bookPhotoLoaded":true,"bookPhotoSrc":"/images/nature/ch2-forest.jpg","bookPhotoFilter":"saturate(1.08) contrast(1.05) brightness(0.96)","veilRadial":2,"veilLinear":1,"veilFlatWash":false}
+  header (guest): {"startBtn":true,"loginBtn":true,"donateBtn":true,"dashboardBtn":false}
+[PASS] G4 homepage sections + rail (6.5s)
+  @390 rail=[324,322,380,522] (56x200) cta=[24,787,175,839] ctaCovered=false inkCovered=0 overflow=0
+  @360 rail=[294,300,350,500] (56x200) cta=[24,860,175,912] ctaCovered=false inkCovered=0 overflow=0
+  @768 rail=[686,402,746,622] (60x220) cta=[330,306,481,358] ctaCovered=false inkCovered=0 overflow=0
+[PASS] G5 mobile rail vs book CTA (10.1s)
+  book: {"badge":"En préparation — pas encore en vente","badgeColor":"rgb(220, 232, 216)","coverTitle":"Les secrets d'Orkod","coverBrand":"ORKOD","coverConcept":"Couverture conceptuelle","conceptNote":"Un aperçu de la couverture. Le livre est encore en préparation et n'est pas encore en vente.","photoSrc":"/images/nature/ch2-forest.jpg","photoLoaded":true,"bookingCta":true}
+[PASS] G6 book page (4.8s)
+  body selectors: {"selectors":["Cerveau","Poumons et souffle","Cœur","Foie","Estomac","Intestins","Reins"],"callouts":0,"pageBottom":900,"scrollH":900,"winH":900,"overflow":0,"emptyState":true,"emptyItems":7,"emptyLabel":"Organes"}
+  body brain: {"title":"Cerveau","activeRows":1,"dotInsideCanvas":true,"dotVisible":true}
+  body reset to default: {"active":0,"detailTitle":null,"hint":"Cliquez sur une zone pour en savoir plusOrganesCerveauPoumons et souffleCœurFoieEstomacIntestinsReins"}
+  body empty-state selection: {"title":"Foie","active":1}
+[PASS] G7 body explorer (10.6s)
+  locale en: {"dir":"ltr","lang":"en","h1":"Gentle care for your body's energy","rawKey":false,"bookTitle":"The Orkod Secrets"}
+  locale ar: {"dir":"rtl","lang":"ar","h1":"رعاية لطيفة لطاقة جسمك","rawKey":false,"bookTitle":"أسرار أوركود"}
+  locale fr: {"dir":"ltr","lang":"fr","h1":"Un soin en douceur pour l'énergie de votre corps","rawKey":false,"bookTitle":"Les secrets d'Orkod"}
+  locale id: {"dir":"ltr","lang":"id","h1":"Perawatan lembut untuk energi tubuh Anda","rawKey":false,"bookTitle":"Rahasia Orkod"}
+[PASS] G8 four locales (12.7s)
+  raw-key scan: PASS
+[PASS] G9 raw i18n key scan (40.3s)
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+  overflow matrix: PASS (all routes, all viewports)
+[PASS] G10 overflow matrix (206.9s)
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+  purple scan: PASS (no purple found on any route)
+[PASS] G11 purple computed-style scan (35.2s)
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+  mobile /start: {"panels":2,"panelRects":[[0,0,390,804],[0,804,390,560]],"rects":[[55,430,281,310]],"overflow":0,"pageScrolls":true,"scrollH":1428,"winH":844,"headerPresent":false,"moreHint":"flex","moreText":"L'autre choix se trouve plus bas","skipRect":[248,788,372,828],"cardRect":[22,929,368,1268],"cardInPanel":true,"quizVisible":1,"bodyPreviewOpacity":0.82}
+  mobile /start skip link: {"overlap":false,"skip":[248,788,372,828]}
+  mobile /body: {"overflow":0,"selectors":7,"emptyItems":7}
+  mobile /home: {"navBottom":522,"navTop":322,"winH":844,"innerScrolls":false,"pageScroll":true,"pos":"01 / 02"}
+  mobile /book: {"overflow":0,"coverWidth":257,"coverVisible":true,"badgeVisible":true,"badgeText":"En préparation — pas encore en vente"}
+[PASS] G12 mobile layout (16.6s)
+
+=== Round 19 summary ===
+PASS G1 language gate (5.2s)
+PASS G2 /start states (16.9s)
+PASS G3 /start localisation (12.3s)
+PASS G4 homepage sections + rail (6.5s)
+PASS G5 mobile rail vs book CTA (10.1s)
+PASS G6 book page (4.8s)
+PASS G7 body explorer (10.6s)
+PASS G8 four locales (12.7s)
+PASS G9 raw i18n key scan (40.3s)
+PASS G10 overflow matrix (206.9s)
+PASS G11 purple computed-style scan (35.2s)
+PASS G12 mobile layout (16.6s)
+groups: 12 passed, 0 failed
+artifacts: C:\MyProjects\pranichealing\frontend\preview\nature-green-round-19
