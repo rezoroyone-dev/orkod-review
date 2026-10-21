@@ -1,0 +1,89 @@
+warm-up: visited 23 routes (dev-server optimiser settled)
+  gate: {"rows":["en","ar","fr","id"],"bgImage":"url(\"https://localhost/images/language-gate-nature.webp\")","logoRadius":"50%","searchInput":true}
+  gate search "indon" -> ["id"]
+  gate keyboard ArrowDown -> highlighted row: ar
+  gate choose -> url: https://localhost/start
+[PASS] G1 language gate (6.9s)
+  start neutral: {"panels":2,"previews":2,"previewLoaded":[true,true],"previewOpacity":["0.16","0"],"skipHref":"/home","natureWashOpacity":"0.22"}
+  start left hover preview: {"opacity":"0.9","scrim":"0.72","natural":900,"fullWidth":true,"belowCopy":true,"boxHeight":421,"feathered":true}
+  start right hover preview: {"opacity":"0.78","scrim":"0.7","natural":1428,"coversPanel":true,"feathered":true}
+  start left FOCUS preview opacity: 0.9
+  start left click -> https://localhost/body
+  start right click -> https://localhost/login?redirect=/quiz
+  start skip -> https://localhost/home
+[PASS] G2 /start states (18.7s)
+  home section 1: {"sections":2,"navDots":2,"pos":"01 / 02","navArrows":2,"photoLoaded":true,"photoSrc":"/images/nature/home-forest.jpg","photoCovers":true,"startCta":true,"h1":"Un soin en douceur pour l'énergie de votre corps"}
+  home section 2: {"pos":"02 / 02","lang":"fr","bookHref":true,"bookCover":true,"bookStatus":"En préparation — pas encore en vente","servicesGone":true,"navWidth":226,"navLeft":1192,"navRight":1418,"navTop":338,"navBottom":562,"infoRight":1080,"overlap":false,"inkRightMost":1064,"railCoveredLines":0,"railCoveredPx":0,"labelsVisible":true,"bookPhotoLoaded":true,"bookPhotoSrc":"/images/nature/book-backdrop.jpg"}
+  header (guest): {"startBtn":true,"loginBtn":true,"donateBtn":true,"dashboardBtn":false,"logoutBtn":false}
+[PASS] G3 homepage sections + header (8.1s)
+  book: {"url":"/book","lang":"fr","hasTitle":true,"badge":"En préparation — pas encore en vente","unavailable":"La commande n'est pas encore disponible sur ce site. À la sortie du livre, un vrai paiement sera ouvert — aucun paiement n'est traité ici aujourd'hui.","bodyText":"Orkod.\nCommencer votre parcours\nLivre\nFrançais\nFaire un don\nSe connecter\nOrkod.\nAccueil\nExplorateur du corps\nQuiz\nSymptômes\nPraticiens\nLivre\nAcadémie\nFamille\nAssistant\nDons\nContactez-nous\nSe connecter\nCommencer votre parcours\n\nBIBLIOTHÈQUE ÉNERGÉTIQUE\n\nLes secrets d'Orkod\n\nDécouvrez des livres conçus pour votre mode de vie et votre langue.\n\nORKOD\nOrkod\nUn guide pratique pour des séances énergétiqu"}
+  login gate: {"url":"/login","query":"?redirect=/quiz","gateNotice":true,"loginCard":true,"backLink":"/home","cardBg":"rgba(20, 51, 36, 0.94)","headerBg":"linear-gradient(135deg, rgb(33, 75, 53) 0%, rgb(20, 51, 36) 100%)","audioAutoplay":false}
+[PASS] G4 book page + login gate (9.2s)
+  body selectors: {"selectors":["Cerveau","Poumons et souffle","Cœur","Foie","Estomac","Intestins","Reins"],"callouts":0,"pageBottom":900,"scrollH":900,"winH":900,"studioDisplay":"grid","overflow":0}
+  body "Cerveau" selection: {"title":"Cerveau","activeRows":1,"dotInsideCanvas":true}
+  body "Poumons et souffle" selection: {"title":"Poumons et souffle","activeRows":1,"dotInsideCanvas":true}
+  body "Cœur" selection: {"title":"Cœur","activeRows":1,"dotInsideCanvas":true}
+  body "Foie" selection: {"title":"Foie","activeRows":1,"dotInsideCanvas":true}
+  body "Estomac" selection: {"title":"Estomac","activeRows":1,"dotInsideCanvas":true}
+  body "Intestins" selection: {"title":"Intestins","activeRows":1,"dotInsideCanvas":true}
+  body "Reins" selection: {"title":"Reins","activeRows":1,"dotInsideCanvas":true}
+  body reset to default: {"active":0,"detailTitle":null,"hint":"Cliquez sur une zone pour en savoir plus","hoveredRow":false}
+[PASS] G5 body explorer (16.5s)
+  donations: {"amounts":0,"hasGold":false,"url":"/donations","hasHeading":true}
+  booking gate: {"url":"/login","query":"?redirect=/booking","gateNotice":true}
+  specialty gate: {"url":"/login","query":"?redirect=/specialty/heart"}
+[PASS] G6 donations + auth gates (11.6s)
+  locale en: {"dir":"ltr","lang":"en","h1":"Gentle care for your body's energy","rawKey":false}
+  locale ar: {"dir":"rtl","lang":"ar","h1":"رعاية لطيفة لطاقة جسمك","rawKey":false}
+  locale fr: {"dir":"ltr","lang":"fr","h1":"Un soin en douceur pour l'énergie de votre corps","rawKey":false}
+  locale id: {"dir":"ltr","lang":"id","h1":"Perawatan lembut untuk energi tubuh Anda","rawKey":false}
+  /start locale: {"dir":"ltr","titles":["Saya tahu kenapa saya sakit","Saya tidak tahu kenapa saya sakit"]}
+[PASS] G7 four locales (24.7s)
+  raw-key scan: PASS
+[PASS] G8 raw i18n key scan (63.1s)
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+  overflow matrix: PASS (all routes, all viewports)
+[PASS] G9 overflow matrix (323.7s)
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+  purple scan: PASS (no purple found on any route)
+[PASS] G10 purple computed-style scan (54.8s)
+        ! console: Failed to load resource: the server responded with a status of 404 ()
+  mobile /body: {"overflow":0,"selectors":7,"pageBottom":844,"winH":844,"scrollH":844}
+  mobile /home: {"navBottom":828,"navTop":770,"winH":844,"innerScrolls":false,"pageScroll":true,"ch1Height":787,"pos":"01 / 02"}
+  mobile /home section 2: {"pos":"02 / 02","posWhiteSpace":"nowrap","ch2Top":1,"bookPhotoLoaded":true,"bookStatus":"En préparation — pas encore en vente"}
+  mobile /start: {"panels":2,"previewOpacity":["0.72","0.78"],"scrimOpacity":["0.7","0.68"],"headerPresent":false,"overflow":0}
+[PASS] G11 mobile layout (26.9s)
+  fr @1440 dir=ltr rail=[1192,338,1418,562] w=226 infoRight=1080 ink<=1064 coveredLines=0 coveredPx=0
+  fr @1366 dir=ltr rail=[1118,272,1344,496] w=226 infoRight=1043 ink<=1024 coveredLines=0 coveredPx=0
+  fr @1280 dir=ltr rail=[1032,288,1258,512] w=226 infoRight=996 ink<=979 coveredLines=0 coveredPx=0
+  fr @1100 dir=ltr rail=[1018,290,1078,510] w=60 infoRight=980 ink<=966 coveredLines=0 coveredPx=0
+  en @1440 dir=ltr rail=[1234,338,1418,562] w=184 infoRight=1080 ink<=1062 coveredLines=0 coveredPx=0
+  en @1366 dir=ltr rail=[1160,272,1344,496] w=184 infoRight=1043 ink<=1022 coveredLines=0 coveredPx=0
+  en @1280 dir=ltr rail=[1074,288,1258,512] w=184 infoRight=996 ink<=977 coveredLines=0 coveredPx=0
+  en @1100 dir=ltr rail=[1018,290,1078,510] w=60 infoRight=980 ink<=964 coveredLines=0 coveredPx=0
+  ar @1440 dir=rtl rail=[22,338,184,562] w=162 infoRight=1226 ink<=1194 coveredLines=0 coveredPx=0
+  ar @1366 dir=rtl rail=[22,272,184,496] w=162 infoRight=1186 ink<=1154 coveredLines=0 coveredPx=0
+  ar @1280 dir=rtl rail=[22,288,184,512] w=162 infoRight=1141 ink<=1109 coveredLines=0 coveredPx=0
+  ar @1100 dir=rtl rail=[22,290,82,510] w=60 infoRight=1054 ink<=1022 coveredLines=0 coveredPx=0
+[PASS] G12 rail vs section-02 copy matrix (88.3s)
+
+=== Round 17 summary ===
+PASS G1 language gate (6.9s)
+PASS G2 /start states (18.7s)
+PASS G3 homepage sections + header (8.1s)
+PASS G4 book page + login gate (9.2s)
+PASS G5 body explorer (16.5s)
+PASS G6 donations + auth gates (11.6s)
+PASS G7 four locales (24.7s)
+PASS G8 raw i18n key scan (63.1s)
+PASS G9 overflow matrix (323.7s)
+PASS G10 purple computed-style scan (54.8s)
+PASS G11 mobile layout (26.9s)
+PASS G12 rail vs section-02 copy matrix (88.3s)
+groups: 12 passed, 0 failed
+artifacts: C:\MyProjects\pranichealing\frontend\preview\nature-green-round-17
