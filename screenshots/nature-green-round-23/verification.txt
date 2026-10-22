@@ -1,0 +1,95 @@
+Round 23 - homepage initial chapter state + mobile chapter-02 CTA spacing
+Generated 2026-10-22T11:04:12.916Z
+
+Root cause of the boot-time 02/02: snap mode was enabled in onMounted, so the
+initial measurement ran before Vue had applied .hp-chapters--snap. In that
+transient layout chapter 01 was 326px tall and chapter 02 462.5px in a 788.5px
+strip, so chapter 02 won the visible-area test and the rail latched onto it;
+no later scroll or resize event re-ran the measurement, so the wrong reading
+persisted. The active section is now read positionally (the section whose top is
+closest to the top of the visible strip) instead of by pixel area, so a taller
+section can no longer win mid-load, and the reduced-motion layout (sections
+sized by content, both partly on screen) also starts at 01 / 02. Fix: snap mode is decided during setup (first render already has the
+final layout), the first measurement runs after nextTick + one animation frame,
+and a ResizeObserver / document.fonts.ready / window load re-sync when late
+layout changes happen.
+
+Mobile spacing: chapter 02 on phones is taller than the viewport, so at the
+snap point the CTA sat 6px from the bottom edge at 390x844. The section now
+uses less air above the cover and slightly more below the button; short
+viewports (<=830px tall) trim the cover's own padding too. Button size is
+unchanged (173x52) and nothing is hidden.
+
+## r23-01-home-chapter01-desktop-1440.png
+
+- viewport: 1440x900
+- route: /home; language gate: absent
+- fresh-load state (before any interaction): indicator 01/02, active dot 0, visible chapter 1
+- state at capture: indicator 01/02, active dot 0, aria-current index 0, visible chapter 1, offset 0px
+- chapter 01: top 72px, bottom 900px (fills the viewport)
+
+## r23-02-home-chapter01-desktop-1280.png
+
+- viewport: 1280x800
+- route: /home; language gate: absent
+- fresh-load state (before any interaction): indicator 01/02, active dot 0, visible chapter 1
+- state at capture: indicator 01/02, active dot 0, aria-current index 0, visible chapter 1, offset 0px
+- chapter 01: top 72px, bottom 800px (fills the viewport)
+
+## r23-03-home-chapter02-desktop-1440.png
+
+- viewport: 1440x900
+- route: /home; language gate: absent
+- fresh-load state (before any interaction): indicator 01/02, active dot 0, visible chapter 1
+- state at capture: indicator 02/02, active dot 1, aria-current index 1, visible chapter 2, offset 828px
+- chapter 02: top 72px, bottom 900px; chapter 01 bottom 72px
+- heading: "The Orkod Secrets" at 367.4..420.7px, visible, unobstructed
+- CTA: "View the book" -> /book at 595..647px, visible, unobstructed, 253px above the bottom edge
+
+## r23-04-home-chapter02-mobile-390.png
+
+- viewport: 390x844
+- route: /home; language gate: absent
+- fresh-load state (before any interaction): indicator 01/02, active dot 0, visible chapter 1
+- state at capture: indicator 02/02, active dot 1, aria-current index 1, visible chapter 2, offset 844px
+- chapter 02: top 0px, bottom 931px; chapter 01 bottom 0px
+- heading: "The Orkod Secrets" at 503..535.5px, visible, unobstructed
+- CTA: "View the book" -> /book at 760.8..812.8px, visible, unobstructed, 31.2px above the bottom edge
+
+## r23-05-home-chapter02-mobile-360.png
+
+- viewport: 360x800
+- route: /home; language gate: absent
+- fresh-load state (before any interaction): indicator 01/02, active dot 0, visible chapter 1
+- state at capture: indicator 02/02, active dot 1, aria-current index 1, visible chapter 2, offset 800px
+- chapter 02: top 0px, bottom 878.3px; chapter 01 bottom 0px
+- heading: "The Orkod Secrets" at 431.1..463.5px, visible, unobstructed
+- CTA: "View the book" -> /book at 714.3..766.3px, visible, unobstructed, 33.7px above the bottom edge
+
+## r23-06-home-chapter02-mobile-390-arabic.png
+
+- viewport: 390x844, locale ar (dir rtl)
+- route: /home; language gate: absent
+- fresh-load state (before any interaction): indicator 01/02, active dot 0, visible chapter 1
+- state at capture: indicator 02/02, active dot 1, aria-current index 1, visible chapter 2, offset 844px
+- chapter 02: top 0px, bottom 901.8px; chapter 01 bottom 0px
+- heading: "أسرار أوركود" at 499.4..531.9px, visible, unobstructed
+- CTA: "عرض الكتاب" -> /book at 731.7..783.7px, visible, unobstructed, 60.3px above the bottom edge
+
+Machine checks were run in the browser before each shutter; the script aborts
+without saving if any fails. No visual inspection of the PNGs is claimed.
+
+## Checks run on this tree
+
+- fresh loads with 250 ms latency and cache disabled: indicator trace never
+  reads 02/02 before interaction (1440x900 and 1280x800)
+- rail dot clicks, up/down arrows, wheel, PageDown/PageUp, resizes:
+  26/26 assertions pass across 1440x900, 1280x800, 390x844, 360x800, ar-RTL
+- reduced motion at 1440x900 and 390x844: initial 01/02, rail click still
+  reaches 02/02
+- vue-tsc --noEmit: clean; eslint on HomePage.vue: clean
+- vitest: 16 files / 149 tests pass; the 25 failing files and 2 failing auth
+  tests are the pre-existing backend-only suites (ECONNREFUSED :9091)
+- vite build: pass (PWA, 143 precached entries)
+- Round-20 regression suite (temp output dir): 16/17 pass; the one failure is
+  the superseded 900x1413 preview-asset assertion from Round 21
