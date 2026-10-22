@@ -1,0 +1,105 @@
+Round 24 - mobile book cover cropping (360x800) in homepage chapter 02
+Generated 2026-10-22T13:20:00Z
+
+What was wrong
+--------------
+Round 23 trimmed the top of chapter 02 on short phones to win room for the CTA.
+At 360x800 that set padding-top to 24px, and the 3D book then started at y=40
+while the header occupies y=0..57 (sticky, 57px tall on phones). The top 16.9px
+of the cover - the entire top edge, including the bevel - sat behind the header.
+Hit-testing the top centre of the cover returned the header's "Start your
+journey" button, not the book. At 390x844 the base rule (padding-top 75.96px)
+put the cover at y=102, so only 360-class short phones were affected.
+
+What changed (frontend/src/views/HomePage.vue only)
+---------------------------------------------------
+Inside @media (max-width: 767px) and (max-height: 830px):
+  .hp-chapter--two            padding-top: calc(var(--bx-chrome-top, 57px) + 7px)
+                              (64px at the current 57px header)
+  .hp-chapter--two .hp-book-stage   padding-block: 10px   (was 18px)
+  .hp-chapter--two .hp-book-cover   width: 196px          (was the 210px floor)
+
+The section now starts just below the header, the stage keeps a thin frame of
+air, and the cover is 6.7% smaller on these short viewports so the CTA keeps its
+bottom gap. The book art, cloth texture, bevel, gold print, spine/pages, page
+backdrop and forest grading are untouched; only the rendered size changes. The
+390x844 rule set is not touched at all.
+
+Measured geometry (fresh load, real rail click, no synthetic scroll)
+--------------------------------------------------------------------
+viewport       cover bbox (y)      header bottom   clearance   CTA bottom / gap
+360x800  en    72.4 .. 359.1       57              15.4        770.3 / 29.7
+375x812  en    72.4 .. 359.1       57              15.4        744.8 / 67.2
+390x844  en    102.1 .. 409.8      57              45.1        812.8 / 31.2  (unchanged)
+360x800  ar    72.4 .. 359.1       57              15.4        715.7 / 84.3
+390x844  ar    102.1 .. 409.8      57              45.1        783.7 / 60.3  (unchanged)
+1280x800 en    278.2 .. 597.3      72              206.2       CTA 173x52 (unchanged)
+1440x900 en    308.0 .. 668.5      72              236.0       CTA 173x52 (unchanged)
+
+At 360x800 the cover bbox is 192.8 x 286.6px (was 206.5 x 307.7). Its left/right
+edges are 62.2 and 255.0 inside a 360px viewport, so it is not clipped at either
+side either. The clearance test is conservative: the axis-aligned bbox of the
+rotated book is strictly below the header rect, so no painted pixel of the cover
+can be underneath it. The button is 173x52 (154x52 for the shorter Arabic label,
+unchanged) - same size as before, well above the 44px touch minimum.
+
+Resize drift (pre-existing, now smaller)
+----------------------------------------
+Changing the viewport height keeps the document scroll offset, so a snapped
+section drifts by the height delta until the next scroll re-snaps. At 360x800,
+shrinking to 780px without re-snapping leaves the cover 4.6px behind the header;
+with the Round-23 CSS the same sequence left it 36.9px behind. Indicator stays
+02/02 throughout, and the next snap restores the 15.4px clearance. No scroll
+re-snap logic was added (out of scope, and it risks jumps when mobile browser
+chrome shows/hides).
+
+Assertions (verify-r24.mjs, headless Edge)
+------------------------------------------
+148/148 pass across 360x800, 375x812, 390x844, 1280x800, 1440x900, en + ar:
+- fresh load: rail 01/02, active dot index 0, aria-current="step"
+- rail click: 02/02, active dot 1, chapter 02 snapped (top 0 on phones, top 72
+  under the header on desktop)
+- cover bbox clears the header, is fully inside the viewport vertically and
+  horizontally, and no header hit covers the cover's top area
+- no horizontal overflow (document scrollWidth == innerWidth at every size)
+- CTA bottom gap >= 24px and button height 52px on phones; desktop CTA 173x52
+- PageDown/PageUp, wheel (desktop), rail clicks both directions
+- resize -20/+20px: indicator keeps 02/02, next snap restores clearance
+- reduced motion at 360x800, 390x844, 1440x900: fresh load 01/02, chapter 02
+  reachable with cover clear of the header
+- no console errors (dev-sw / SSL / suspended-network noise filtered)
+
+Cross-round pixel checks
+------------------------
+- r24-06 (1440x900 chapter 02) SHA-256 7fe197de...b60b is byte-identical to the
+  Round-22 desktop chapter-02 capture: desktop composition unchanged.
+- r24-04 (390x844 Arabic chapter 02) 9761fa6e...af5a is byte-identical to the
+  Round-23 capture: the 390 layout is untouched.
+- r24-07 (1440x900 chapter 01 fresh load) 18ed7902...79e0 is byte-identical to
+  the Round-23 capture: the initial-indicator fix still holds pixel for pixel.
+
+Captures (each machine-checked before the shutter; the script aborts instead of
+saving a shot whose assertions fail)
+--------------------------------------------------------------------
+r24-01-home-chapter02-mobile-360.png        360x800   en  401382 B  8b491a27ea23a779...
+r24-02-home-chapter02-mobile-390.png        390x844   en  448130 B  5831977030870b4a...
+r24-03-home-chapter02-mobile-360-arabic.png 360x800   ar  401805 B  259fa957953c8b53...
+r24-04-home-chapter02-mobile-390-arabic.png 390x844   ar  449100 B  9761fa6e6c11c65e...
+r24-05-home-chapter02-desktop-1280.png      1280x800  en  1414428 B 55e6b7f13ed5dec9...
+r24-06-home-chapter02-desktop-1440.png      1440x900  en  1742710 B 7fe197de479a6e3e...
+r24-07-home-chapter01-desktop-1440.png      1440x900  en  1523174 B 18ed7902e43bd109...
+r24-08-home-chapter01-mobile-360.png        360x800   en  324045 B  1d2f68b8194e1dc9...
+
+Checks run on this tree
+-----------------------
+- vue-tsc --noEmit: clean (exit 0)
+- eslint src/views/HomePage.vue: clean (exit 0)
+- vitest: 16 files / 149 tests pass (home.presentation.test.ts 4/4); the 25
+  failing files and 2 failing auth tests are the unchanged backend-only suites
+  (ECONNREFUSED 127.0.0.1:9091, backend deliberately not started)
+- npm run build: pass (PWA, 143 precached entries; postbuild copy to the runtime
+  volume only)
+- Round-21/22/23 preview directories untouched (17 / 3 / 7 files)
+
+No visual inspection of the PNGs is claimed. All statements above are DOM
+geometry, hit tests, pixel hashes and browser assertions.
