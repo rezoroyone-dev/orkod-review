@@ -1,0 +1,45 @@
+Round 22 - homepage chapter 02 capture verification
+Generated 2026-10-22T10:16:23.014Z
+
+Why this round exists: Round 21's r21-16-home-book-section.png was captured at
+`/`, which is the LanguageGate, not the homepage. The real homepage route is
+`/home` (src/router.ts:45-55). This round re-captures the intended view. No
+application code, styling, data, database or backend was changed.
+
+Pre-existing observation (NOT introduced or changed by this round): at 1440x900 a
+fresh load of /home already shows the indicator at 02/02 while chapter 01 still
+occupies the viewport; it corrects itself on scroll/resize. At 390x844 the initial
+state is correct (01/02). The
+chapter-02 verdict below therefore does not rely on the indicator alone: it is
+confirmed by the section geometry (chapter 02 aligned to the viewport top,
+chapter 01 scrolled out) plus visible heading and CTA hit-tests.
+
+## r22-01-home-chapter02-desktop-1440.png
+
+- viewport: 1440x900
+- route at capture: /home (verified === "/home")
+- language-selection screen (main.gate): absent before and after
+- navigation control used: .hp-nav-dot nth(1) (real click)
+- chapter dot active: index 1; aria-current="step": index 1
+- chapter indicator text: "02/02"
+- scroll mode: inner scroller, settled offset 828px
+- chapter 02 geometry: top 72px, bottom 900px; chapter 01 bottom 72px (scrolled out)
+- book heading: "The Orkod Secrets" at 367.4..420.7px, visible, unobstructed
+- book CTA: "View the book" -> /book at 595..647px, visible, unobstructed
+
+## r22-02-home-chapter02-mobile-390.png
+
+- viewport: 390x844
+- route at capture: /home (verified === "/home")
+- language-selection screen (main.gate): absent before and after
+- navigation control used: .hp-nav-dot nth(1) (real click)
+- chapter dot active: index 1; aria-current="step": index 1
+- chapter indicator text: "02/02"
+- scroll mode: window, settled offset 844px
+- chapter 02 geometry: top 0px, bottom 939.4px; chapter 01 bottom 0px (scrolled out)
+- book heading: "The Orkod Secrets" at 528.3..560.8px, visible, unobstructed
+- book CTA: "View the book" -> /book at 786.1..838.1px, visible, unobstructed
+
+Every assertion above is machine-checked in the browser before the shutter; the
+script aborts without saving if any fails. No visual inspection of the PNGs is
+claimed by this report.
