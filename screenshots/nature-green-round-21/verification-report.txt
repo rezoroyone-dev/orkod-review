@@ -1,0 +1,68 @@
+Round 21 - final anatomy and content accuracy - verification report
+Generated: 2026-10-22T09:18:14.965Z
+
+Evidence is DOM/CSS/Three.js/pixel measurement only. No visual inspection is claimed.
+
+  figure box 757x446 in panel 714x900 @ y=395
+  opacity 0.86 | filter drop-shadow(rgba(4, 16, 10, 0.72) 0px 2px 3px) drop-shadow(rgba(4, 16, 10, 0.62) 0px 20px 38px) saturate(1.04)
+  scrim has a local pool: true
+  overflow-x 0px
+  rendered figure height 446px = 50% of the panel
+  asset 900x1461 alpha bbox [28,28,872,1433]
+    head       px  26822  alpha>=0.60 67%  >=0.90 28%
+    torso      px 161885  alpha>=0.60 54%  >=0.90 34%
+    thighs     px 110746  alpha>=0.60 27%  >=0.90 7%
+    legs+feet  px  56505  alpha>=0.60 28%  >=0.90 0%
+[PASS] G1 /start desktop legibility (7.3s)
+  hover: opacity 1, --on true, scrim 0.78, overflow-x 0
+[PASS] G2 /start desktop active state (5.4s)
+  360x780: src start-preview-body-mobile.png opacity 0.92 box 259x310 panel 360x740 inside true overflow-x 0
+[PASS] G3 /start 360x780 (4.4s)
+  390x844: src start-preview-body-mobile.png opacity 0.92 box 281x310 panel 390x804 inside true overflow-x 0
+[PASS] G3 /start 390x844 (8.6s)
+  768x1024: src start-preview-body-mobile.png opacity 0.92 box 330x310 panel 768x984 inside true overflow-x 0
+[PASS] G3 /start 768x1024 (7.0s)
+  1024x768: src start-preview-body.png opacity 0.86 box 536x408 panel 506x800 inside false overflow-x 0
+[PASS] G3 /start 1024x768 (5.0s)
+  1440x900: src start-preview-body.png opacity 0.86 box 757x446 panel 714x900 inside false overflow-x 0
+[PASS] G3 /start 1440x900 (4.6s)
+  en: lang=en dir=ltr books=1 bullets=0 cta=/booking
+    status "IN PREPARATION — NOT YET ON SALE" | concept "CONCEPT COVER"
+    price/checkout hits [] | overflow-x 0
+[PASS] G4 /book honesty (en) (4.2s)
+  ar: lang=ar dir=rtl books=1 bullets=0 cta=/booking
+    status "قيد الإعداد — ليس متاحًا للبيع بعد" | concept "غلاف تصوّري"
+    price/checkout hits [] | overflow-x 0
+[PASS] G4 /book honesty (ar) (4.7s)
+  fr: lang=fr dir=ltr books=1 bullets=0 cta=/booking
+    status "EN PRÉPARATION — PAS ENCORE EN VENTE" | concept "COUVERTURE CONCEPTUELLE"
+    price/checkout hits [] | overflow-x 0
+[PASS] G4 /book honesty (fr) (7.6s)
+  id: lang=id dir=ltr books=1 bullets=0 cta=/booking
+    status "DALAM PERSIAPAN — BELUM DIJUAL" | concept "SAMPUL KONSEP"
+    price/checkout hits [] | overflow-x 0
+[PASS] G4 /book honesty (id) (4.3s)
+  canvas 874x724; organ buttons 7
+  crown>brow  mean|A-B| 31.82  >8  9821  >20  9717  | face silhouette px 15973  L(composed) 135  L(shell) 85 | organ px 10149
+  brow>eyes   mean|A-B| 19.64  >8  1474  >20  1157  | face silhouette px 3323  L(composed) 165  L(shell) 131 | organ px 1961
+  eyes>chin   mean|A-B| 0.31  >8     0  >20     0  | face silhouette px 18334  L(composed) 162  L(shell) 162 | organ px 2120
+  callout anchor {"x":693,"y":427,"cls":"bx-callout bx-callout--left"}
+[PASS] G5 /body brain anatomy (21.7s)
+  en: {"dir":"ltr","lang":"en","marker":[693,427],"canvasTransform":"none","firstOrgan":"Brain"}
+  ar: {"dir":"rtl","lang":"ar","marker":[693,427],"canvasTransform":"none","firstOrgan":"الدماغ"}
+  canvas 874x724: mean |d| 0.742, >12 0.70%, bright centroid en (440.7, 370.9) ar (440.3, 369.8)
+[PASS] G6 /body Arabic RTL (model not mirrored) (21.4s)
+  keyboard: focused "bx-selector-item" -> selected index 1, callout "Poumons et souffle"
+[PASS] G7 /body keyboard (9.1s)
+  reduced-motion media true: settled frame vs 3s later mean |d| 0.121 (>12 0.22%)
+[PASS] G7b /body reduced motion (14.3s)
+  /start: overflow-x 0
+  /body: overflow-x 0
+  /book: overflow-x 0
+[PASS] G8 console + overflow sweep (14.9s)
+
+16 groups: 16 PASS / 0 FAIL  (2026-10-22T09:18:14.952Z)
+
+Environment: dev server https://localhost, Edge headless (playwright-core), viewport 1440x900
+unless a group name says otherwise. The Go backend was NOT restarted; backend-only vitest
+suites therefore report ECONNREFUSED on :9091 and are excluded from these frontend checks.
