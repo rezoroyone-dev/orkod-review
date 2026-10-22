@@ -1,0 +1,204 @@
+﻿Round 25 - Orkod release-readiness audit (responsive snap fix + full public-site audit)
+Generated 2026-10-22T13:49:24Z
+
+Scope
+-----
+Full pre-release audit of the running site at https://localhost (Vite dev server,
+self-signed cert, headless Edge via playwright-core): public journeys, all public
+routes, responsive/a11y at 360x800, 390x844, 768x1024, 1024x768, 1280x800, 1440x900
+in en/fr/ar, the 3D body explorer, performance, framing, locale parity and honesty
+copy. One application file changed: frontend/src/views/HomePage.vue. No redesign,
+no copy change, no dependency, no backend/database/README/Makefile change.
+
+What was wrong
+--------------
+1) Snap mode never re-evaluated after load. snapEnabled was computed once at setup.
+   - 1024 -> 767 px (resize or rotation): snap stayed ON below its 961px threshold.
+     The page kept .hp-chapters--snap, so the inner scroller AND the document both
+     scrolled: measured winY=732 with #hp-ch2 at top=-730, indicator still 02/02.
+   - 360 -> 1280 px: snap stayed OFF on desktop, so the desktop two-column grid
+     rendered without snap. Sections became content-height and #hp-ch2 landed at
+     top=0.4, i.e. 71.6px behind the 72px header.
+2) Tablet band 768..960 px. canSnap() is min-width:961px, so tablets use the
+   desktop grid with no snap and had no top padding for the fixed header. After a
+   rail click the chapter 02 cover sat at y=28.8 with the header at y=0..61
+   (32.2px hidden); on load, chapter 01's eyebrow was at y=8.6 and its h1 at
+   y=42.4, both behind the header.
+3) Reduced motion on desktop. goToChapter() scrolled the window with a manual
+   window.scrollTo(el.top + scrollY), which ignores scroll-margin. At 1024x768 the
+   chapter 02 cover cleared the 61px header by -2.2px (i.e. 2.2px behind it).
+   The global [id] { scroll-margin-top: 92px } (src/styles/_global.scss:65) only
+   helps native scrollIntoView / anchors, not the manual scroll.
+
+The fix (frontend/src/views/HomePage.vue only)
+----------------------------------------------
+1) applySnapPreference() re-evaluates canSnap() on every relevant media change and
+   watchSnapPreference() attaches change listeners to (min-width: 961px) and
+   (prefers-reduced-motion: reduce). On a mode change it clears layoutReady, waits
+   nextTick + one animation frame, restores layoutReady and re-aligns the kept
+   chapter with goToChapter(keep, true). Listeners are removed in onBeforeUnmount.
+2) goToChapter(idx, instant = false): behavior = instant || reduce ? 'auto' : 'smooth'.
+   The window branch now uses el.scrollIntoView({ block: 'start', behavior }) so the
+   real scroll-margin applies instead of a manual offset.
+3) CSS: .hp-chapters .hp-chapter { scroll-margin-top: 0 } overrides the global 92px
+   inside the chapter deck, and at min-width:768px the non-snap deck gets
+   scroll-margin-top: var(--bx-chrome-top, 72px) (72 / 61 / 57px by header height).
+
+Measured after the fix (fresh load, real rail click, no synthetic scroll)
+------------------------------------------------------------------------
+viewports                 chapter 02 cover top..bottom   header   clearance
+768x1024 en               89.8 .. 397.5                   61       28.8
+820x1180 en               - (probe)                      61       30.9
+960x800 en                - (probe)                      61       36.8
+1024x768 reduced motion   99.8 .. 407.5                   61       38.8  (was -2.2)
+1280x800 reduced motion   -                               72       49.6
+1440x900 reduced motion   -                               72       53.3
+360x800 en (fresh)        72.4 .. 359.1                   57       15.4  (unchanged)
+375x812 en (fresh)        72.4 .. 359.1                   57       15.4  (unchanged)
+390x844 en (fresh)        102.1 .. 409.8                  57       45.1  (unchanged)
+1280x800 en (fresh)       278.2 .. 597.3                  72       206.2 (unchanged)
+1440x900 en (fresh)       -                               72       236.0 (unchanged)
+
+Chapter 01 at 768x1024 now starts at y=61 (below the 61px header) with the eyebrow
+at y=69.6, instead of eyebrow 8.6 / h1 42.4 behind it. Resize checks: 1024 -> 767
+keeps the cover clear (52.8px); 360 -> 1280 re-enables snap and lands chapter 02
+below the header. verify-r24.mjs (the round-24 regression suite) is 148/148.
+
+Resize limitation (documented, not changed)
+-------------------------------------------
+Within the same mode the scroll offset is preserved, so changing the viewport
+height/width drifts the snapped chapter by the delta until the next scroll.
+1024 -> 767 is fine (clearance 52.8px); 767 -> 360 leaves the cover 27.6px above
+the viewport (header not overlapped, but the top of the book is cut) until the
+next scroll re-aligns. No re-align was added inside a mode: it would fight user
+scrolling and mobile URL-bar height changes. Cross-mode changes are handled.
+
+Audit coverage
+--------------
+Journeys (audit-journeys.mjs): all pass. Language gate 4 rows, filter, empty state,
+orkod.locale persistence and ar RTL; /start two panels + skip link -> /home; body
+and quiz panels; /quiz gates to /login?redirect=/quiz with a working back link;
+quiz completes 4 steps -> "Our suggestion for you" with no payment wording;
+mocked login redirect honoured for same-origin targets; //evil.example rejected
+(stays on localhost/login); /book cover 324x468, "not yet on sale", no buy/cart
+controls, /booking link; live donations form + no-card note; mocked disabled ->
+.dn-offline and no form; mocked enabled feed lists a donation and POSTs
+{name:"Review Visitor"}.
+
+Body explorer (audit-body.mjs): 47/47. Canvas 874x724 at 1440; seven organs
+(Brain / Lungs & breath / Heart / Liver / Stomach / Intestines / Kidneys); each
+callout pill matches its detail title and stays in the viewport; GLB 200
+(orkod-human-body.8521db4e.glb); keyboard Enter selects; reset re-frames the
+camera but keeps the selection (its aria-label says so); mobile 390 en/ar no
+horizontal overflow, callout hidden, detail action 332x44; no app console errors.
+Only noise: the benign "ResizeObserver loop completed with undelivered
+notifications" browser warning (event.error null) x3 after selecting an organ
+at 390, from the 3D resize observer (HumanBody3D.vue:1780). Not an app error; the
+3D code was left untouched.
+
+Canvas pixels (PIL/numpy): non-blank (std 26.1 desktop / 27.9 mobile, 13.5k /
+6.8k colours). en vs ar mean abs pixel difference 0.60 (desktop) and 0.17
+(mobile), while en vs horizontally flipped ar is 3.75 / 4.49 - the 3D body is
+not mirrored in RTL.
+
+Routes and responsive (audit-routes.mjs): 315/315. 15 public routes + 3 live
+detail pages (symptoms/back-pain, practitioners/4, organs/brain): 200, one h1,
+content, no overflow, no console errors. /booking correctly gates to
+/login?redirect=/booking. 404 page renders and its "Go Home" button returns to /.
+Then 8 pages (/, /start, /home, /body, /book, /donations, /symptoms, /doctors) x
+5 viewports (360 en, 390 en, 360 ar, 768 en, 1280 en): no horizontal overflow,
+h1 clear of the header at the top, no nameless or oversized controls, all images
+have alt, no console errors. Gate first tab stop has a visible 2px focus ring.
+
+Performance (audit-perf.mjs): 26/26. CLS 0.0002..0.0006; no failed or duplicate
+same-origin requests; no oversized non-asset responses; settled main-thread task
+time 0% (/start, /home) and 2% (/body 1280 and 390). Findings, not changes:
+- /body fetches the GLB (1.1MB) plus organs.bin.gz (5.4MB transfer) on initial
+  load at BOTH 1280 and 390. organs.bin.gz is itself gzip data served with
+  Content-Encoding: gzip (double-compressed transport) and Cache-Control:
+  no-cache in this environment. Recommendation: fetch organ geometry on demand
+  (first organ selection) and serve the model binaries with a long cache; left
+  unchanged this round (asset pipeline, no redesign).
+- Dev-mode numbers are unbundled: 250 module requests, ~1.1MB JS. The production
+  build bundles them; its largest chunk is vendor 1,093.92kB (316.48kB gzip),
+  which triggers Vite's >1000kB chunk warning. PWA precaches 143 entries
+  (7,695.86KiB) and does NOT precache the anatomy models (checked dist/sw.js).
+
+Framing (scripts/check-framing.mjs): all 6 viewports OK - whole body inside the
+frame (headY<=1, feetY>=-1), hands inside (halfX 0.177..0.603), feet 134..222px
+above the stage bottom, fill 46.7..73.4%, visible-band use 60.8..78.8%.
+
+Locale and raw keys: locale-parity 1262 keys in each of en/fr/ar/id, 0 referenced
+keys missing, 0 unreferenced drift (the 70 flagged literals are concatenation
+prefixes such as Academy_Bullet_ / Book_Hl_1, not renderable keys).
+raw-key-scan: PASS on 22 public routes (including /organs/heart,
+/symptoms/back-pain, /practitioners/1, /doctors/1, /academy/divine-healing,
+/specialty/heart) - no raw i18n key is visible.
+
+Honesty and security spot checks: no payment success is implied anywhere; the
+book is "not yet on sale" with no buy controls; donations show the live backend
+feed (GET /api/public/donations -> 200 {enabled:true, donations:[]}) and say no
+card is taken on the page; quiz login redirects only accept same-origin paths
+(//evil.example is rejected). Auth/quiz persistence tests used Playwright route
+mocks and are reported as mocked, not real.
+
+Residual limitations
+--------------------
+- fr chapter 02 is denser on small phones: at 390x844 the CTA bottom is 838.3
+  (5.7px above the edge, visible); at 360x800 it is 848, i.e. ~48px below the
+  fold and reached by scrolling. Nothing is clipped (the chapter grows to 960px
+  and the document scrolls); en/ar fit. Left unchanged - it is translation
+  length, not a layout break, and changing the 360 composition again was out of
+  scope for this round.
+- Same-mode resize drift above.
+- 5.4MB organ geometry on /body and the >1MB vendor chunk above.
+- The 3D ResizeObserver warning is a browser notice, not an app error.
+
+Commands run on this tree
+-------------------------
+- npx vue-tsc --noEmit: exit 0
+- npx eslint src/views/HomePage.vue: exit 0
+- npm run test (vitest): 149 tests pass / 2 fail / 110 skipped; 16 files pass,
+  25 files fail. All failures are the unchanged backend-only suites:
+  ECONNREFUSED ::1:9091 / 127.0.0.1:9091 (backend deliberately not started on
+  9091). Authentication.integration.test.ts and LogIn.logic.test.ts are the two
+  failing tests; the other files fail on the same auth setup error.
+- npm run build: pass in 22.84s (PWA 143 entries; postbuild copies dist to the
+  runtime frontend volume). Warning: vendor chunk 1,093.92kB > 1000kB.
+- verify-r24.mjs 148/148; audit-journeys.mjs all pass; audit-body.mjs 47/47;
+  audit-routes.mjs 315/315; audit-perf.mjs 26/26; check-framing.mjs all OK;
+  locale-parity.mjs 0 missing; raw-key-scan.mjs PASS.
+- Round 21/22/23/24 preview directories untouched.
+
+Captures (machine-checked before the shutter; the script aborts on a failed
+assertion instead of saving a misleading shot)
+------------------------------------------------
+r25-01-gate-mobile-390-en.png                390x844   en  250250 B  0cbb21e7dd3b0e0b...
+r25-02-gate-desktop-1440-en.png             1440x900   en 1496186 B  5320188f0010ef19...
+r25-03-start-mobile-390-en.png               390x844   en  558147 B  8803a844ccfd7d77...
+r25-04-start-desktop-1440-en.png            1440x900   en 2083472 B  f983fe8b23c74956...
+r25-05-home-chapter01-desktop-1440-en.png   1440x900   en 1523174 B  18ed7902e43bd109...
+r25-06-home-chapter02-mobile-390-en.png      390x844   en  448113 B  876fdb7e8c8458ba...
+r25-07-home-chapter02-mobile-360-en.png      360x800   en  401219 B  a0e325c94b056fbd...
+r25-08-home-chapter02-tablet-768-en.png      768x1024   en  488508 B  ac5dd02f92c61ef3...
+r25-09-home-chapter02-desktop-1280-en.png   1280x800   en 1414428 B  55e6b7f13ed5dec9...
+r25-10-home-chapter02-reduced-motion-1024-en.png 1024x768  en  672585 B  dc625fe44b5d2a29...
+r25-11-body-desktop-1440-en.png             1440x900   en  489485 B  9a57256a158b3163...
+r25-12-body-heart-desktop-1440-en.png       1440x900   en  495433 B  4794279ee220f9b9...
+r25-13-body-mobile-390-ar.png                390x844   ar  150920 B  13612c11bf53271c...
+r25-14-symptoms-desktop-1440-en.png         1440x900   en  174870 B  fde1ee3309f41de7...
+r25-15-book-desktop-1440-en.png             1440x900   en 1156689 B  d14e9ee23a294ba0...
+r25-16-donations-desktop-1440-en.png        1440x900   en  154346 B  e64b407ba657b190...
+r25-17-quiz-gate-desktop-1440-en.png        1440x900   en  461894 B  be86b54f3ba5cd50...
+r25-18-not-found-desktop-1440-en.png        1440x900   en    9358 B  0cf86c46524b330b...
+r25-19-home-chapter02-mobile-390-fr.png      390x844   fr  446476 B  3cc162dd67281253...
+r25-20-home-chapter02-mobile-390-ar.png      390x844   ar  448968 B  da20fdc0c57d4642...
+
+Cross-round pixel evidence: r25-05 (1440 chapter 01 fresh load) is byte-identical
+to the Round 24/23 capture (18ed7902e43bd109...), and r25-09 (1280 chapter 02) is
+byte-identical to Round 24 (55e6b7f13ed5dec9...): the desktop composition still
+hashes the same after the scroll changes.
+
+No visual inspection of the PNGs is claimed. All statements above are DOM
+geometry, hit tests, layout arithmetic, pixel statistics/hashes and browser
+assertions.
