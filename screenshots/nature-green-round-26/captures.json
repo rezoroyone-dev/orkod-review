@@ -1,0 +1,734 @@
+[
+ {
+  "file": "r26-01-gate-mobile-390-en.png",
+  "w": 390,
+  "h": 844,
+  "locale": "en",
+  "path": "/",
+  "chapter": null,
+  "bytes": 250250,
+  "sha": "0cbb21e7dd3b0e0b01ea67d70022edd29c0ef0f5c107d82b85536b87d3e9ca3f",
+  "geo": null,
+  "checks": [
+   "h1 \"Welcome to Orkod — begin your wellness journey\"",
+   "header 0, h1 top 160",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-02-gate-desktop-1440-en.png",
+  "w": 1440,
+  "h": 900,
+  "locale": "en",
+  "path": "/",
+  "chapter": null,
+  "bytes": 1496193,
+  "sha": "d606163ba5a7e484f91138c430aa9b4cb30db9d92af551a674db088f6b217b4e",
+  "geo": null,
+  "checks": [
+   "h1 \"Welcome to Orkod — begin your wellness journey\"",
+   "header 0, h1 top 441",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-03-start-mobile-390-en.png",
+  "w": 390,
+  "h": 844,
+  "locale": "en",
+  "path": "/start",
+  "chapter": null,
+  "bytes": 558129,
+  "sha": "fd69451a86a599e2c38517a4f74f43f6ecd85e4b75fe12010d8c33bdb166f3ab",
+  "geo": null,
+  "checks": [
+   "h1 \"Start Your Healing Journey Today\"",
+   "header 0, h1 top -1",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-04-start-desktop-1440-en.png",
+  "w": 1440,
+  "h": 900,
+  "locale": "en",
+  "path": "/start",
+  "chapter": null,
+  "bytes": 2083472,
+  "sha": "f983fe8b23c749566c50c4b8599ddf1e9caea2845671560553d232e839289702",
+  "geo": null,
+  "checks": [
+   "h1 \"Start Your Healing Journey Today\"",
+   "header 0, h1 top -1",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-05-home-chapter01-desktop-1440-en.png",
+  "w": 1440,
+  "h": 900,
+  "locale": "en",
+  "path": "/home",
+  "chapter": 1,
+  "bytes": 1523174,
+  "sha": "18ed7902e43bd10975ab364fe5ae148dcf64a5a28d45a56c742d8818ff3979e0",
+  "geo": {
+   "nav": "01 / 02",
+   "activeIndex": 0,
+   "cover": {
+    "t": 1136,
+    "b": 1496.5,
+    "l": 183.1,
+    "r": 423.9
+   },
+   "headerBottom": 72,
+   "cta": {
+    "t": 1423,
+    "b": 1475,
+    "w": 173,
+    "h": 52
+   },
+   "hScroll": 0,
+   "ch1Top": 72,
+   "ch1Eyebrow": 331.6,
+   "ch1H1": 365.4,
+   "ch2Top": 900,
+   "ch2Bottom": 1728,
+   "ch2H": 828,
+   "footerTop": 900,
+   "scrollY": 0,
+   "snap": "hp-chapters hp-chapters--snap",
+   "checks": [
+    "01/02, ch1 top 72, eyebrow 331.6, h1 365.4, header 72",
+    "no console errors"
+   ]
+  },
+  "checks": [
+   "01/02, ch1 top 72, eyebrow 331.6, h1 365.4, header 72",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-06-home-chapter02-mobile-390-en.png",
+  "w": 390,
+  "h": 844,
+  "locale": "en",
+  "path": "/home",
+  "chapter": 2,
+  "bytes": 464100,
+  "sha": "98be06cf3d2c485323eb120eb675de46b5523109985afa536f269c9c9e476df0",
+  "geo": {
+   "nav": "02 / 02",
+   "activeIndex": 1,
+   "cover": {
+    "t": 68.5,
+    "b": 346.2,
+    "l": 80.1,
+    "r": 266.9
+   },
+   "headerBottom": 57,
+   "cta": {
+    "t": 639.2,
+    "b": 691.2,
+    "w": 173,
+    "h": 52
+   },
+   "hScroll": 0,
+   "ch1Top": -787,
+   "ch1Eyebrow": -677.1,
+   "ch1H1": -643.3,
+   "ch2Top": 0,
+   "ch2Bottom": 844,
+   "ch2H": 844,
+   "footerTop": 844,
+   "scrollY": 844,
+   "snap": "hp-chapters",
+   "checks": [
+    "CTA 173x52 bottom 691.2 gap 152.8",
+    "02/02, cover 68.5..346.2, header 57 (clear 11.5)",
+    "chapter h 844, footer gap 0",
+    "no console errors"
+   ]
+  },
+  "checks": [
+   "CTA 173x52 bottom 691.2 gap 152.8",
+   "02/02, cover 68.5..346.2, header 57 (clear 11.5)",
+   "chapter h 844, footer gap 0",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-07-home-chapter02-mobile-360-en.png",
+  "w": 360,
+  "h": 800,
+  "locale": "en",
+  "path": "/home",
+  "chapter": 2,
+  "bytes": 408294,
+  "sha": "7ef53575756d25d6f53a20e201c480e1d9a9d5b3a5d2ff552491eabb57784608",
+  "geo": {
+   "nav": "02 / 02",
+   "activeIndex": 1,
+   "cover": {
+    "t": 68.5,
+    "b": 346.2,
+    "l": 65.1,
+    "r": 251.9
+   },
+   "headerBottom": 57,
+   "cta": {
+    "t": 652.7,
+    "b": 704.7,
+    "w": 173,
+    "h": 52
+   },
+   "hScroll": 0,
+   "ch1Top": -743,
+   "ch1Eyebrow": -638.4,
+   "ch1H1": -604.6,
+   "ch2Top": 0,
+   "ch2Bottom": 816.7,
+   "ch2H": 816.7,
+   "footerTop": 816.7,
+   "scrollY": 800,
+   "snap": "hp-chapters",
+   "checks": [
+    "CTA 173x52 bottom 704.7 gap 95.3",
+    "02/02, cover 68.5..346.2, header 57 (clear 11.5)",
+    "chapter h 816.7, footer gap 0",
+    "no console errors"
+   ]
+  },
+  "checks": [
+   "CTA 173x52 bottom 704.7 gap 95.3",
+   "02/02, cover 68.5..346.2, header 57 (clear 11.5)",
+   "chapter h 816.7, footer gap 0",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-08-home-chapter02-tablet-768-en.png",
+  "w": 768,
+  "h": 1024,
+  "locale": "en",
+  "path": "/home",
+  "chapter": 2,
+  "bytes": 1067038,
+  "sha": "243109aa44c407e7f43ed7e33e32e20734987ca8d49ebcb33b7b4952c7493e69",
+  "geo": {
+   "nav": "02 / 02",
+   "activeIndex": 1,
+   "cover": {
+    "t": 390.3,
+    "b": 698,
+    "l": 52.6,
+    "r": 259.1
+   },
+   "headerBottom": 61,
+   "cta": {
+    "t": 666.6,
+    "b": 718.6,
+    "w": 173,
+    "h": 52
+   },
+   "hScroll": 0,
+   "ch1Top": -902,
+   "ch1Eyebrow": -531.9,
+   "ch1H1": -498.1,
+   "ch2Top": 61,
+   "ch2Bottom": 1024,
+   "ch2H": 963,
+   "footerTop": 1024,
+   "scrollY": 963,
+   "snap": "hp-chapters",
+   "checks": [
+    "CTA 173x52 bottom 718.6 gap 305.4",
+    "chapter fills viewport: ch2 61..1024, footer gap 0",
+    "02/02, cover 390.3..698, header 61 (clear 329.3)",
+    "chapter h 963, footer gap 0",
+    "no console errors"
+   ]
+  },
+  "checks": [
+   "CTA 173x52 bottom 718.6 gap 305.4",
+   "chapter fills viewport: ch2 61..1024, footer gap 0",
+   "02/02, cover 390.3..698, header 61 (clear 329.3)",
+   "chapter h 963, footer gap 0",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-09-home-chapter02-desktop-1280-en.png",
+  "w": 1280,
+  "h": 800,
+  "locale": "en",
+  "path": "/home",
+  "chapter": 2,
+  "bytes": 1415506,
+  "sha": "e93ee4049ca5101eee2801e03415d129225d8d812632838a9afc4e4e351d8409",
+  "geo": {
+   "nav": "02 / 02",
+   "activeIndex": 1,
+   "cover": {
+    "t": 278.2,
+    "b": 597.3,
+    "l": 120.4,
+    "r": 334.4
+   },
+   "headerBottom": 72,
+   "cta": {
+    "t": 543.6,
+    "b": 595.6,
+    "w": 173,
+    "h": 52
+   },
+   "hScroll": 0,
+   "ch1Top": -656,
+   "ch1Eyebrow": -439.6,
+   "ch1H1": -405.8,
+   "ch2Top": 72,
+   "ch2Bottom": 800,
+   "ch2H": 728,
+   "footerTop": 800,
+   "scrollY": 0,
+   "snap": "hp-chapters hp-chapters--snap",
+   "checks": [
+    "02/02, cover 278.2..597.3, header 72 (clear 206.2)",
+    "chapter h 728, footer gap 0",
+    "no console errors"
+   ]
+  },
+  "checks": [
+   "02/02, cover 278.2..597.3, header 72 (clear 206.2)",
+   "chapter h 728, footer gap 0",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-10-home-chapter02-reduced-motion-1024-en.png",
+  "w": 1024,
+  "h": 768,
+  "locale": "en",
+  "path": "/home",
+  "chapter": 2,
+  "bytes": 1141859,
+  "sha": "1a6cf6843a2861234084cec2cd877ad3e76f4a0d1cac23955ca9d65f3c54341d",
+  "geo": {
+   "nav": "02 / 02",
+   "activeIndex": 1,
+   "cover": {
+    "t": 262.3,
+    "b": 570,
+    "l": 106.7,
+    "r": 313.3
+   },
+   "headerBottom": 61,
+   "cta": {
+    "t": 529.8,
+    "b": 581.8,
+    "w": 173,
+    "h": 52
+   },
+   "hScroll": 0,
+   "ch1Top": -646,
+   "ch1Eyebrow": -429.3,
+   "ch1H1": -395.5,
+   "ch2Top": 61,
+   "ch2Bottom": 768,
+   "ch2H": 707,
+   "footerTop": 768,
+   "scrollY": 707,
+   "snap": "hp-chapters",
+   "checks": [
+    "chapter fills viewport: ch2 61..768, footer gap 0",
+    "02/02, cover 262.3..570, header 61 (clear 201.3)",
+    "chapter h 707, footer gap 0",
+    "no console errors"
+   ]
+  },
+  "checks": [
+   "chapter fills viewport: ch2 61..768, footer gap 0",
+   "02/02, cover 262.3..570, header 61 (clear 201.3)",
+   "chapter h 707, footer gap 0",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-11-body-desktop-1440-en.png",
+  "w": 1440,
+  "h": 900,
+  "locale": "en",
+  "path": "/body",
+  "chapter": null,
+  "bytes": 489386,
+  "sha": "2ff2a683371119cf8af661d4c3d90d9d6f31dd45c3cd1be975da0c89dc0fb2b2",
+  "geo": null,
+  "checks": [
+   "h1 \"Tell us where you feel it\"",
+   "header 72, h1 top 93",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-12-body-heart-desktop-1440-en.png",
+  "w": 1440,
+  "h": 900,
+  "locale": "en",
+  "path": "/body",
+  "chapter": null,
+  "bytes": 495423,
+  "sha": "f73710485993ad401cc7084432b271a507f573d20ccc5a9adda42dcabf5d1665",
+  "geo": null,
+  "checks": [
+   "h1 \"Tell us where you feel it\"",
+   "header 72, h1 top 93",
+   "selected \"Heart\"",
+   "callout shown",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-13-body-mobile-390-ar.png",
+  "w": 390,
+  "h": 844,
+  "locale": "ar",
+  "path": "/body",
+  "chapter": null,
+  "bytes": 150920,
+  "sha": "13612c11bf53271c7633a5879fd4fe4f392dafa5ddb324e64a46605cf91446be",
+  "geo": null,
+  "checks": [
+   "h1 \"أخبرنا أين تشعر به\"",
+   "header 57, h1 top 75",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-14-symptoms-desktop-1440-en.png",
+  "w": 1440,
+  "h": 900,
+  "locale": "en",
+  "path": "/symptoms",
+  "chapter": null,
+  "bytes": 174870,
+  "sha": "fde1ee3309f41de78a30bd0a470af249010cf05adda09acd8caf5e21c3ceda19",
+  "geo": null,
+  "checks": [
+   "h1 \"Explore by body area\"",
+   "header 72, h1 top 193",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-15-book-desktop-1440-en.png",
+  "w": 1440,
+  "h": 900,
+  "locale": "en",
+  "path": "/book",
+  "chapter": null,
+  "bytes": 1155836,
+  "sha": "616edbd8d20d1a7ca4c192831ee05e9baa4eb23c688128944d8b7faa1a3f5002",
+  "geo": null,
+  "checks": [
+   "h1 \"The Orkod Secrets\"",
+   "header 72, h1 top 193",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-16-donations-desktop-1440-en.png",
+  "w": 1440,
+  "h": 900,
+  "locale": "en",
+  "path": "/donations",
+  "chapter": null,
+  "bytes": 154346,
+  "sha": "e64b407ba657b1903b49309404fb5808083ac72cbaf7442a6f63d164af6d7b4e",
+  "geo": null,
+  "checks": [
+   "h1 \"Donate a session to those in need\"",
+   "header 72, h1 top 193",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-17-quiz-gate-desktop-1440-en.png",
+  "w": 1440,
+  "h": 900,
+  "locale": "en",
+  "path": "/quiz",
+  "chapter": null,
+  "bytes": 461894,
+  "sha": "be86b54f3ba5cd501cd901e83df5f82e572084547824111f1a763c4241df9ab6",
+  "geo": null,
+  "checks": [
+   "h1 \"Log in to Orkod\"",
+   "header 0, h1 top 215",
+   "gated to /login?redirect=/quiz",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-18-not-found-desktop-1440-en.png",
+  "w": 1440,
+  "h": 900,
+  "locale": "en",
+  "path": "/this-page-does-not-exist",
+  "chapter": null,
+  "bytes": 9358,
+  "sha": "0cf86c46524b330b08b4d6455a346d9015444d0dc3047de689843ef4f06320d2",
+  "geo": null,
+  "checks": [
+   "h1 \"404\"",
+   "header 0, h1 top 414",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-19-home-chapter02-mobile-390-fr.png",
+  "w": 390,
+  "h": 844,
+  "locale": "fr",
+  "path": "/home",
+  "chapter": 2,
+  "bytes": 464592,
+  "sha": "95f9588a9977a8f6a67ee4cc194e24267b834f63c1b79778639e64ac2778d89f",
+  "geo": {
+   "nav": "02 / 02",
+   "activeIndex": 1,
+   "cover": {
+    "t": 68.5,
+    "b": 346.2,
+    "l": 80.1,
+    "r": 266.9
+   },
+   "headerBottom": 57,
+   "cta": {
+    "t": 664.7,
+    "b": 716.7,
+    "w": 151,
+    "h": 52
+   },
+   "hScroll": 0,
+   "ch1Top": -787,
+   "ch1Eyebrow": -677.1,
+   "ch1H1": -643.3,
+   "ch2Top": 0,
+   "ch2Bottom": 844,
+   "ch2H": 844,
+   "footerTop": 844,
+   "scrollY": 844,
+   "snap": "hp-chapters",
+   "checks": [
+    "CTA 151x52 bottom 716.7 gap 127.3",
+    "02/02, cover 68.5..346.2, header 57 (clear 11.5)",
+    "chapter h 844, footer gap 0",
+    "no console errors"
+   ]
+  },
+  "checks": [
+   "CTA 151x52 bottom 716.7 gap 127.3",
+   "02/02, cover 68.5..346.2, header 57 (clear 11.5)",
+   "chapter h 844, footer gap 0",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-20-home-chapter02-mobile-360-fr.png",
+  "w": 360,
+  "h": 800,
+  "locale": "fr",
+  "path": "/home",
+  "chapter": 2,
+  "bytes": 402635,
+  "sha": "78dfd967a7c1292757e2deb15051745c5b17487b4970a5a68461036c19552993",
+  "geo": {
+   "nav": "02 / 02",
+   "activeIndex": 1,
+   "cover": {
+    "t": 68.5,
+    "b": 346.2,
+    "l": 65.1,
+    "r": 251.9
+   },
+   "headerBottom": 57,
+   "cta": {
+    "t": 730.5,
+    "b": 782.5,
+    "w": 151,
+    "h": 52
+   },
+   "hScroll": 0,
+   "ch1Top": -743,
+   "ch1Eyebrow": -638.4,
+   "ch1H1": -604.6,
+   "ch2Top": 0,
+   "ch2Bottom": 894.5,
+   "ch2H": 894.5,
+   "footerTop": 894.5,
+   "scrollY": 800,
+   "snap": "hp-chapters",
+   "checks": [
+    "CTA 151x52 bottom 782.5 gap 17.5",
+    "02/02, cover 68.5..346.2, header 57 (clear 11.5)",
+    "chapter h 894.5, footer gap 0",
+    "no console errors"
+   ]
+  },
+  "checks": [
+   "CTA 151x52 bottom 782.5 gap 17.5",
+   "02/02, cover 68.5..346.2, header 57 (clear 11.5)",
+   "chapter h 894.5, footer gap 0",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-21-home-chapter02-mobile-390-ar.png",
+  "w": 390,
+  "h": 844,
+  "locale": "ar",
+  "path": "/home",
+  "chapter": 2,
+  "bytes": 461170,
+  "sha": "8c1b42840bd5d065a98465e1003044912e4e6f97262e10f3c8b7f22c8bfc1156",
+  "geo": {
+   "nav": "02 / 02",
+   "activeIndex": 1,
+   "cover": {
+    "t": 68.5,
+    "b": 346.2,
+    "l": 126.1,
+    "r": 312.9
+   },
+   "headerBottom": 57,
+   "cta": {
+    "t": 610.1,
+    "b": 662.1,
+    "w": 154,
+    "h": 52
+   },
+   "hScroll": 0,
+   "ch1Top": -787,
+   "ch1Eyebrow": -680.7,
+   "ch1H1": -646.9,
+   "ch2Top": 0,
+   "ch2Bottom": 844,
+   "ch2H": 844,
+   "footerTop": 844,
+   "scrollY": 844,
+   "snap": "hp-chapters",
+   "checks": [
+    "CTA 154x52 bottom 662.1 gap 181.9",
+    "02/02, cover 68.5..346.2, header 57 (clear 11.5)",
+    "chapter h 844, footer gap 0",
+    "no console errors"
+   ]
+  },
+  "checks": [
+   "CTA 154x52 bottom 662.1 gap 181.9",
+   "02/02, cover 68.5..346.2, header 57 (clear 11.5)",
+   "chapter h 844, footer gap 0",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-22-home-chapter02-mobile-360-id.png",
+  "w": 360,
+  "h": 800,
+  "locale": "id",
+  "path": "/home",
+  "chapter": 2,
+  "bytes": 406275,
+  "sha": "85980836648d2baf4fa68ad4e1a3b009361f1dcfce0e15841df38e2f8341f151",
+  "geo": {
+   "nav": "02 / 02",
+   "activeIndex": 1,
+   "cover": {
+    "t": 68.5,
+    "b": 346.2,
+    "l": 65.1,
+    "r": 251.9
+   },
+   "headerBottom": 57,
+   "cta": {
+    "t": 652.7,
+    "b": 704.7,
+    "w": 149,
+    "h": 52
+   },
+   "hScroll": 0,
+   "ch1Top": -743,
+   "ch1Eyebrow": -638.4,
+   "ch1H1": -604.6,
+   "ch2Top": 0,
+   "ch2Bottom": 816.7,
+   "ch2H": 816.7,
+   "footerTop": 816.7,
+   "scrollY": 800,
+   "snap": "hp-chapters",
+   "checks": [
+    "CTA 149x52 bottom 704.7 gap 95.3",
+    "02/02, cover 68.5..346.2, header 57 (clear 11.5)",
+    "chapter h 816.7, footer gap 0",
+    "no console errors"
+   ]
+  },
+  "checks": [
+   "CTA 149x52 bottom 704.7 gap 95.3",
+   "02/02, cover 68.5..346.2, header 57 (clear 11.5)",
+   "chapter h 816.7, footer gap 0",
+   "no console errors"
+  ]
+ },
+ {
+  "file": "r26-23-home-chapter02-resized-390-360-fr.png",
+  "w": 390,
+  "h": 844,
+  "locale": "fr",
+  "path": "/home",
+  "chapter": 2,
+  "bytes": 402319,
+  "sha": "6b8c5a20ece88f3121b2695dee0920d084dc3c56c2fbc400f369d25223c7a5c7",
+  "geo": {
+   "nav": "02 / 02",
+   "activeIndex": 1,
+   "cover": {
+    "t": 68.5,
+    "b": 346.2,
+    "l": 65.1,
+    "r": 251.9
+   },
+   "headerBottom": 57,
+   "cta": {
+    "t": 730.5,
+    "b": 782.5,
+    "w": 151,
+    "h": 52
+   },
+   "hScroll": 0,
+   "ch1Top": -743,
+   "ch1Eyebrow": -638.4,
+   "ch1H1": -604.6,
+   "ch2Top": 0,
+   "ch2Bottom": 894.5,
+   "ch2H": 894.5,
+   "footerTop": 894.5,
+   "scrollY": 800,
+   "snap": "hp-chapters",
+   "checks": [
+    "CTA 151x52 bottom 782.5 gap 61.5",
+    "resized 390x844 -> 360x800; cover top 68.5, header 57, ch2 top 0",
+    "02/02, cover 68.5..346.2, header 57 (clear 11.5)",
+    "chapter h 894.5, footer gap 0",
+    "no console errors"
+   ]
+  },
+  "checks": [
+   "CTA 151x52 bottom 782.5 gap 61.5",
+   "resized 390x844 -> 360x800; cover top 68.5, header 57, ch2 top 0",
+   "02/02, cover 68.5..346.2, header 57 (clear 11.5)",
+   "chapter h 894.5, footer gap 0",
+   "no console errors"
+  ]
+ }
+]

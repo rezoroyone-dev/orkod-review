@@ -1,0 +1,225 @@
+Round 26 - Orkod performance pass + responsive polish (tablet band, FR short phones, resize crop)
+Generated 2026-10-22T15:58:00Z
+
+Scope
+-----
+Follow-up to Round 25 on the running site at https://localhost (Vite dev server,
+self-signed cert, headless Edge via playwright-core) and on the production build
+served by `vite preview` (service worker enabled/blocked as noted). Two files
+changed:
+
+  frontend/src/views/HomePage.vue   (layout + resize correction)
+  frontend/vite.config.mts          (three.js chunk split, /models/ SW cache)
+
+No redesign, no copy change, no new dependency, no WebGL context change, no
+backend/database/Docker/README/Makefile change, no scroll snapping added. The app
+repo was not committed, staged or pushed; only the review artefacts were pushed.
+
+What was wrong
+--------------
+1) Tablet band 768..960 (non-snap layout). Chapters were content-height, while
+   `.orkod-public` keeps `min-height: calc(100svh - chrome)`. At 768x1024 the deck
+   ended at y=423 and the footer only started at y=1024 (100svh): a ~361px pale
+   #F7FAF5 band between the dark chapter and the footer. 960x800 had 76px, reduced
+   motion 1024x768 had 34px, 1280x800 had ~2px.
+2) French short phones. At 390x844 the chapter 02 CTA ended at y=838 (5.7px from
+   the edge); at 360x800 it ended at y=848, i.e. ~48px below the fold. The long
+   French heading/body wraps to extra lines. en/ar fit at both sizes.
+3) Same-mode resize drift. 390x844 -> 360x800 preserves the document scrollY while
+   chapter 01 reflows from 844 to 800px, so #hp-ch2 ended at top=-44 and the book
+   cover at top=24.5: its top 32.5px sat under the 57px fixed header until the next
+   scroll. Cross-mode changes were already handled by Round 25.
+4) Every page preloaded `vendor` (1,093.92kB raw / 316.48kB gzip) because three.js
+   was merged into that shared chunk, even though only the lazy /body route imports
+   it. Every visitor downloaded ~670kB of 3D engine on the language gate, home,
+   book, donations, etc.
+5) /body re-downloaded the 1.1MB body shell + 5.4MB organ bundle + 242KB manifest
+   on every visit; the SW had no runtime rule for /models/.
+
+Changes
+-------
+HomePage.vue (CSS):
+- `@media (min-width:768px) .hp-chapters:not(.hp-chapters--snap) .hp-chapter`
+  now gets `min-height: calc(100svh - var(--bx-chrome-top,72px))`, `display:flex`,
+  `align-items:center`, mirroring the snapped desktop chapter. Existing `.hp-wrap`
+  keeps its own `min(100% - 48px, 1240px)` width and inline auto margins.
+- Mobile `.hp-chapter--two` gets `min-height: 100svh`. Mobile chapters scroll under
+  the fixed header (scroll-margin 0), so minus-chrome was 57px short once the
+  trims below made its content shorter than the viewport; this removes the last
+  pale strip above the footer.
+- Short-phone spacing (chapter 02 only) now applies at `max-height:860px` (was
+  830): eyebrow margin 14->9, badge 18->12, body 16->10, actions 32->16, grid gap
+  28->20, stage padding 10->6, cover 196->190. A second tier at
+  `max-height:810px` trims a further 12px of rhythm (eyebrow 7, badge 10, body 8,
+  actions 14, grid gap 16). No type size changes; the CTA stays 52px tall.
+HomePage.vue (JS):
+- `onViewportResize()` runs on `resize`, updates the chapter indicator as before,
+  and for width-only changes (not snap mode) re-aligns the current chapter after a
+  220ms debounce, but only when its top is within 1..56px of the viewport top. A
+  free-scrolling visitor is never yanked, and height-only resizes (mobile URL bar)
+  do nothing. The timer is cleared on unmount.
+vite.config.mts:
+- manualChunks: `node_modules/three` -> `vendor-three`. It is still precached by
+  the PWA (offline /body) but no longer modulepreloaded by other routes.
+- workbox runtimeCaching: `/models/` -> CacheFirst, cache `body-models-cache`,
+  12 entries / 30 days, statuses 0/200. Comment records that the anatomy bundle is
+  not fingerprinted, so a rebuild must bump the cache name.
+
+Measured results
+----------------
+
+A) Tablet band (fresh load, real rail click; footer gap = footer.top - ch2.bottom)
+
+  viewport                ch2 top..bottom      ch2 height   footer gap   before
+  768x1024  en            61 .. 1024           963          0            361
+  820x1180  en            61 .. 1180           1119         0            ~360
+  960x800   en            61 .. 800            739          0            76
+  1024x768  reduced       61 .. 768            707          0            34
+  1280x800  reduced       72 .. 800            728          0            ~2
+  1440x900  snap (control) 72 .. 900           828          0            0
+
+  The content column is centred exactly like the snapped layout: 768x1024 ch2
+  grid 361..724 inside 61..1024. Header clearance unchanged (ch2 top is 61/72,
+  below the fixed chrome). No horizontal overflow.
+
+B) Chapter 02 on small phones (final layout, fresh load + rail click)
+
+  case                 ch height   cover top..bottom   CTA (w x h)  CTA bottom   gap
+  390x844 fr           844         68.5 .. 346.2       151 x 52     716.7        127.3
+  360x800 fr           894.5       68.5 .. 346.2       151 x 52     782.5         17.5
+  390x844 en           844         68.5 .. 346.2       173 x 52     691.2        152.8
+  360x800 en           816.7       68.5 .. 346.2       173 x 52     704.7         95.3
+  390x844 ar           844         68.5 .. 346.2       154 x 52     662.1        181.9
+  360x800 ar           800         68.5 .. 346.2       154 x 52     662.1        137.9
+  390x844 id           844         68.5 .. 346.2       149 x 52     691.2        152.8
+  360x800 id           816.7       68.5 .. 346.2       149 x 52     704.7         95.3
+
+  Before: 390 fr CTA 786..838 (gap 5.7); 360 fr CTA 796..848 (48px below the
+  fold); fr chapter height 956/960. Now the CTA is fully visible at both target
+  sizes, still 52px tall, and nothing is clipped. Chapter 02 fills 100svh at
+  390x844 (footer gap 0) and keeps natural scroll at 360x800 (chapter 894.5).
+  The book cover clears the 57px header by 11.5px in every case.
+
+C) Same-mode resize (390x844 -> 360x800, FR, same page)
+
+  before fix: ch2 top -44, cover top 24.5 (32.5px under the 57px header)
+  after fix:  ch2 top 0,  cover top 68.5, CTA 730.5..782.5 (gap 17.5)
+  767x900 -> 360x900: unchanged (already aligned).
+  Width-only trigger, 220ms debounce, ±56px window: a resize while the visitor is
+  mid-chapter does not move the page. Cross-mode 960<->961 and reduced-motion
+  changes still use the Round 25 path (verify-r24.mjs 148/148).
+
+D) JavaScript split (production build, `vite preview`, SW blocked, fresh contexts)
+
+  /home initial JS (5 requests: entry, vendor, vuetify, date-fns, HomePage chunk)
+    before: 2,184,474 B decoded / 649,428 B over the wire (brotli)
+    after:  1,514,084 B decoded / 478,892 B over the wire
+    saved:    670,390 B decoded (-30.7%) / 170,536 B over the wire (-26.3%)
+  index.html modulepreloads only entry + vendor + vuetify + date-fns; three is
+  absent. /body loads the same total as before (7 JS requests, incl.
+  vendor-three): 2,208,252 B decoded / 658,326 B over the wire - the split moves
+  three to where it is actually used, it does not add bytes to /body.
+  CSS unchanged (135.5KB over the wire on both routes).
+
+  Build output: vendor 421.41kB (145.69 gzip), vendor-three 670.39kB (170.54 gzip),
+  entry 449.66kB (144.27), vuetify 560.65kB (173.80). No >1000kB warning remains.
+  PWA precache: 144 entries, 7,694.69KiB; anatomy models are still NOT precached
+  (checked dist/sw.js), and the `/models/` runtime route is present.
+
+E) /body repeat visits (production build, SW enabled, 390x844)
+
+  load 1 (network): GLB 1,144,436 B, anatomy.json 51,536 B (241,958 decoded),
+                    organs.bin.gz 5,696,012 B (9,699,496 after HTTP gzip decode)
+  load 2: all three responses fromServiceWorker=true, transferSize=0
+          (durations 53 / 26 / 153 ms)
+  load 3: all three fromServiceWorker=true, transferSize=0
+          (durations 4 / 2 / 47 ms)
+  So a returning visitor avoids 7,081,806 bytes of model traffic. The first visit
+  is unchanged by design: the organ geometry (Meshopt-simplified, int16-quantized,
+  gzip; 5,695,712 B on disk) is required to draw the seven organs and is fetched
+  only after the body's first frame. Reducing it further means decimating the
+  curated mesh (visual-quality risk), which this round does not do.
+
+F) Verification suite (same tree)
+
+  npx vue-tsc --noEmit                                  exit 0
+  npx eslint src/views/HomePage.vue --ext .vue          exit 0
+  npm run test (vitest)                                 149 passed / 2 failed /
+                                                        110 skipped; 16 files
+                                                        pass / 25 fail - all
+                                                        ECONNREFUSED :9091
+                                                        (585 occurrences),
+                                                        unchanged pre-existing
+                                                        backend-only suites
+  node scripts/static-color-scan.cjs                    PUBLIC: 0 ADMIN: 17
+                                                        UNUSED: 6 - PASS
+  npx vite build                                        pass in 23.62s, no chunk
+                                                        warning (postbuild copy
+                                                        deliberately skipped)
+  verify-r24.mjs                                        148/148
+  audit-journeys.mjs                                    47/47 (mocked auth/quiz/
+                                                        donations marked mocked)
+  audit-body.mjs                                        47/47
+  audit-routes.mjs                                      315/315
+  audit-perf.mjs                                        26/26; CLS 0.0000..0.0006;
+                                                        busy 0% / 0% / 3%
+  scripts/check-framing.mjs                             all 6 viewports OK
+  scripts/locale-parity.mjs                             1262 keys each en/fr/ar/id,
+                                                        0 referenced missing
+  scripts/raw-key-scan.mjs                              PASS on 22 public routes
+
+  Live backend still reachable through the Vite proxy: GET /api/public/donations
+  -> 200 {enabled:true,donations:[]}. Backend/Docker were not restarted.
+
+Captures (assertions run before each shutter; the script aborts rather than save
+a misleading shot)
+------------------------------------------------------------------------------
+r26-01-gate-mobile-390-en.png                 390x844  en    250250 B  0cbb21e7dd3b0e0b...
+r26-02-gate-desktop-1440-en.png              1440x900  en   1496193 B  d606163ba5a7e484...
+r26-03-start-mobile-390-en.png                390x844  en    558129 B  fd69451a86a599e2...
+r26-04-start-desktop-1440-en.png             1440x900  en   2083472 B  f983fe8b23c74956...
+r26-05-home-chapter01-desktop-1440-en.png    1440x900  en   1523174 B  18ed7902e43bd109...
+r26-06-home-chapter02-mobile-390-en.png       390x844  en    464100 B  98be06cf3d2c4853...
+r26-07-home-chapter02-mobile-360-en.png       360x800  en    408294 B  7ef53575756d25d6...
+r26-08-home-chapter02-tablet-768-en.png       768x1024  en   1067038 B  243109aa44c407e7...
+r26-09-home-chapter02-desktop-1280-en.png    1280x800  en   1415506 B  e93ee4049ca5101e...
+r26-10-home-chapter02-reduced-motion-1024-en.png 1024x768 en 1141859 B 1a6cf6843a286123...
+r26-11-body-desktop-1440-en.png              1440x900  en    489386 B  2ff2a683371119cf...
+r26-12-body-heart-desktop-1440-en.png        1440x900  en    495423 B  f73710485993ad40...
+r26-13-body-mobile-390-ar.png                 390x844  ar    150920 B  13612c11bf53271c...
+r26-14-symptoms-desktop-1440-en.png          1440x900  en    174870 B  fde1ee3309f41de7...
+r26-15-book-desktop-1440-en.png              1440x900  en   1155836 B  616edbd8d20d1a7c...
+r26-16-donations-desktop-1440-en.png         1440x900  en    154346 B  e64b407ba657b190...
+r26-17-quiz-gate-desktop-1440-en.png         1440x900  en    461894 B  be86b54f3ba5cd50...
+r26-18-not-found-desktop-1440-en.png         1440x900  en      9358 B  0cf86c46524b330b...
+r26-19-home-chapter02-mobile-390-fr.png       390x844  fr    464592 B  95f9588a9977a8f6...
+r26-20-home-chapter02-mobile-360-fr.png       360x800  fr    402635 B  78dfd967a7c12927...
+r26-21-home-chapter02-mobile-390-ar.png       390x844  ar    461170 B  8c1b42840bd5d065...
+r26-22-home-chapter02-mobile-360-id.png       360x800  id    406275 B  85980836648d2baf...
+r26-23-home-chapter02-resized-390-360-fr.png  390x844  fr    402319 B  6b8c5a20ece88f31...
+
+Cross-round pixel evidence
+--------------------------
+- r26-05 (1440 chapter 01) is byte-identical to R25/R24: 18ed7902e43bd109...
+- r26-13 (body ar), r26-14 (symptoms), r26-16 (donations), r26-17 (quiz gate),
+  r26-18 (404) are byte-identical to their R25 files.
+- r26-09 (1280 chapter 02) differs from R25 by at most 10/255 per channel on
+  1,272 of 1,024,000 pixels (mean 0.16, 0.12%): sub-visible render dither, same
+  DOM geometry; the desktop composition is unchanged.
+- r26-08 (768 tablet) now shows the chapter filling the viewport; file size rose
+  from 488B-class (pale band) to 1.07MB because the dark forest backdrop now
+  covers the band instead of the page background.
+
+Residual limitations
+--------------------
+- The first /body visit still transfers 7.08MB of model data. It is required for
+  the seven-organ figure; repeat visits are now cache hits. A smaller first load
+  needs an asset-pipeline rebuild/decimation, not a runtime change.
+- The `/models/` CacheFirst cache is keyed by URL; anatomy files are not
+  fingerprinted. Rebuilding them requires bumping `body-models-cache` (documented
+  in vite.config.mts).
+- Vitest's 25 failing files are the unchanged backend-only suites; backend on
+  :9091 was intentionally not started.
+- No visual inspection of the PNGs is claimed. All evidence is DOM geometry, hit
+  tests, layout arithmetic, pixel statistics/hashes and browser assertions.
+- Round 21/22/23/24/25 preview directories were left untouched.
