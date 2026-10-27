@@ -1,4 +1,4 @@
-﻿import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach } from 'vitest';
 import { setActivePinia, createPinia } from 'pinia';
 import SuperUserService from '@/services/SuperUserService';
 import { useUserStore } from '@/stores/user';
@@ -7,7 +7,7 @@ import { getAdminUser } from './testAuth';
 
 // This is a pure logic test for the authentication flow, bypassing the UI WeakMap issues
 describe('Authentication Logic Flow', () => {
-  const adminCreds = { userName: 'admin', passWord: (process.env.TEST_ADMIN_PASSWORD ?? 'test-admin-password') };
+  const adminCreds = { userName: 'admin', passWord: 'R8g9f6T@21/N' };
 
   beforeEach(() => {
     setActivePinia(createPinia());

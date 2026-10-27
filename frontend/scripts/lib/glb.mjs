@@ -1,44 +1,73 @@
 /**
  * Orkod - minimal GLB reader shared by the body-asset scripts.
  *
- * Deliberately dependency-free and deliberately general: real assets ship with
- * several meshes and primitives, `KHR_mesh_quantization` (normalised int16
- * positions), non-indexed triangles and per-node TRS transforms, so anything
+ * Deliberately dependency-free apart from `meshoptimizer` (used only to decode
+ * `EXT_meshopt_compression`), and deliberately general: real assets ship with
+ * several meshes and primitives, `KHR_mesh_quantization` (normalised integer
+ * positions/normals), `EXT_meshopt_compression` (the whole buffer is Meshopt-
+ * compressed), non-indexed triangles and per-node TRS transforms, so anything
  * that assumes "one mesh, one float32 POSITION accessor" reads the wrong
  * numbers.
  *
  * Used by verify-body-glb.mjs, preview-body-glb.mjs and check-framing.mjs.
  */
 import { readFileSync } from 'node:fs';
+import { MeshoptDecoder } from 'meshoptimizer/decoder';
 
 const GLB_MAGIC = 0x46546c67;
 const CHUNK_JSON = 0x4e4f534a;
 const CHUNK_BIN = 0x004e4942;
 
-/** Reads the exact bytes of one bufferView. */
-function view(bin, json, i) {
-  const bv = json.bufferViews[i];
-  return bin.subarray(bv.byteOffset || 0, (bv.byteOffset || 0) + bv.byteLength);
+/** glTF componentType -> byte width, reader and normalisation divisor. */
+const COMPONENT = {
+  5120: { size: 1, read: (dv, o) => dv.getInt8(o), norm: 127 },
+  5121: { size: 1, read: (dv, o) => dv.getUint8(o), norm: 255 },
+  5122: { size: 2, read: (dv, o) => dv.getInt16(o, true), norm: 32767 },
+  5123: { size: 2, read: (dv, o) => dv.getUint16(o, true), norm: 65535 },
+  5125: { size: 4, read: (dv, o) => dv.getUint32(o, true), norm: 4294967295 },
+  5126: { size: 4, read: (dv, o) => dv.getFloat32(o, true), norm: 1 },
+};
+
+/**
+ * Builds one byte view per bufferView, transparently decoding any bufferView
+ * that carries `EXT_meshopt_compression`. The shipped body GLB is one such
+ * file: its accessors point at compressed bytes with no uncompressed fallback,
+ * so the raw bufferView must be decoded before it can be read.
+ */
+async function buildViews(json, bin) {
+  await MeshoptDecoder.ready;
+  const buffers = [bin];
+  return (json.bufferViews || []).map((bv) => {
+    const ext = bv.extensions && bv.extensions.EXT_meshopt_compression;
+    if (!ext) {
+      const src = buffers[bv.buffer ?? 0];
+      return src.subarray(bv.byteOffset || 0, (bv.byteOffset || 0) + bv.byteLength);
+    }
+    if (!MeshoptDecoder.supported) throw new Error('EXT_meshopt_compression present but the decoder is unsupported');
+    const src = buffers[ext.buffer ?? 0];
+    const source = src.subarray(ext.byteOffset || 0, (ext.byteOffset || 0) + ext.byteLength);
+    const stride = ext.byteStride;
+    const target = new Uint8Array(ext.count * stride);
+    MeshoptDecoder.decodeGltfBuffer(target, ext.count, stride, source, ext.mode, ext.filter || 'NONE');
+    return target;
+  });
 }
 
-/** Reads a POSITION/NORMAL-style accessor as Float32 xyz triples. */
-function readVec3(json, bin, accIndex) {
+/** Reads a POSITION/NORMAL-style accessor as Float64 xyz triples. */
+function readVec3(json, views, accIndex) {
   const acc = json.accessors[accIndex];
-  const bv = json.bufferViews[acc.bufferView];
-  const data = view(bin, json, acc.bufferView);
+  const data = views[acc.bufferView];
   const dv = new DataView(data.buffer, data.byteOffset, data.byteLength);
+  const ct = COMPONENT[acc.componentType];
+  const ncomp = acc.type === 'VEC3' ? 3 : acc.type === 'VEC2' ? 2 : 1;
+  const stride = json.bufferViews[acc.bufferView].byteStride ?? ct.size * ncomp;
   const base = acc.byteOffset || 0;
-  const width = acc.componentType === 5126 ? 4 : acc.componentType === 5122 ? 2 : 1;
-  const components = acc.type === 'VEC3' ? 3 : acc.type === 'VEC2' ? 2 : 1;
-  const stride = bv.byteStride ?? width * components;
   const out = new Float64Array(acc.count * 3);
   for (let i = 0; i < acc.count; i++) {
     for (let c = 0; c < 3; c++) {
-      const o = base + i * stride + c * width;
-      let v;
-      if (width === 4) v = dv.getFloat32(o, true);
-      else if (width === 2) v = acc.normalized ? dv.getInt16(o, true) / 32767 : dv.getUint16(o, true);
-      else v = acc.normalized ? dv.getUint8(o) / 255 : dv.getUint8(o);
+      const o = base + i * stride + Math.min(c, ncomp - 1) * ct.size;
+      let v = ct.read(dv, o);
+      if (acc.normalized) v = v / ct.norm;
       out[i * 3 + c] = v;
     }
   }
@@ -46,17 +75,15 @@ function readVec3(json, bin, accIndex) {
 }
 
 /** Reads an index accessor as Uint32. */
-function readIndices(json, bin, accIndex) {
+function readIndices(json, views, accIndex) {
   const acc = json.accessors[accIndex];
-  const data = view(bin, json, acc.bufferView);
+  const data = views[acc.bufferView];
   const dv = new DataView(data.buffer, data.byteOffset, data.byteLength);
+  const ct = COMPONENT[acc.componentType];
+  const stride = json.bufferViews[acc.bufferView].byteStride ?? ct.size;
   const base = acc.byteOffset || 0;
-  const width = acc.componentType === 5125 ? 4 : acc.componentType === 5123 ? 2 : 1;
   const out = new Uint32Array(acc.count);
-  for (let i = 0; i < acc.count; i++) {
-    const o = base + i * width;
-    out[i] = width === 4 ? dv.getUint32(o, true) : width === 2 ? dv.getUint16(o, true) : dv.getUint8(o);
-  }
+  for (let i = 0; i < acc.count; i++) out[i] = ct.read(dv, base + i * stride);
   return out;
 }
 
@@ -83,7 +110,7 @@ export function xformPoint(m, x, y, z) {
  * triangle list over every primitive (welded by exact authored vertex position,
  * which is what makes a closed-manifold check possible on non-indexed meshes).
  */
-export function readGlb(path) {
+export async function readGlb(path) {
   const buf = readFileSync(path);
   const facts = {
     bytes: buf.length,
@@ -108,6 +135,8 @@ export function readGlb(path) {
   facts.extensionsRequired = json.extensionsRequired || [];
   facts.materials = (json.materials || []).map((m) => m.name || '(unnamed)');
 
+  const views = await buildViews(json, bin);
+
   const parts = [];
   const weldedIndex = new Map();
   const worldPos = [];
@@ -121,9 +150,9 @@ export function readGlb(path) {
     const mesh = json.meshes[node.mesh];
     const m = nodeMatrix(node);
     for (const prim of mesh.primitives) {
-      const P = readVec3(json, bin, prim.attributes.POSITION);
-      const N = prim.attributes.NORMAL !== undefined ? readVec3(json, bin, prim.attributes.NORMAL) : null;
-      const I = prim.indices !== undefined ? readIndices(json, bin, prim.indices) : null;
+      const P = readVec3(json, views, prim.attributes.POSITION);
+      const N = prim.attributes.NORMAL !== undefined ? readVec3(json, views, prim.attributes.NORMAL) : null;
+      const I = prim.indices !== undefined ? readIndices(json, views, prim.indices) : null;
       const verts = P.length / 3;
       const tris = I ? I.length / 3 : verts / 3;
       const material = json.materials?.[prim.material]?.name ?? '(unnamed)';
@@ -140,7 +169,7 @@ export function readGlb(path) {
           id = worldPos.length / 3;
           weldedIndex.set(key, id);
           worldPos.push(p[0], p[1], p[2]);
-          worldNrm.push(N ? m[0] * N[i * 3] : 0, N ? m[1] * N[i * 3 + 1] : 0, N ? m[2] * N[i * 3 + 2] : 0);
+          worldNrm.push(N ? N[i * 3] : 0, N ? N[i * 3 + 1] : 0, N ? N[i * 3 + 2] : 0);
         }
         local[i] = id;
       }

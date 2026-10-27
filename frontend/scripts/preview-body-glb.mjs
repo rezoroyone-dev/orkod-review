@@ -22,7 +22,7 @@ const argOf = (n, d) => {
   const i = argv.indexOf(`--${n}`);
   return i !== -1 && argv[i + 1] ? argv[i + 1] : d;
 };
-const GLB_PATH = resolve(argOf('glb', 'public/models/orkod/orkod-human-body.0db6962c.glb'));
+const GLB_PATH = resolve(argOf('glb', 'public/models/orkod/orkod-human-body.8521db4e.glb'));
 const OUTDIR = resolve(argOf('outdir', 'preview/body'));
 
 /** Front, the two obliques and quarter turns, both profiles, then back home. */
@@ -74,7 +74,7 @@ function writePNG(path, w, h, rgb) {
   );
 }
 
-const g = readGlb(GLB_PATH);
+const g = await readGlb(GLB_PATH);
 const { pos, nrm, idx } = g;
 const V = g.weldedVertices;
 const T = g.triangleCount;

@@ -111,8 +111,9 @@ import { REGION_COLORS, isOrgan } from '@/data/anatomy';
  *
  * Data: internal organs are BodyParts3D (c) Database Center for Life Science,
  * CC BY 4.0, curated by scripts/build-anatomy.mjs; see
- * /models/anatomy/ATTRIBUTION.md. The body shell is the CC0 (public domain)
- * Grab3D "Human Muscles" écorché - see /models/ORKOD-ASSETS.md.
+ * /models/anatomy/ATTRIBUTION.md. The body shell is the Mandrake "Male body
+ * base mesh (highpoly)" adult male body, CC BY 4.0 (attribution required) - see
+ * /models/ORKOD-ASSETS.md.
  */
 
 const props = withDefaults(
@@ -301,12 +302,12 @@ const disposables: { dispose: () => void }[] = [];
  * of the `body` layer, so the BodyParts3D `skin` region is never built or
  * rendered — that region would add a second external surface under this one.
  *
- * The asset is the Grab3D "Human Muscles" CC0 écorché: a full-body adult male
- * figure with the skin removed, showing the superficial muscle layer from head
- * to toe, standing with the arms hanging slightly away from the body. It is a
- * single mesh with a single textured material, no skeleton and no clothing, and
- * it carries no external genital geometry (the model stops at the muscle layer).
- * It is fitted, baked, to the organs and shipped as one shell; see
+ * The asset is the Mandrake "Male body base mesh (highpoly)" adult male body
+ * (CC BY 4.0, attribution required): a single natural outer-surface mesh with
+ * no exposed muscle, no clothing and no external genital geometry, standing in
+ * a relaxed A-pose with the arms held slightly away from the body. It carries
+ * no textures — its form is real geometry shaded from vertex normals. It is
+ * fitted, baked, to the organs and shipped as one shell; see
  * /models/ORKOD-ASSETS.md.
  */
 let bodyShell: THREE.Object3D | null = null;
@@ -317,7 +318,7 @@ let bodyStats = { meshes: 0, triangles: 0, vertices: 0, materials: 0 };
 let perfReported = false;
 
 /** Shipped size of the body GLB, recorded for the performance line. */
-const BODY_SHELL_KB = 9185;
+const BODY_SHELL_KB = 1117;
 
 /**
  * Local path to the prepared body shell.
@@ -329,24 +330,24 @@ const BODY_SHELL_KB = 9185;
  * cache miss, which is what actually delivers a rebuilt body to existing
  * visitors.
  *
- * The shipped bytes are Meshopt-compressed (EXT_meshopt_compression): the same
- * 601k-triangle sculpt, 23.7 MB → 9.2 MB, geometry only (the three JPEG
- * textures are unchanged). This is why `loadBodyShell` installs the Meshopt
- * decoder on the loader; without it the GLB cannot be decoded. Keep the name in
- * sync with public/models/ORKOD-ASSETS.md.
+ * The shipped bytes are Meshopt-compressed (EXT_meshopt_compression, with
+ * KHR_mesh_quantization): a 300k-triangle sculpt, 7.2 MB → 1.1 MB. There are no
+ * textures. This is why `loadBodyShell` installs the Meshopt decoder on the
+ * loader; without it the GLB cannot be decoded. Keep the name in sync with
+ * public/models/ORKOD-ASSETS.md.
  */
-const BODY_GLB_URL = '/models/orkod/orkod-human-body.0db6962c.glb';
+const BODY_GLB_URL = '/models/orkod/orkod-human-body.8521db4e.glb';
 
 /**
  * Shell opacity.
  *
  * The body has to read as a person first and a window second. The shell renders
- * as a cool-pearl translucent surface (its sculpted muscle relief comes from the
- * normal map, not from albedo), so it keeps the figure's form and silhouette
- * while the organs read clearly through it. This sits so the organs read at a
- * glance while the head, hands and leg shape stay legible. Below roughly 0.28
- * the figure dissolves into the glow; above roughly 0.6 the organs stop reading
- * through it.
+ * as a cool-pearl translucent surface (the figure's relief comes from the mesh
+ * geometry shaded by vertex normals, not from albedo), so it keeps the figure's
+ * form and silhouette while the organs read clearly through it. This sits so the
+ * organs read at a glance while the head, hands and leg shape stay legible.
+ * Below roughly 0.28 the figure dissolves into the glow; above roughly 0.6 the
+ * organs stop reading through it.
  */
 const BODY_SHELL_OPACITY = 0.5;
 
@@ -397,6 +398,23 @@ let skeletonLoading = false;
 let spinTarget: number | null = null;
 let autoRotate = true;
 let hoverRegion: string | null = null;
+
+/**
+ * Render-on-demand bookkeeping.
+ *
+ * `animate()` used to submit a frame on every requestAnimationFrame tick, even
+ * when nothing had moved — the steady state after a visitor grabs the scene
+ * (auto-rotate off, nothing selected) was a static image paid for at the full
+ * frame rate. `needsRender` is raised by every event that actually changes what
+ * is on screen (pointer hover/selection, layer toggles, resize, camera moves);
+ * the loop skips `renderer.render()` when it is clear. Auto-rotate, a camera
+ * tween, an active selection pulse, and the very first frames all keep drawing
+ * unconditionally, so nothing that animates can stall.
+ */
+let needsRender = true;
+
+/** True while the tab is hidden; the loop is fully parked, not just idle. */
+let loopPaused = false;
 
 /**
  * Smooth camera move. When an organ is selected the camera eases onto it and
@@ -675,10 +693,10 @@ const tex = new THREE.CanvasTexture(canvas);
  * scripts/check-framing.mjs derives the camera from this file's real bounding
  * box. No corrective transform is applied at runtime.
  *
- * Its geometry contains no external genital anatomy: it is the superficial
- * muscle layer with the skin removed, so the figure stops at the muscle and
- * there is no external genital geometry. Nothing is masked, clipped or hidden
- * at runtime.
+ * Its geometry contains no external genital anatomy. It is a smooth anatomical
+ * base mesh (Mandrake, CC BY 4.0), so the figure reads as a neutral body surface
+ * with a flat, featureless groin and there is no external genital geometry.
+ * Nothing is masked, clipped or hidden at runtime.
  *
  * Applies a translucent treatment so the organs read through the body while the
  * muscle form and silhouette stay legible. The material is deliberately matte
@@ -736,18 +754,18 @@ const SHELL_OPACITY = BODY_SHELL_OPACITY;
  */
 function makeTranslucent(mat: THREE.Material): THREE.MeshStandardMaterial {
   const base = mat as THREE.MeshStandardMaterial;
-  // Metalness is forced to 0 and roughness to a matte mid value. The source
-  // écorché material ships metalness/roughness = 1 driven by a packed
-  // metallicRoughness texture; a translucent shell must not inherit those or it
-  // reads as polished metal.
+  // Metalness is forced to 0 and roughness to a matte mid value, and the colour
+  // is a flat cool pearl. A translucent shell must not inherit the source
+  // material's metalness/roughness (the retired écorché shipped those = 1
+  // through a packed metallicRoughness texture and read as polished metal) nor
+  // its albedo: a coloured body stops the silhouette reading as a person, so the
+  // purple environment is left to fall on the neutral surface instead.
   //
-  // The base-colour (muscle albedo) map is deliberately NOT carried on the
-  // shell. Multiplied through at shell opacity it turned the figure into a dim,
-  // muddy maroon mass that read as neither skin nor glass. The normal map is
-  // kept, so the sculpted muscle relief still shades and the figure keeps its
-  // identity, but the surface itself is the neutral cool-pearl SHELL_COLOR, which
-  // is what lets the silhouette read as a person and lets the purple environment
-  // fall on it rather than being painted in.
+  // A normal map is carried over only when the source has one. The shipped
+  // Mandrake shell has no textures at all — its relief is real geometry shaded
+  // from vertex normals — so `base.normalMap` is null and the form comes
+  // straight from the mesh. The branch is kept so a normal-mapped shell (like
+  // the retired écorché) would still shade correctly.
   return new THREE.MeshStandardMaterial({
     color: new THREE.Color(SHELL_COLOR),
     roughness: 0.5,
@@ -1039,6 +1057,7 @@ function toggleLayer(key: 'body' | 'organs' | 'skeleton') {
     const sk = layerMeshes.get('skeleton:skeleton');
     if (sk) sk.visible = layers.skeleton;
   }
+  needsRender = true;
 }
 
 /**
@@ -1122,6 +1141,7 @@ function frameCamera(instant = false) {
     controls.autoRotate = false;
   }
   anchorDirty = true;
+  needsRender = true;
 }
 
 /**
@@ -1187,6 +1207,29 @@ function focusOnSelection() {
     // Any non-organ selection (or clearing) returns to the full-body frame.
     const v = frameView();
     if (v) startCamTween(v.pos, v.target, v.dist * 0.35, v.dist * 4);
+  }
+}
+
+/**
+ * Parks the render loop while the tab is hidden.
+ *
+ * A backgrounded tab has no visible frame, so continuing to pay for a
+ * ~672k-triangle WebGL render every 16 ms is pure waste — battery and heat on
+ * mobile, needless CPU contention on desktop. `animate()` stops rescheduling
+ * itself the moment `document.hidden` is true; this listener resumes the loop
+ * (and forces one fresh frame) when the tab is shown again.
+ */
+function onVisibilityChange() {
+  if (document.hidden) {
+    loopPaused = true;
+    caf(rafId);
+    return;
+  }
+  if (alive && loopPaused) {
+    loopPaused = false;
+    lastT = performance.now();
+    needsRender = true;
+    rafId = raf(animate);
   }
 }
 
@@ -1256,6 +1299,7 @@ function initScene() {
   });
   controls.addEventListener('change', () => {
     anchorDirty = true;
+    needsRender = true;
   });
 
   raycaster = new THREE.Raycaster();
@@ -1297,6 +1341,7 @@ function initScene() {
           renderer.setSize(s.w, s.h, false);
           frameCamera(true);
           anchorDirty = true;
+          needsRender = true;
         })
       : null;
   resizeObs?.observe(stage);
@@ -1306,6 +1351,9 @@ function initScene() {
     console.error('[HumanBody3D] WebGL context lost');
     state.value = 'error';
   });
+
+  // Park the loop (and free the GPU) whenever the tab is backgrounded.
+  document.addEventListener('visibilitychange', onVisibilityChange);
 
   // The one and only external body shell. Loading is async, so the scene is
   // populated as soon as it resolves; `state` still only becomes 'ready' from
@@ -1335,6 +1383,7 @@ function initScene() {
   );
 
   firstFrameDone = false;
+  needsRender = true;
 
   // `state` is intentionally NOT set here. It becomes 'ready' from animate()
   // once renderer.render() has actually produced a frame at a non-zero size.
@@ -1344,6 +1393,9 @@ function initScene() {
 function disposeScene() {
   resizeObs?.disconnect();
   resizeObs = null;
+
+  document.removeEventListener('visibilitychange', onVisibilityChange);
+  loopPaused = false;
 
   if (controls) {
     controls.dispose();
@@ -1388,6 +1440,7 @@ function disposeScene() {
   pickTargets.length = 0;
   firstFrameDone = false;
   lastAnchorKey = '';
+  needsRender = true;
   perfReported = false;
   bodyStats = { meshes: 0, triangles: 0, vertices: 0, materials: 0 };
 }
@@ -1528,6 +1581,7 @@ function onPointerUp(e: PointerEvent) {
   hoverRegion = null;
   applyDotVisuals();
   applyOrganVisuals();
+  needsRender = true;
   emit('select', id);
 }
 
@@ -1540,6 +1594,7 @@ function onPointerMove(e: PointerEvent) {
     hoverRegion = id;
     applyDotVisuals();
     applyOrganVisuals();
+    needsRender = true;
   }
 }
 
@@ -1561,6 +1616,13 @@ function pulse() {
 
 function animate(now: number) {
   if (!alive) return;
+  // A hidden tab has no visible frame: stop the loop entirely (and stop
+  // rescheduling) rather than burning the GPU to draw a picture nobody sees.
+  // onVisibilityChange() restarts it when the tab is shown again.
+  if (document.hidden) {
+    loopPaused = true;
+    return;
+  }
   rafId = raf(animate);
   const dt = Math.min(0.05, Math.max(0.001, (now - lastT) / 1000));
   lastT = now;
@@ -1613,22 +1675,37 @@ function animate(now: number) {
       canvas.width > 0 && canvas.height > 0 && Number.isFinite(camera.aspect);
 
     if (drewSomething) {
-      try {
-        renderer.render(scene, camera);
-      } catch (err) {
-        console.error('[HumanBody3D] first render failed', err);
-        state.value = 'error';
-        alive = false;
-        return;
-      }
+      // Render on demand. Auto-rotate and OrbitControls damping both raise
+      // `needsRender` through the controls 'change' event, a camera tween and a
+      // spin are explicit, and an active selection/hover keeps its pulse
+      // animating — so the only frames skipped are the genuinely static ones.
+      const selectionActive = !!(props.activeId || hoverRegion);
+      const shouldRender =
+        needsRender ||
+        !firstFrameDone ||
+        selectionActive ||
+        camTween !== null ||
+        spinTarget !== null;
 
-      if (!firstFrameDone) {
-        firstFrameDone = true;
-        state.value = 'ready';
-        lastAnchorKey = '';
-        anchorDirty = true;
-        // Organs enrich an already-usable body; they never gate readiness.
-        void loadAnatomyProgressive();
+      if (shouldRender) {
+        try {
+          renderer.render(scene, camera);
+        } catch (err) {
+          console.error('[HumanBody3D] first render failed', err);
+          state.value = 'error';
+          alive = false;
+          return;
+        }
+        needsRender = false;
+
+        if (!firstFrameDone) {
+          firstFrameDone = true;
+          state.value = 'ready';
+          lastAnchorKey = '';
+          anchorDirty = true;
+          // Organs enrich an already-usable body; they never gate readiness.
+          void loadAnatomyProgressive();
+        }
       }
     } else if (!firstFrameDone) {
       // Never spin forever on a canvas that cannot draw.
@@ -1652,6 +1729,7 @@ watch(
     // Selecting an organ eases the camera onto it; clearing eases back out.
     focusOnSelection();
     anchorDirty = true;
+    needsRender = true;
     syncAnchor();
   }
 );

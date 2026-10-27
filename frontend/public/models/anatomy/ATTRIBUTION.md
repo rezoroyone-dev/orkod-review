@@ -25,11 +25,14 @@ structure or variation. This interface is educational and is not a clinical tool
 The external body shell shown on `/body` is a separate asset, not part of the
 BodyParts3D bundle:
 
-- Model: **Grab3D "Human Muscles"** (écorché) — https://grab3d.com/models/anatomy/human-muscles/
-- License: **CC0 1.0 Universal (public domain)** — https://creativecommons.org/publicdomain/zero/1.0/
-- CC0 imposes no attribution requirement; the credit is given for provenance.
-- File: `public/models/orkod/orkod-human-body.ed4a8915.glb`. See
-  `public/models/ORKOD-ASSETS.md` for the full record.
+- Model: **Mandrake "Male body base mesh (highpoly)"** — https://sketchfab.com/3d-models/male-body-base-mesh-highpoly-9311f4f8fa1a4fe4bb0027ff7e8fd795
+- Author: Mandrake (`@mandrake_3d`), published 2020-12-09
+- License: **CC Attribution 4.0 International** — https://creativecommons.org/licenses/by/4.0/
+- **CC BY 4.0 requires attribution.** The credit is rendered on the `/body`
+  stage (the localized `Body_3D_Credit` string, which names the model and its
+  licence), and the full record — author, source URL, licence and the SHA-256 of
+  the shipped bytes — is kept in `public/models/ORKOD-ASSETS.md`.
+- File: `public/models/orkod/orkod-human-body.8521db4e.glb`.
 
 The BodyParts3D `skin` region is present in the data bundle but is never built
-or drawn; the Grab3D shell is the only external body surface in the scene.
+or drawn; the Mandrake shell is the only external body surface in the scene.

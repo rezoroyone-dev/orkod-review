@@ -1,4 +1,4 @@
-﻿import SuperUser from '@/interfaces/SuperUser';
+import SuperUser from '@/interfaces/SuperUser';
 import ContactMessageService, { ContactMessage } from '@/services/ContactMessageService';
 import SuperUserService from '@/services/SuperUserService';
 import { createPinia, setActivePinia } from 'pinia';
@@ -6,7 +6,7 @@ import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import { getAdminUser } from './testAuth';
 
 describe('Contact Message Integration', () => {
-  const adminCreds: SuperUser = { id: undefined, userName: 'admin', passWord: (process.env.TEST_ADMIN_PASSWORD ?? 'test-admin-password') };
+  const adminCreds: SuperUser = { id: undefined, userName: 'admin', passWord: 'R8g9f6T@21/N' };
   let adminUser: SuperUser;
 
   beforeAll(async () => {
@@ -130,7 +130,7 @@ describe('Contact Message Integration', () => {
   });
 
   it('should fail to fetch messages with wrong credentials', async () => {
-    // Attempt to authenticate with wrong password â€” should throw
+    // Attempt to authenticate with wrong password — should throw
     await expect(SuperUserService.authenticate('admin', 'wrong_password')).rejects.toThrow();
   });
 });
