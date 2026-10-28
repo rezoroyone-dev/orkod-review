@@ -16,8 +16,8 @@ All images hosted at: https://raw.githubusercontent.com/rezoroyone-dev/orkod-rev
 | Screenshot | Description | Direct URL |
 |------------|-------------|------------|
 | start-tablet.png | `/start` tablet 768×1024 — stacked layout | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-tablet.png |
-| start-mobile.png | `/start` mobile 390×844 — stacked cards, anatomical preview | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-mobile.png |
-| start-mobile-narrow.png | `/start` mobile 360×800 — no horizontal overflow | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-mobile-narrow.png |
+| start-mobile.png | `/start` mobile 390×844 — stacked cards, full anatomical preview (object-fit: contain) | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-mobile.png |
+| start-mobile-narrow.png | `/start` mobile 360×800 — no horizontal overflow, full figure visible | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-mobile-narrow.png |
 
 ## /home — Chapter Transitions (desktop 1440x900)
 
