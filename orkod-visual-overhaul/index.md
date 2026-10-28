@@ -41,7 +41,7 @@ All images hosted at: https://raw.githubusercontent.com/rezoroyone-dev/orkod-rev
 
 | Screenshot | Description | Direct URL |
 |------------|-------------|------------|
-| body-default-desktop.png | `/body` desktop — dark slate stage, pearl shell figure, 7-organ selector bar | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-default-desktop.png |
+| body-default-desktop.png | `/body` desktop — deep-green stage, default view with no organ pre-selected, "whole body" active, 7-organ selector bar | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-default-desktop.png |
 | body-brain.png | Brain selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-brain.png |
 | body-lungs.png | Lungs selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-lungs.png |
 | body-heart.png | Heart selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-heart.png |
@@ -60,9 +60,9 @@ All images hosted at: https://raw.githubusercontent.com/rezoroyone-dev/orkod-rev
 
 ## Verification Summary
 
-- **`/start` page**: Two choice cards (body explorer vs quiz), nature background supports content, CTAs visible without hover, works on desktop/tablet/mobile/narrow. Arabic RTL is pre-existing (test harness defaults to French locale).
+- **`/start` page**: Two choice cards (body explorer vs quiz), nature background supports content, CTAs visible without hover, anatomical previews properly contained within cards with no edge clipping, works on desktop/tablet/mobile/narrow. Arabic RTL is pre-existing (test harness defaults to French locale).
 - **`/home` page**: Chapter 1↔2 scrolling settles cleanly on chapter boundaries at all viewports. Heading visible immediately on load. Footer follows content, no intrusion into chapter 1.
-- **`/body` page**: All 7 organs (brain, heart, lungs, liver, stomach, intestines, kidneys) selectable with highlights, leader-line callouts, and detail panels. Camera frames correctly. Dark slate stage with pearl shell figure and green accents. Works on desktop/tablet/mobile/narrow.
+- **`/body` page**: All 7 organs (brain, heart, lungs, liver, stomach, intestines, kidneys) selectable with highlights, leader-line callouts, and detail panels. Camera frames correctly. Deep-green stage with calm lighting and green accents. Works on desktop/tablet/mobile/narrow.
 - **Tests**: 42/42 frontend tests pass. Typecheck PASS. Lint PASS. Build PASS.
 
 ## Contact Sheet
