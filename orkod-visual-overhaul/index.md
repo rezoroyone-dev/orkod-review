@@ -60,7 +60,7 @@ All images hosted at: https://raw.githubusercontent.com/rezoroyone-dev/orkod-rev
 
 ## Verification Summary
 
-- **`/start` page**: Two choice cards (body explorer vs quiz), nature background supports content, CTAs visible without hover, works on desktop/tablet/mobile/narrow, Arabic RTL supported.
+- **`/start` page**: Two choice cards (body explorer vs quiz), nature background supports content, CTAs visible without hover, works on desktop/tablet/mobile/narrow. Arabic RTL is pre-existing (test harness defaults to French locale).
 - **`/home` page**: Chapter 1↔2 scrolling settles cleanly on chapter boundaries at all viewports. Heading visible immediately on load. Footer follows content, no intrusion into chapter 1.
 - **`/body` page**: All 7 organs (brain, heart, lungs, liver, stomach, intestines, kidneys) selectable with highlights, leader-line callouts, and detail panels. Camera frames correctly. Dark slate stage with pearl shell figure and green accents. Works on desktop/tablet/mobile/narrow.
 - **Tests**: 42/42 frontend tests pass. Typecheck PASS. Lint PASS. Build PASS.
