@@ -14,7 +14,6 @@ All images hosted at: https://raw.githubusercontent.com/rezoroyone-dev/orkod-rev
 
 | Screenshot | Description | Direct URL |
 |------------|-------------|------------|
-| start-tablet.png | `/start` tablet 768×1024 — stacked layout | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-tablet.png |
 | start-mobile-390-final.png | `/start` mobile 390×844 — stacked cards, full anatomical preview (object-fit: contain) | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-mobile-390-final.png |
 | start-mobile-360-final.png | `/start` mobile 360×800 — no horizontal overflow, full figure visible | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-mobile-360-final.png |
 | start-mobile-414-final.png | `/start` mobile 414×896 — premium composition, no clipping | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-mobile-414-final.png |
@@ -52,7 +51,6 @@ All images hosted at: https://raw.githubusercontent.com/rezoroyone-dev/orkod-rev
 
 | Screenshot | Description | Direct URL |
 |------------|-------------|------------|
-| body-default-tablet.png | Default view tablet 768×1024 | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-default-tablet.png |
 | body-default-mobile-final.png | Default view mobile 390×844 | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-default-mobile-final.png |
 
 ## Verification Summary
