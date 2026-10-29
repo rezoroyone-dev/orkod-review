@@ -9,7 +9,6 @@ All images hosted at: https://raw.githubusercontent.com/rezoroyone-dev/orkod-rev
 | Screenshot | Description | Direct URL |
 |------------|-------------|------------|
 | start-desktop-final.png | `/start` desktop — two choice cards, nature background with legibility veil, CTAs visible without hover | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-desktop-final.png |
-| start-desktop-ar.png | `/start` desktop Arabic RTL — mirrored layout | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-desktop-ar.png |
 
 ## /start — Healing Journey Entry (mobile)
 
@@ -58,10 +57,11 @@ All images hosted at: https://raw.githubusercontent.com/rezoroyone-dev/orkod-rev
 
 ## Verification Summary
 
-- **`/start` page**: Two choice cards (body explorer vs quiz), nature background supports content, CTAs visible without hover, anatomical previews properly contained within cards with no edge clipping, works on desktop/tablet/mobile/narrow. Arabic RTL is pre-existing (test harness defaults to French locale).
-- **`/home` page**: Chapter 1↔2 scrolling settles cleanly on chapter boundaries at all viewports (desktop 1440, tablet 768, mobile 390/360). Heading visible immediately on load. Footer follows content, no intrusion into chapter 1. Scroll-snap enforced via `scrollend` event handler with JS snap-to-nearest-chapter.
-- **`/body` page**: All 7 organs (brain, heart, lungs, liver, stomach, intestines, kidneys) selectable with highlights, leader-line callotes, and detail panels. Camera frames correctly. Deep-green stage with calm lighting and green accents. Works on desktop/tablet/mobile/narrow.
-- **Tests**: 43/43 frontend tests pass (including 3 new scroll-snap architecture tests). Typecheck PASS. Lint PASS. Build PASS.
+- **`/start` page**: Two choice cards (body explorer vs quiz), nature background supports content, CTAs visible without hover, anatomical previews properly contained within cards with no edge clipping, works on desktop/tablet/mobile/narrow. No horizontal overflow at any viewport width. Arabic RTL is pre-existing (test harness defaults to French locale).
+- **`/home` page**: Chapter 1↔2 scrolling settles cleanly on chapter boundaries at all viewports (desktop 1440, tablet 768, mobile 390/360). Heading visible immediately on load. Footer follows content and is reachable by scrolling. Scroll-snap enforced via `scrollend` event handler with JS snap-to-nearest-chapter.
+- **`/body` page**: All 7 organs (brain, lungs, heart, liver, stomach, intestines, kidneys) selectable with highlights, leader-line callouts, and detail panels. No organ pre-selected on fresh load. Camera frames correctly. Deep-green stage with calm lighting and green accents. Works on desktop/tablet/mobile/narrow.
+- **Tests**: 43/43 frontend tests pass (including 3 new scroll-snap architecture tests). Typecheck PASS. Build PASS.
+- **Gallery**: 20 final screenshots published to branch `visual-review-final`.
 
 ## Contact Sheet
 
