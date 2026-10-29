@@ -67,33 +67,35 @@
   th { font-weight: 700; color: #2F6848; }
   tr:hover { background: #FAFCFA; }
   .ok { color: #2F6848; font-weight: 600; }
+  .fail { color: #D32F2F; font-weight: 600; }
   .warn { color: #C6A24A; font-weight: 600; }
 </style>
 </head>
 <body>
 
 <h1>Orkod Visual Overhaul — Contact Sheet</h1>
-<p class="muted">Final implementation screenshots for /start, /home, /body redesign plus chapter-scroll fix and body-organ verification.</p>
+<p class="muted">Final implementation screenshots for /start, /home, /body redesign with chapter-scroll fix and organ verification.</p>
 
-<p><strong>Gallery repository:</strong> <a href="https://github.com/rezoroyone-dev/orkod-review/tree/visual-review-final/orkod-visual-overhaul" target="_blank">rezoroyone-dev/orkod-review — branch visual-review-final</a></p>
+<p><strong>Repository:</strong> <a href="https://github.com/rezoroyone-dev/orkod-review/tree/visual-review-final/orkod-visual-overhaul" target="_blank">rezoroyone-dev/orkod-review — branch visual-review-final</a></p>
 <p><strong>Raw base URL:</strong> <a href="https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/" target="_blank">https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/</a></p>
+<p><strong>Inventory:</strong> 20 screenshots — start: 4, home: 6, body: 10</p>
 
 <h2>1. /start — Healing Journey Entry</h2>
 <div class="contact-grid">
   <div class="contact-item">
     <img src="start-desktop-final.png" alt="Start page desktop">
     <div class="label">/start — Desktop 1440×900</div>
-    <div class="desc">Two choice cards: "Commencer l'exploration" → body explorer, "Commencer" → quiz. Nature background supports content. CTAs visible without hover (opacity 1, visibility visible).</div>
+    <div class="desc">Two choice cards. Nature background with legibility veil. CTAs visible without hover (opacity 1, visibility visible). No horizontal overflow.</div>
   </div>
   <div class="contact-item">
     <img src="start-mobile-390-final.png" alt="Start page mobile 390">
     <div class="label">/start — Mobile 390×844</div>
-    <div class="desc">Stacked cards, full anatomical preview visible (object-fit: contain). No horizontal overflow.</div>
+    <div class="desc">Stacked cards, full anatomical preview (object-fit: contain). No horizontal overflow.</div>
   </div>
   <div class="contact-item">
     <img src="start-mobile-360-final.png" alt="Start page narrow mobile">
     <div class="label">/start — Mobile 360×800</div>
-    <div class="desc">Narrow viewport, no horizontal overflow.</div>
+    <div class="desc">Narrow viewport, no horizontal overflow, full figure visible.</div>
   </div>
   <div class="contact-item">
     <img src="start-mobile-414-final.png" alt="Start page mobile 414">
@@ -107,22 +109,32 @@
   <div class="contact-item">
     <img src="home-ch1-desktop-final.png" alt="Home chapter 1 desktop">
     <div class="label">/home — Chapter 1 Desktop 1440×900</div>
-    <div class="desc">Immediately visible main heading, supporting text, dual CTAs, nature photograph with legibility veil.</div>
+    <div class="desc">Heading visible immediately on load. Nature photograph with legibility veil. Dual CTAs.</div>
   </div>
   <div class="contact-item">
     <img src="home-ch2-scroll-desktop-final.png" alt="Home chapter 2 scroll desktop">
     <div class="label">/home — Chapter 2 after wheel scroll</div>
-    <div class="desc">Chapter 2 settled at top after scroll-snap enforcement. No content clipped near top. Book cover visible, "in preparation" message.</div>
+    <div class="desc">Chapter 2 settled at top (scrollTop=828). No clipping at top. Book cover visible, "in preparation" message.</div>
+  </div>
+  <div class="contact-item">
+    <img src="home-ch1-tablet-final.png" alt="Home chapter 1 tablet">
+    <div class="label">/home — Chapter 1 Tablet 768×1024</div>
+    <div class="desc">Tablet proportions, heading readable.</div>
+  </div>
+  <div class="contact-item">
+    <img src="home-ch2-scroll-tablet-final.png" alt="Home chapter 2 tablet">
+    <div class="label">/home — Chapter 2 Tablet after scroll</div>
+    <div class="desc">Chapter 2 settled at top on tablet.</div>
   </div>
   <div class="contact-item">
     <img src="home-ch1-mobile-final.png" alt="Home chapter 1 mobile">
     <div class="label">/home — Chapter 1 Mobile 390×844</div>
-    <div class="desc">Mobile hero composition fills viewport. Chapter heading visible.</div>
+    <div class="desc">Mobile hero composition fills viewport.</div>
   </div>
   <div class="contact-item">
     <img src="home-ch2-scroll-mobile-final.png" alt="Home chapter 2 mobile">
     <div class="label">/home — Chapter 2 Mobile after scroll</div>
-    <div class="desc">Chapter 2 settled at top after scroll-snap enforcement on mobile.</div>
+    <div class="desc">Chapter 2 settled at top on mobile (scrollTop=787).</div>
   </div>
 </div>
 
@@ -131,47 +143,52 @@
   <div class="contact-item">
     <img src="body-default-desktop-final.png" alt="Body default desktop">
     <div class="label">/body — Default Desktop 1440×900</div>
-    <div class="desc">Deep-green stage, no organ pre-selected, "whole body" active in selector, 7-organ list in detail panel.</div>
+    <div class="desc">Deep-green stage. No organ pre-selected. "Whole body" active in sidebar. Detail panel shows organ list.</div>
   </div>
   <div class="contact-item">
     <img src="body-default-mobile-final.png" alt="Body default mobile">
     <div class="label">/body — Default Mobile 390×844</div>
-    <div class="desc">Stacked controls, recognizable figure on mobile.</div>
+    <div class="desc">Stacked controls on mobile, no organ pre-selected.</div>
   </div>
   <div class="contact-item">
     <img src="body-brain-desktop-final.png" alt="Body brain selected">
     <div class="label">/body — Brain selected</div>
-    <div class="desc">Detail panel title: "Cerveau". Organ highlight visible in 3D.</div>
+    <div class="desc">Active selector: "Cerveau01". Detail panel title: "Cerveau". 3D canvas rendering updated.</div>
   </div>
   <div class="contact-item">
     <img src="body-lungs-desktop-final.png" alt="Body lungs selected">
     <div class="label">/body — Lungs selected</div>
-    <div class="desc">Detail panel title: "Poumons et souffle". Distinct visual from brain.</div>
+    <div class="desc">Active selector: "Poumons et souffle02". Detail panel title: "Poumons et souffle". Distinct visual.</div>
   </div>
   <div class="contact-item">
     <img src="body-heart-desktop-final.png" alt="Body heart selected">
     <div class="label">/body — Heart selected</div>
-    <div class="desc">Detail panel title: "Cœur". Distinct visual from brain/lungs.</div>
+    <div class="desc">Active selector: "Cœur03". Detail panel title: "Cœur". Distinct visual.</div>
   </div>
   <div class="contact-item">
     <img src="body-liver-desktop-final.png" alt="Body liver selected">
     <div class="label">/body — Liver selected</div>
-    <div class="desc">Detail panel title: "Foie". Distinct visual.</div>
+    <div class="desc">Active selector: "Foie04". Detail panel title: "Foie". Distinct visual.</div>
   </div>
   <div class="contact-item">
     <img src="body-stomach-desktop-final.png" alt="Body stomach selected">
     <div class="label">/body — Stomach selected</div>
-    <div class="desc">Detail panel title: "Estomac". Distinct visual.</div>
+    <div class="desc">Active selector: "Estomac05". Detail panel title: "Estomac". Distinct visual.</div>
   </div>
   <div class="contact-item">
     <img src="body-intestines-desktop-final.png" alt="Body intestines selected">
     <div class="label">/body — Intestines selected</div>
-    <div class="desc">Detail panel title: "Intestins". Distinct visual.</div>
+    <div class="desc">Active selector: "Intestins06". Detail panel title: "Intestins". Distinct visual.</div>
   </div>
   <div class="contact-item">
     <img src="body-kidneys-desktop-final.png" alt="Body kidneys selected">
     <div class="label">/body — Kidneys selected</div>
-    <div class="desc">Detail panel title: "Reins". Distinct visual.</div>
+    <div class="desc">Active selector: "Reins07". Detail panel title: "Reins". Distinct visual.</div>
+  </div>
+  <div class="contact-item">
+    <img src="body-brain-mobile-final.png" alt="Body brain selected mobile">
+    <div class="label">/body — Brain selected Mobile</div>
+    <div class="desc">Organ selection works on mobile viewport.</div>
   </div>
 </div>
 
@@ -179,25 +196,27 @@
 <table>
   <tr><th>Check</th><th>Result</th><th>Details</th></tr>
   <tr><td>/start heading visible on load</td><td class="ok">PASS</td><td>All viewports</td></tr>
-  <tr><td>/start CTAs visible without hover</td><td class="ok">PASS</td><td>Both choice cards (opacity 1, visibility visible)</td></tr>
+  <tr><td>/start CTAs visible without hover</td><td class="ok">PASS</td><td>"Commencer l'exploration" → /body, "Commencer" → /quiz. Opacity 1, visibility visible.</td></tr>
   <tr><td>/start no horizontal overflow</td><td class="ok">PASS</td><td>Mobile 390/360/414</td></tr>
   <tr><td>/start anatomical preview contained</td><td class="ok">PASS</td><td>object-fit: contain, no edge clipping</td></tr>
-  <tr><td>/home chapter 1 heading visible</td><td class="ok">PASS</td><td>All viewports</td></tr>
-  <tr><td>/home scroll settles on chapter boundary</td><td class="ok">PASS</td><td>scrollTop=828 for ch2, scrollTop=0 for ch1</td></tr>
-  <tr><td>/home footer reachable</td><td class="ok">PASS</td><td>scrollTop=1192, footer visible</td></tr>
-  <tr><td>/home no content clipping at ch2 top</td><td class="ok">PASS</td><td>Chapter 2 heading at 352px from viewport top</td></tr>
-  <tr><td>/body 3D model ready</td><td class="ok">PASS</td><td>Canvas found, WebGL context active</td></tr>
-  <tr><td>/body all 7 organs selectable</td><td class="ok">PASS</td><td>Brain, lungs, heart, liver, stomach, intestines, kidneys — all verified</td></tr>
-  <tr><td>/body organ detail panel updates</td><td class="ok">PASS</td><td>Title changes correctly for each organ</td></tr>
-  <tr><td>/body organ deselect (whole body)</td><td class="ok">PASS</td><td>Callout cleared, detail panel reset</td></tr>
-  <tr><td>/body default no organ pre-selected</td><td class="ok">PASS</td><td>Whole body active, no detail panel on fresh load</td></tr>
+  <tr><td>/home chapter 1 heading visible</td><td class="ok">PASS</td><td>Immediately visible on load</td></tr>
+  <tr><td>/home scroll snap to ch2</td><td class="ok">PASS</td><td>scrollTop=828 on desktop, scrollTop=787 on mobile (390×844)</td></tr>
+  <tr><td>/home footer reachable</td><td class="ok">PASS</td><td>scrollTop=1192, footer visible on desktop</td></tr>
+  <tr><td>/home no clipping at ch2 top</td><td class="ok">PASS</td><td>Chapter 2 heading at 352px from viewport top, fully visible</td></tr>
+  <tr><td>/home scrollback to ch1</td><td class="ok">PASS</td><td>scrollTop=0 after reverse scroll</td></tr>
+  <tr><td>/body 3D model ready</td><td class="ok">PASS</td><td>Canvas found, WebGL context active, .human3d--ready class present</td></tr>
+  <tr><td>/body all 7 organs verified</td><td class="ok">PASS</td><td>Brain, lungs, heart, liver, stomach, intestines, kidneys — each with correct active selector and detail panel title</td></tr>
+  <tr><td>/body organ deselect</td><td class="ok">PASS</td><td>Whole-body button restores default state</td></tr>
+  <tr><td>/body default no organ pre-selected</td><td class="ok">PASS</td><td>Whole body active, no detail title on fresh load</td></tr>
+  <tr><td>/body distinct screenshots per organ</td><td class="ok">PASS</td><td>All 7 organ screenshots have unique SHA-256 hashes</td></tr>
   <tr><td>Typecheck</td><td class="ok">PASS</td><td>npx vue-tsc --noEmit — no errors</td></tr>
   <tr><td>Production build</td><td class="ok">PASS</td><td>npx vite build — 150 PWA entries</td></tr>
-  <tr><td>Frontend unit/presentation tests</td><td class="ok">PASS</td><td>136/136 tests in 12 test files</td></tr>
-  <tr><td>Integration tests</td><td class="warn">BLOCKED</td><td>Require TEST_ADMIN_PASSWORD backend; pre-existing</td></tr>
+  <tr><td>Frontend non-integration tests</td><td class="ok">PASS</td><td>136/136 in 12 test files</td></tr>
+  <tr><td>Pagination.unit.test.ts</td><td class="fail">FAIL</td><td>3/6 tests fail with "Authenticated user is required" — caused by missing TEST_ADMIN_PASSWORD env var, not by code changes</td></tr>
+  <tr><td>Full test suite</td><td class="warn">TIMEOUT</td><td>npx vitest run times out due to integration tests requiring backend at localhost:9091</td></tr>
 </table>
 
-<p class="muted">Direct image URLs (base): https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/&lt;filename&gt;</p>
+<p class="muted">Raw image URLs: https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/&lt;filename&gt;</p>
 
 </body>
 </html>
