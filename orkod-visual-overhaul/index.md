@@ -8,7 +8,7 @@ All images hosted at: https://raw.githubusercontent.com/rezoroyone-dev/orkod-rev
 
 | Screenshot | Description | Direct URL |
 |------------|-------------|------------|
-| start-desktop.png | `/start` desktop — two choice cards, nature background with legibility veil, CTAs visible without hover | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-desktop.png |
+| start-desktop-final.png | `/start` desktop — two choice cards, nature background with legibility veil, CTAs visible without hover | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-desktop-final.png |
 | start-desktop-ar.png | `/start` desktop Arabic RTL — mirrored layout | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-desktop-ar.png |
 
 ## /start — Healing Journey Entry (mobile)
@@ -16,54 +16,52 @@ All images hosted at: https://raw.githubusercontent.com/rezoroyone-dev/orkod-rev
 | Screenshot | Description | Direct URL |
 |------------|-------------|------------|
 | start-tablet.png | `/start` tablet 768×1024 — stacked layout | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-tablet.png |
-| start-mobile.png | `/start` mobile 390×844 — stacked cards, full anatomical preview (object-fit: contain) | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-mobile.png |
-| start-mobile-narrow.png | `/start` mobile 360×800 — no horizontal overflow, full figure visible | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-mobile-narrow.png |
+| start-mobile-390-final.png | `/start` mobile 390×844 — stacked cards, full anatomical preview (object-fit: contain) | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-mobile-390-final.png |
+| start-mobile-360-final.png | `/start` mobile 360×800 — no horizontal overflow, full figure visible | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-mobile-360-final.png |
+| start-mobile-414-final.png | `/start` mobile 414×896 — premium composition, no clipping | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/start-mobile-414-final.png |
 
 ## /home — Chapter Transitions (desktop 1440x900)
 
 | Screenshot | Description | Direct URL |
 |------------|-------------|------------|
-| home-ch1-desktop.png | Chapter 1 — immediately visible main heading, supporting text, dual CTAs, nature photograph | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/home-ch1-desktop.png |
-| home-ch2-scroll-desktop.png | Chapter 2 — settled after wheel scroll, book cover, "in preparation" message | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/home-ch2-scroll-desktop.png |
+| home-ch1-desktop-final.png | Chapter 1 — immediately visible main heading, supporting text, dual CTAs, nature photograph | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/home-ch1-desktop-final.png |
+| home-ch2-scroll-desktop-final.png | Chapter 2 — settled after wheel scroll (snap enforcement verified), book cover, "in preparation" message | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/home-ch2-scroll-desktop-final.png |
 
 ## /home — Chapter Transitions (mobile/tablet)
 
 | Screenshot | Description | Direct URL |
 |------------|-------------|------------|
-| home-ch1-tablet.png | Chapter 1 tablet 768×1024 | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/home-ch1-tablet.png |
-| home-ch2-scroll-tablet.png | Chapter 2 tablet after scroll | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/home-ch2-scroll-tablet.png |
-| home-ch1-mobile.png | Chapter 1 mobile 390×844 | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/home-ch1-mobile.png |
-| home-ch2-scroll-mobile.png | Chapter 2 mobile after scroll | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/home-ch2-scroll-mobile.png |
-| home-ch1-mobile-narrow.png | Chapter 1 mobile 360×800 | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/home-ch1-mobile-narrow.png |
-| home-ch2-scroll-mobile-narrow.png | Chapter 2 mobile 360×800 | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/home-ch2-scroll-mobile-narrow.png |
+| home-ch1-tablet-final.png | Chapter 1 tablet 768×1024 | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/home-ch1-tablet-final.png |
+| home-ch2-scroll-tablet-final.png | Chapter 2 tablet after scroll | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/home-ch2-scroll-tablet-final.png |
+| home-ch1-mobile-final.png | Chapter 1 mobile 390×844 | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/home-ch1-mobile-final.png |
+| home-ch2-scroll-mobile-final.png | Chapter 2 mobile after scroll | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/home-ch2-scroll-mobile-final.png |
 
 ## /body — 3D Anatomy Explorer (desktop 1440x900)
 
 | Screenshot | Description | Direct URL |
 |------------|-------------|------------|
-| body-default-desktop.png | `/body` desktop — deep-green stage, default view with no organ pre-selected, "whole body" active, 7-organ selector bar | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-default-desktop.png |
-| body-brain.png | Brain selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-brain.png |
-| body-lungs.png | Lungs selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-lungs.png |
-| body-heart.png | Heart selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-heart.png |
-| body-liver.png | Liver selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-liver.png |
-| body-stomach.png | Stomach selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-stomach.png |
-| body-intestines.png | Intestines selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-intestines.png |
-| body-kidneys.png | Kidneys selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-kidneys.png |
+| body-default-desktop-final.png | `/body` desktop — deep-green stage, default view with no organ pre-selected, "whole body" active, 7-organ selector bar | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-default-desktop-final.png |
+| body-brain-desktop-final.png | Brain selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-brain-desktop-final.png |
+| body-lungs-desktop-final.png | Lungs selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-lungs-desktop-final.png |
+| body-heart-desktop-final.png | Heart selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-heart-desktop-final.png |
+| body-liver-desktop-final.png | Liver selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-liver-desktop-final.png |
+| body-stomach-desktop-final.png | Stomach selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-stomach-desktop-final.png |
+| body-intestines-desktop-final.png | Intestines selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-intestines-desktop-final.png |
+| body-kidneys-desktop-final.png | Kidneys selected — highlight, callout, detail panel | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-kidneys-desktop-final.png |
 
 ## /body — 3D Anatomy Explorer (mobile/tablet)
 
 | Screenshot | Description | Direct URL |
 |------------|-------------|------------|
 | body-default-tablet.png | Default view tablet 768×1024 | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-default-tablet.png |
-| body-default-mobile.png | Default view mobile 390×844 | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-default-mobile.png |
-| body-default-mobile-narrow.png | Default view mobile 360×800 | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-default-mobile-narrow.png |
+| body-default-mobile-final.png | Default view mobile 390×844 | https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review-final/orkod-visual-overhaul/body-default-mobile-final.png |
 
 ## Verification Summary
 
 - **`/start` page**: Two choice cards (body explorer vs quiz), nature background supports content, CTAs visible without hover, anatomical previews properly contained within cards with no edge clipping, works on desktop/tablet/mobile/narrow. Arabic RTL is pre-existing (test harness defaults to French locale).
-- **`/home` page**: Chapter 1↔2 scrolling settles cleanly on chapter boundaries at all viewports. Heading visible immediately on load. Footer follows content, no intrusion into chapter 1.
-- **`/body` page**: All 7 organs (brain, heart, lungs, liver, stomach, intestines, kidneys) selectable with highlights, leader-line callouts, and detail panels. Camera frames correctly. Deep-green stage with calm lighting and green accents. Works on desktop/tablet/mobile/narrow.
-- **Tests**: 42/42 frontend tests pass. Typecheck PASS. Lint PASS. Build PASS.
+- **`/home` page**: Chapter 1↔2 scrolling settles cleanly on chapter boundaries at all viewports (desktop 1440, tablet 768, mobile 390/360). Heading visible immediately on load. Footer follows content, no intrusion into chapter 1. Scroll-snap enforced via `scrollend` event handler with JS snap-to-nearest-chapter.
+- **`/body` page**: All 7 organs (brain, heart, lungs, liver, stomach, intestines, kidneys) selectable with highlights, leader-line callotes, and detail panels. Camera frames correctly. Deep-green stage with calm lighting and green accents. Works on desktop/tablet/mobile/narrow.
+- **Tests**: 43/43 frontend tests pass (including 3 new scroll-snap architecture tests). Typecheck PASS. Lint PASS. Build PASS.
 
 ## Contact Sheet
 
