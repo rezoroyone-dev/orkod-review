@@ -1,0 +1,13 @@
+{
+  "issues": [
+    {
+      "route": "/body",
+      "type": "unknown-route-target",
+      "href": "/models/anatomy/ATTRIBUTION.md",
+      "path": "/models/anatomy/ATTRIBUTION.md",
+      "text": "Anatomy: BodyParts3D (CC BY 4.0) · Body: Mandrake (CC BY 4.0)"
+    }
+  ],
+  "donateFinal": "/donations",
+  "checkedRoutes": 19
+}

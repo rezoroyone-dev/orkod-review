@@ -1,0 +1,191 @@
+[
+  {
+    "name": "Brain",
+    "found": true,
+    "shot": "C:\\MyProjects\\orkod-review\\r16-2026-11-06\\body-sel-Brain-1440.png",
+    "sample": {
+      "method": "2d-snapshot",
+      "w": 802,
+      "h": 714,
+      "top": [],
+      "bg": [
+        0,
+        0,
+        0
+      ]
+    },
+    "bestGlobal": null,
+    "expectedMatch": {
+      "expectedHex": "#a89aa2",
+      "nearest": null
+    }
+  },
+  {
+    "name": "Lungs & breath",
+    "found": true,
+    "shot": "C:\\MyProjects\\orkod-review\\r16-2026-11-06\\body-sel-Lungs___breath-1440.png",
+    "sample": {
+      "method": "2d-snapshot",
+      "w": 802,
+      "h": 714,
+      "top": [],
+      "bg": [
+        0,
+        0,
+        0
+      ]
+    },
+    "bestGlobal": null,
+    "expectedMatch": {
+      "expectedHex": "#f2a6c0",
+      "nearest": null
+    }
+  },
+  {
+    "name": "Heart",
+    "found": true,
+    "shot": "C:\\MyProjects\\orkod-review\\r16-2026-11-06\\body-sel-Heart-1440.png",
+    "sample": {
+      "method": "2d-snapshot",
+      "w": 802,
+      "h": 714,
+      "top": [],
+      "bg": [
+        0,
+        0,
+        0
+      ]
+    },
+    "bestGlobal": null,
+    "expectedMatch": {
+      "expectedHex": "#d93a3f",
+      "nearest": null
+    }
+  },
+  {
+    "name": "Liver",
+    "found": true,
+    "shot": "C:\\MyProjects\\orkod-review\\r16-2026-11-06\\body-sel-Liver-1440.png",
+    "sample": {
+      "method": "2d-snapshot",
+      "w": 802,
+      "h": 714,
+      "top": [],
+      "bg": [
+        0,
+        0,
+        0
+      ]
+    },
+    "bestGlobal": null,
+    "expectedMatch": {
+      "expectedHex": "#8f2f2f",
+      "nearest": null
+    }
+  },
+  {
+    "name": "Stomach",
+    "found": true,
+    "shot": "C:\\MyProjects\\orkod-review\\r16-2026-11-06\\body-sel-Stomach-1440.png",
+    "sample": {
+      "method": "2d-snapshot",
+      "w": 802,
+      "h": 714,
+      "top": [],
+      "bg": [
+        0,
+        0,
+        0
+      ]
+    },
+    "bestGlobal": null,
+    "expectedMatch": {
+      "expectedHex": "#f2b03c",
+      "nearest": null
+    }
+  },
+  {
+    "name": "Intestines",
+    "found": true,
+    "shot": "C:\\MyProjects\\orkod-review\\r16-2026-11-06\\body-sel-Intestines-1440.png",
+    "sample": {
+      "method": "2d-snapshot",
+      "w": 802,
+      "h": 714,
+      "top": [],
+      "bg": [
+        0,
+        0,
+        0
+      ]
+    },
+    "bestGlobal": null,
+    "expectedMatch": {
+      "expectedHex": "#c98d86",
+      "nearest": null
+    }
+  },
+  {
+    "name": "Kidneys",
+    "found": true,
+    "shot": "C:\\MyProjects\\orkod-review\\r16-2026-11-06\\body-sel-Kidneys-1440.png",
+    "sample": {
+      "method": "2d-snapshot",
+      "w": 802,
+      "h": 714,
+      "top": [],
+      "bg": [
+        0,
+        0,
+        0
+      ]
+    },
+    "bestGlobal": null,
+    "expectedMatch": {
+      "expectedHex": "#c0572e",
+      "nearest": null
+    }
+  },
+  {
+    "name": "Left Hand",
+    "found": true,
+    "shot": "C:\\MyProjects\\orkod-review\\r16-2026-11-06\\body-sel-Left_Hand-1440.png",
+    "sample": {
+      "method": "2d-snapshot",
+      "w": 802,
+      "h": 714,
+      "top": [],
+      "bg": [
+        0,
+        0,
+        0
+      ]
+    },
+    "bestGlobal": null,
+    "expectedMatch": {
+      "expectedHex": "#b8c4b8",
+      "nearest": null
+    }
+  },
+  {
+    "name": "Right Hand",
+    "found": true,
+    "shot": "C:\\MyProjects\\orkod-review\\r16-2026-11-06\\body-sel-Right_Hand-1440.png",
+    "sample": {
+      "method": "2d-snapshot",
+      "w": 802,
+      "h": 714,
+      "top": [],
+      "bg": [
+        0,
+        0,
+        0
+      ]
+    },
+    "bestGlobal": null,
+    "expectedMatch": {
+      "expectedHex": "#b8c4b8",
+      "nearest": null
+    }
+  }
+]
