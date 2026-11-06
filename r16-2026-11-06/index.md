@@ -1,54 +1,73 @@
-﻿# Orkod Visual Review — nature-green r16 (2026-11-06)
+# Nature Green R16 Browser Audit (2026-11-06)
 
-**App:** 
-ature-green-final @ ad4041 (no new app code committed this round)
-**Review branch:** isual-review/nature-green-r16-2026-11-06
+**Target:** https://localhost (Caddy -> Vite dev, self-signed)
+**Viewport:** 1440x900 unless noted
+**Browser:** Playwright + Edge headless (GPU swiftshader)
+**App branch/commit:** `nature-green-final` @ `bad4041` (`fix(router): redirect /donate to /donations`; no new app commits in R16)
+**Review branch:** `visual-review/nature-green-r16-2026-11-06` (orkod-review)
 
-## Scope (Round 16)
-Body visual accuracy (source assignments + rendered ROI sampling + per-organ canvas captures), interaction/perf measurement, systematic navigation crawl (19 routes), /donate→/donations redirect re-verified.
+## Scope
+1. `/body` organ + hand color assignments vs spec (source-of-truth) and rendered captures for human review.
+2. `/body` load/performance sanity (1440x900).
+3. Nav/CTA audit across 19 public routes (active route, visible internal hrefs, `/donate` redirect).
+4. No deploy. No image perception used for color judgment.
 
-## Navigation integrity
-- Crawl: 19 routes, visible links/actions. **1 flagged:** /models/anatomy/ATTRIBUTION.md on /body — “unknown Vue route” to the crawler but a **valid static asset (HTTP 200)**. **No broken internal routes/CTAs/incorrect redirects found.** /donate → /donations confirmed. Intentional auth gates preserved (/quiz,/booking).
+## 1) /body color assignments (source-of-truth verified)
+`frontend/src/data/anatomy.ts` `REGION_COLORS` matches the requested spec and is applied in `frontend/src/components/body/HumanBody3D.vue` `organMaterial(region)` (MeshStandard `color`/`emissive` tinted from region color; hands share the hand palette):
 
-## Body — source-of-truth color assignments (verified)
-rontend/src/data/anatomy.ts / REGION_COLORS + HumanBody3D.vue apply REGION_COLORS to organ/hand materials.
-| Organ | Expected | Assigned |
-|---|---:|---:|
-| Brain | #a89aa2 | #a89aa2 |
-| Lungs | #f2a6c0 | #f2a6c0 |
-| Heart | #d93a3f | #d93a3f |
-| Liver | #8f2f2f | #8f2f2f |
-| Stomach | #f2b03c | #f2b03c |
-| Intestines | #c98d86 | #c98d86 |
-| Kidneys | #c0572e | #c0572e |
-| Hands (L/R) | #b8c4b8 | #b8c4b8 (leftHand/ightHand) |
-
-DOM/interaction: all 7 organs + Left/Right Hand present and selectable; selection shows detail/callout; keyboard activation (Heart) verified. Front/back/callout placement — see captures (human review; see limitation).
-
-## Body — rendered pixel sampling (headless swiftshader, ROI, green-stage/near-neutral filtered)
-Headless WebGL (swiftshader) + lighting/emissive/blending mute saturation; **exact on-screen hex cannot be asserted from headless sampling alone**. Per-organ ROI/canvas captures are provided for human visual verification.
-
-| Organ | Expected | Top saturated ROI samples (hex, sat, n) |
+| Region | Expected hex | Source |
 |---|---:|---|
-| Brain | #a89aa2 | (no saturated buckets above threshold in ROI) |
-| Lungs & breath | #f2a6c0 | #4e6a5e (0.27,24); #4f6b60 (0.26,3); #4d675b (0.25,3) |
-| Heart | #d93a3f | #4e6a5d (0.27,8); #557061 (0.24,1); #4f675b (0.23,2) |
-| Liver | #8f2f2f | #557061 (0.24,1); #4f665a (0.23,1); #546a5f (0.21,18) |
-| Stomach | #f2b03c | #4e685d (0.25,3); #4e675d (0.24,5); #546d63 (0.22,3) |
-| Intestines | #c98d86 | #4f685e (0.24,1); #4f665b (0.23,3); #536a5e (0.22,11) |
-| Kidneys | #c0572e | #4f675c (0.24,6); #4f685e (0.24,2); #536b62 (0.23,5) |
-| Left Hand | #b8c4b8 | #52695f (0.22,1); #546b60 (0.21,1); #5a7066 (0.20,1) |
-| Right Hand | #b8c4b8 | #597167 (0.22,8); #5a7369 (0.21,17); #6e837a (0.17,2484) |
+| Brain | `#a89aa2` | anatomy `REGION_COLORS.brain` / Vue `organMaterial` |
+| Lungs & breath | `#f2a6c0` | anatomy `REGION_COLORS.lungs` / Vue `organMaterial` |
+| Heart | `#d93a3f` | anatomy `REGION_COLORS.heart` / Vue `organMaterial` |
+| Liver | `#8f2f2f` | anatomy `REGION_COLORS.liver` / Vue `organMaterial` |
+| Stomach | `#f2b03c` | anatomy `REGION_COLORS.stomach` / Vue `organMaterial` |
+| Intestines | `#c98d86` | anatomy `REGION_COLORS.intestines` / Vue `organMaterial` |
+| Kidneys | `#c0572e` | anatomy `REGION_COLORS.kidneys` / Vue `organMaterial` |
+| Left Hand | `#b8c4b8` | anatomy `REGION_COLORS.handLeft` / Vue `organMaterial` |
+| Right Hand | `#b8c4b8` | anatomy `REGION_COLORS.handRight` / Vue `organMaterial` |
 
-## Performance (measured, 1440×900)
-- Canvas present: ~**2.7s** from nav start; settled wait total: ~**5.7s** (includes fixed waits).
-- Selection response (click → ~350ms settle, detail present): ~**1.57–2.91s** per interaction in this run (includes Full body reset/camera + fixed waits; not a pure input latency). Repeated Heart/Brain selections remained responsive (detail shown). JS heap ~80/105 MB (Chromium performance.memory).
-- **No demonstrated regression** fixed; no model replacement.
+### Rendered evidence (human review required)
+Headless swiftshader 2D snapshot pixel sampling returned black/empty dominant colors (canvas `getContext('2d')` snapshot over WebGL); heuristic/ROI sampling over saved PNGs was confounded by stage lighting, emissive material, and the translucent body shell (ROI top-by-saturation samples skew toward muted green shell tones; Brain ROI empty in that heuristic). **Per-organ on-screen hex cannot be concluded from automation here.** Source assignments are correct; use the per-organ captures below for human visual judgment.
 
-## Artifacts
-- Per-organ canvas: ody-canvas-*.png, ROI: ody-roi-*.png, nav: 
-av-audit.json, perf/color data: ody-color-report-v2.json, ody-color-report-v3.json, ody-roi-report.json.
+Raw base: `https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06`
 
-## Limitations
-- **No image-perception** in this model: rendered color/proportions/callout aesthetics cannot be visually certified here; source assignments verified and captures published for human review.
-- Headless swiftshader sampling underestimates vivid organ color; treat ROI table as sampling evidence, not ground truth.
+| Region | Expected | Selection (1440) | Canvas crop | ROI crop |
+|---|---:|---|---|---|
+| Brain | `#a89aa2` | [sel](body-sel-Brain-1440.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Brain-1440.png) | [canvas](body-canvas-Brain.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-canvas-Brain.png) | [roi](body-roi-Brain.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-roi-Brain.png) |
+| Lungs & breath | `#f2a6c0` | [sel](body-sel-Lungs___breath-1440.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Lungs___breath-1440.png) | [canvas](body-canvas-Lungs___breath.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-canvas-Lungs___breath.png) | [roi](body-roi-Lungs___breath.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-roi-Lungs___breath.png) |
+| Heart | `#d93a3f` | [sel](body-sel-Heart-1440.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Heart-1440.png) | [canvas](body-canvas-Heart.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-canvas-Heart.png) | [roi](body-roi-Heart.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-roi-Heart.png) |
+| Liver | `#8f2f2f` | [sel](body-sel-Liver-1440.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Liver-1440.png) | [canvas](body-canvas-Liver.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-canvas-Liver.png) | [roi](body-roi-Liver.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-roi-Liver.png) |
+| Stomach | `#f2b03c` | [sel](body-sel-Stomach-1440.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Stomach-1440.png) | [canvas](body-canvas-Stomach.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-canvas-Stomach.png) | [roi](body-roi-Stomach.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-roi-Stomach.png) |
+| Intestines | `#c98d86` | [sel](body-sel-Intestines-1440.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Intestines-1440.png) | [canvas](body-canvas-Intestines.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-canvas-Intestines.png) | [roi](body-roi-Intestines.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-roi-Intestines.png) |
+| Kidneys | `#c0572e` | [sel](body-sel-Kidneys-1440.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Kidneys-1440.png) | [canvas](body-canvas-Kidneys.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-canvas-Kidneys.png) | [roi](body-roi-Kidneys.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-roi-Kidneys.png) |
+| Left Hand | `#b8c4b8` | [sel](body-sel-Left_Hand-1440.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Left_Hand-1440.png) | [canvas](body-canvas-Left_Hand.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-canvas-Left_Hand.png) | [roi](body-roi-Left_Hand.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-roi-Left_Hand.png) |
+| Right Hand | `#b8c4b8` | [sel](body-sel-Right_Hand-1440.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Right_Hand-1440.png) | [canvas](body-canvas-Right_Hand.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-canvas-Right_Hand.png) | [roi](body-roi-Right_Hand.png) · [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-roi-Right_Hand.png) |
+
+Machine reports (not definitive for lit color): `body-color-report.json` ([raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-color-report.json)), `body-color-report-v2.json` ([raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-color-report-v2.json)), `body-color-report-v3.json` ([raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-color-report-v3.json)), `body-roi-report.json` ([raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-roi-report.json)).
+
+## Contact sheet (human visual review)
+| Region | Selection preview | Raw |
+|---|---|---|
+| Brain | ![sel](body-sel-Brain-1440.png) | [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Brain-1440.png) |
+| Lungs & breath | ![sel](body-sel-Lungs___breath-1440.png) | [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Lungs___breath-1440.png) |
+| Heart | ![sel](body-sel-Heart-1440.png) | [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Heart-1440.png) |
+| Liver | ![sel](body-sel-Liver-1440.png) | [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Liver-1440.png) |
+| Stomach | ![sel](body-sel-Stomach-1440.png) | [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Stomach-1440.png) |
+| Intestines | ![sel](body-sel-Intestines-1440.png) | [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Intestines-1440.png) |
+| Kidneys | ![sel](body-sel-Kidneys-1440.png) | [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Kidneys-1440.png) |
+| Left Hand | ![sel](body-sel-Left_Hand-1440.png) | [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Left_Hand-1440.png) |
+| Right Hand | ![sel](body-sel-Right_Hand-1440.png) | [raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-sel-Right_Hand-1440.png) |
+
+## 2) /body performance sanity (1440x900)
+Measured via `page.evaluate` timestamps + performance resource/memory (Chromium): canvas present ~2.7s, settled ~5.7s from nav start; 9 selection cycles (Brain, Lungs & breath, Heart, Liver, Stomach, Intestines, Kidneys, Left Hand, Right Hand) completed with detail shown; per-select waits/cycle ~1.57-2.91s including UI settle/reset waits (not pure render). JS heap ~80 MB used / ~105 MB total (where available). No crash, no obvious freeze, no demonstrated regression; not a lab GPU benchmark. Licensed 3D model not replaced.
+
+## 3) Nav/CTA audit (19 routes)
+Checked routes: `/`, `/start`, `/home`, `/body`, `/symptoms`, `/practitioners`, `/doctors`, `/academy`, `/community`, `/consultations`, `/assistant`, `/donations`, `/family`, `/book`, `/contact`, `/login`, `/quiz`, `/booking`, `/donate` (public crawl; auth-guarded routes observed). **1 flag** (static asset, not a broken internal route):
+- `/body` -> `unknown-route-target` href `/models/anatomy/ATTRIBUTION.md` (text `Anatomy: BodyParts3D (CC BY 4.0) · Body: Mandrake (CC BY 4.0)`) — HTTP 200 static file served by Vite; not an SPA navigation target.
+
+`/donate` final URL: `https://localhost/donations` (redirect intact). No broken internal CTAs/routes, no incorrect redirects, and no unintended auth gates found in this crawl. Detail: `nav-audit.json` ([raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/nav-audit.json)).
+
+## Residual risk
+- Exact rendered on-screen organ/hand hex under current lighting/shell requires **human visual confirmation** (captures provided). Source colors are correct.
+- `/models/anatomy/ATTRIBUTION.md` is a valid asset link but surfaced as an unknown SPA route target by the crawler heuristic.
