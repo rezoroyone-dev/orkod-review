@@ -1,0 +1,242 @@
+[
+ {
+  "dir": "ltr",
+  "lang": "en",
+  "o": false,
+  "cards": [
+   {
+    "href": "/body",
+    "imgOk": true,
+    "nw": 560,
+    "nh": 700,
+    "src": "orkod-body-explorer-mobile.png",
+    "alt": true,
+    "wRatio": 0.978
+   },
+   {
+    "href": "/quiz",
+    "imgOk": true,
+    "nw": 560,
+    "nh": 700,
+    "src": "orkod-quiz-preview-mobile.png",
+    "alt": true,
+    "wRatio": 0.978
+   }
+  ],
+  "skip": true,
+  "loc": "en",
+  "vp": "1440x900",
+  "errs": [],
+  "fails": []
+ },
+ {
+  "dir": "ltr",
+  "lang": "en",
+  "o": false,
+  "cards": [
+   {
+    "href": "/body",
+    "imgOk": true,
+    "nw": 366,
+    "nh": 457,
+    "src": "orkod-body-explorer-mobile.png",
+    "alt": true,
+    "wRatio": 0.971
+   },
+   {
+    "href": "/quiz",
+    "imgOk": true,
+    "nw": 366,
+    "nh": 457,
+    "src": "orkod-quiz-preview-mobile.png",
+    "alt": true,
+    "wRatio": 0.971
+   }
+  ],
+  "skip": true,
+  "loc": "en",
+  "vp": "390x844",
+  "errs": [],
+  "fails": []
+ },
+ {
+  "dir": "ltr",
+  "lang": "en",
+  "o": false,
+  "cards": [
+   {
+    "href": "/body",
+    "imgOk": true,
+    "nw": 336,
+    "nh": 420,
+    "src": "orkod-body-explorer-mobile.png",
+    "alt": true,
+    "wRatio": 0.968
+   },
+   {
+    "href": "/quiz",
+    "imgOk": true,
+    "nw": 336,
+    "nh": 420,
+    "src": "orkod-quiz-preview-mobile.png",
+    "alt": true,
+    "wRatio": 0.968
+   }
+  ],
+  "skip": true,
+  "loc": "en",
+  "vp": "360x800",
+  "errs": [],
+  "fails": []
+ },
+ {
+  "dir": "ltr",
+  "lang": "en",
+  "o": false,
+  "cards": [
+   {
+    "href": "/body",
+    "imgOk": true,
+    "nw": 743,
+    "nh": 929,
+    "src": "orkod-body-explorer-mobile.png",
+    "alt": true,
+    "wRatio": 0.986
+   },
+   {
+    "href": "/quiz",
+    "imgOk": true,
+    "nw": 743,
+    "nh": 929,
+    "src": "orkod-quiz-preview-mobile.png",
+    "alt": true,
+    "wRatio": 0.986
+   }
+  ],
+  "skip": true,
+  "loc": "en",
+  "vp": "768x1024",
+  "errs": [],
+  "fails": []
+ },
+ {
+  "dir": "rtl",
+  "lang": "ar",
+  "o": false,
+  "cards": [
+   {
+    "href": "/body",
+    "imgOk": true,
+    "nw": 560,
+    "nh": 700,
+    "src": "orkod-body-explorer-mobile.png",
+    "alt": true,
+    "wRatio": 0.978
+   },
+   {
+    "href": "/quiz",
+    "imgOk": true,
+    "nw": 560,
+    "nh": 700,
+    "src": "orkod-quiz-preview-mobile.png",
+    "alt": true,
+    "wRatio": 0.978
+   }
+  ],
+  "skip": true,
+  "loc": "ar",
+  "vp": "1440x900",
+  "errs": [],
+  "fails": []
+ },
+ {
+  "dir": "rtl",
+  "lang": "ar",
+  "o": false,
+  "cards": [
+   {
+    "href": "/body",
+    "imgOk": true,
+    "nw": 366,
+    "nh": 457,
+    "src": "orkod-body-explorer-mobile.png",
+    "alt": true,
+    "wRatio": 0.971
+   },
+   {
+    "href": "/quiz",
+    "imgOk": true,
+    "nw": 366,
+    "nh": 457,
+    "src": "orkod-quiz-preview-mobile.png",
+    "alt": true,
+    "wRatio": 0.971
+   }
+  ],
+  "skip": true,
+  "loc": "ar",
+  "vp": "390x844",
+  "errs": [],
+  "fails": []
+ },
+ {
+  "dir": "ltr",
+  "lang": "fr",
+  "o": false,
+  "cards": [
+   {
+    "href": "/body",
+    "imgOk": true,
+    "nw": 366,
+    "nh": 457,
+    "src": "orkod-body-explorer-mobile.png",
+    "alt": true,
+    "wRatio": 0.971
+   },
+   {
+    "href": "/quiz",
+    "imgOk": true,
+    "nw": 366,
+    "nh": 457,
+    "src": "orkod-quiz-preview-mobile.png",
+    "alt": true,
+    "wRatio": 0.971
+   }
+  ],
+  "skip": true,
+  "loc": "fr",
+  "vp": "390x844",
+  "errs": [],
+  "fails": []
+ },
+ {
+  "dir": "ltr",
+  "lang": "id",
+  "o": false,
+  "cards": [
+   {
+    "href": "/body",
+    "imgOk": true,
+    "nw": 336,
+    "nh": 420,
+    "src": "orkod-body-explorer-mobile.png",
+    "alt": true,
+    "wRatio": 0.968
+   },
+   {
+    "href": "/quiz",
+    "imgOk": true,
+    "nw": 336,
+    "nh": 420,
+    "src": "orkod-quiz-preview-mobile.png",
+    "alt": true,
+    "wRatio": 0.968
+   }
+  ],
+  "skip": true,
+  "loc": "id",
+  "vp": "360x800",
+  "errs": [],
+  "fails": []
+ }
+]
