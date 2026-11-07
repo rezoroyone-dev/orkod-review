@@ -1,0 +1,28 @@
+[
+  {
+    "state": "both-hands-unselected",
+    "file": "hands-unselected-1440.png",
+    "asserted": true
+  },
+  {
+    "state": "left-hand-selected",
+    "detail": "Main gauche",
+    "pill": "Main gauche",
+    "file": "hand-left-selected-1440.png",
+    "asserted": true
+  },
+  {
+    "state": "right-hand-selected",
+    "detail": "Main droite",
+    "pill": "Main droite",
+    "file": "hand-right-selected-1440.png",
+    "asserted": true
+  },
+  {
+    "state": "heart-selected-reference",
+    "detail": "C\u0153ur",
+    "pill": "C\u0153ur",
+    "file": "organ-heart-selected-1440.png",
+    "asserted": true
+  }
+]
