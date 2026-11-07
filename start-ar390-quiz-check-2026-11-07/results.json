@@ -1,0 +1,416 @@
+{
+ "ar": {
+  "dir": "rtl",
+  "lang": "ar",
+  "body": {
+   "prevRect": {
+    "x": 25,
+    "y": 259.5,
+    "w": 340,
+    "h": 425
+   },
+   "imgRect": {
+    "x": 30,
+    "y": 264.5,
+    "w": 330,
+    "h": 415
+   },
+   "imgOk": true,
+   "nw": 366,
+   "nh": 457,
+   "src": "orkod-body-explorer-mobile.png",
+   "alt": "مستكشف الجسم ثلاثي الأبعاد من ORKOD يعرض جسم الإنسان مع مناطق تشريحية قابلة للاختيار",
+   "painted": true,
+   "prevStyle": {
+    "display": "flex",
+    "visibility": "visible",
+    "opacity": "1",
+    "overflow": "hidden",
+    "zIndex": "auto",
+    "transform": "none",
+    "clipPath": "none",
+    "position": "static"
+   },
+   "imgStyle": {
+    "display": "block",
+    "visibility": "visible",
+    "opacity": "1",
+    "zIndex": "auto",
+    "transform": "none",
+    "clipPath": "none",
+    "position": "static",
+    "filter": "none",
+    "objectFit": "contain",
+    "width": "330px",
+    "height": "415px"
+   },
+   "cardReveal": {
+    "opacity": "1",
+    "transform": "none",
+    "visibility": "visible",
+    "animation": "none",
+    "class": "start-choice start-choice--body"
+   },
+   "parentChain": [
+    {
+     "tag": "IMG",
+     "cls": "start-choice-img",
+     "op": "1",
+     "vis": "visible",
+     "disp": "block",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-choice-preview",
+     "op": "1",
+     "vis": "visible",
+     "disp": "flex",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-choice-card",
+     "op": "1",
+     "vis": "visible",
+     "disp": "flex",
+     "tf": "none"
+    },
+    {
+     "tag": "SECTION",
+     "cls": "start-choice start-choice--body",
+     "op": "1",
+     "vis": "visible",
+     "disp": "flex",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-choices",
+     "op": "1",
+     "vis": "visible",
+     "disp": "grid",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-content",
+     "op": "1",
+     "vis": "visible",
+     "disp": "block",
+     "tf": "none"
+    }
+   ]
+  },
+  "quiz": {
+   "prevRect": {
+    "x": 25,
+    "y": 971.9,
+    "w": 340,
+    "h": 425
+   },
+   "imgRect": {
+    "x": 30,
+    "y": 976.9,
+    "w": 330,
+    "h": 415
+   },
+   "imgOk": true,
+   "nw": 366,
+   "nh": 457,
+   "src": "orkod-quiz-preview-mobile.png",
+   "alt": "استبيان ORKOD يعرض سؤالًا صحيًا وخيارات للإجابة",
+   "painted": true,
+   "prevStyle": {
+    "display": "flex",
+    "visibility": "visible",
+    "opacity": "1",
+    "overflow": "hidden",
+    "zIndex": "auto",
+    "transform": "none",
+    "clipPath": "none",
+    "position": "static"
+   },
+   "imgStyle": {
+    "display": "block",
+    "visibility": "visible",
+    "opacity": "1",
+    "zIndex": "auto",
+    "transform": "none",
+    "clipPath": "none",
+    "position": "static",
+    "filter": "none",
+    "objectFit": "contain",
+    "width": "330px",
+    "height": "415px"
+   },
+   "cardReveal": {
+    "opacity": "1",
+    "transform": "none",
+    "visibility": "visible",
+    "animation": "none",
+    "class": "start-choice start-choice--quiz"
+   },
+   "parentChain": [
+    {
+     "tag": "IMG",
+     "cls": "start-choice-img start-choice-img--quiz",
+     "op": "1",
+     "vis": "visible",
+     "disp": "block",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-choice-preview",
+     "op": "1",
+     "vis": "visible",
+     "disp": "flex",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-choice-card",
+     "op": "1",
+     "vis": "visible",
+     "disp": "flex",
+     "tf": "none"
+    },
+    {
+     "tag": "SECTION",
+     "cls": "start-choice start-choice--quiz",
+     "op": "1",
+     "vis": "visible",
+     "disp": "flex",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-choices",
+     "op": "1",
+     "vis": "visible",
+     "disp": "grid",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-content",
+     "op": "1",
+     "vis": "visible",
+     "disp": "block",
+     "tf": "none"
+    }
+   ]
+  },
+  "o": false,
+  "errs": [],
+  "fails": []
+ },
+ "en": {
+  "dir": "ltr",
+  "lang": "en",
+  "body": {
+   "prevRect": {
+    "x": 25,
+    "y": 324.8,
+    "w": 340,
+    "h": 425
+   },
+   "imgRect": {
+    "x": 30,
+    "y": 329.8,
+    "w": 330,
+    "h": 415
+   },
+   "imgOk": true,
+   "nw": 366,
+   "nh": 457,
+   "src": "orkod-body-explorer-mobile.png",
+   "alt": "ORKOD 3D body explorer showing the human body with selectable anatomical areas",
+   "painted": true,
+   "prevStyle": {
+    "display": "flex",
+    "visibility": "visible",
+    "opacity": "1",
+    "overflow": "hidden",
+    "zIndex": "auto",
+    "transform": "none",
+    "clipPath": "none",
+    "position": "static"
+   },
+   "imgStyle": {
+    "display": "block",
+    "visibility": "visible",
+    "opacity": "1",
+    "zIndex": "auto",
+    "transform": "none",
+    "clipPath": "none",
+    "position": "static",
+    "filter": "none",
+    "objectFit": "contain",
+    "width": "330px",
+    "height": "415px"
+   },
+   "cardReveal": {
+    "opacity": "1",
+    "transform": "none",
+    "visibility": "visible",
+    "animation": "none",
+    "class": "start-choice start-choice--body"
+   },
+   "parentChain": [
+    {
+     "tag": "IMG",
+     "cls": "start-choice-img",
+     "op": "1",
+     "vis": "visible",
+     "disp": "block",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-choice-preview",
+     "op": "1",
+     "vis": "visible",
+     "disp": "flex",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-choice-card",
+     "op": "1",
+     "vis": "visible",
+     "disp": "flex",
+     "tf": "none"
+    },
+    {
+     "tag": "SECTION",
+     "cls": "start-choice start-choice--body",
+     "op": "1",
+     "vis": "visible",
+     "disp": "flex",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-choices",
+     "op": "1",
+     "vis": "visible",
+     "disp": "grid",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-content",
+     "op": "1",
+     "vis": "visible",
+     "disp": "block",
+     "tf": "none"
+    }
+   ]
+  },
+  "quiz": {
+   "prevRect": {
+    "x": 25,
+    "y": 1067.9,
+    "w": 340,
+    "h": 425
+   },
+   "imgRect": {
+    "x": 30,
+    "y": 1072.9,
+    "w": 330,
+    "h": 415
+   },
+   "imgOk": true,
+   "nw": 366,
+   "nh": 457,
+   "src": "orkod-quiz-preview-mobile.png",
+   "alt": "ORKOD questionnaire showing a health question and answer choices",
+   "painted": true,
+   "prevStyle": {
+    "display": "flex",
+    "visibility": "visible",
+    "opacity": "1",
+    "overflow": "hidden",
+    "zIndex": "auto",
+    "transform": "none",
+    "clipPath": "none",
+    "position": "static"
+   },
+   "imgStyle": {
+    "display": "block",
+    "visibility": "visible",
+    "opacity": "1",
+    "zIndex": "auto",
+    "transform": "none",
+    "clipPath": "none",
+    "position": "static",
+    "filter": "none",
+    "objectFit": "contain",
+    "width": "330px",
+    "height": "415px"
+   },
+   "cardReveal": {
+    "opacity": "1",
+    "transform": "none",
+    "visibility": "visible",
+    "animation": "none",
+    "class": "start-choice start-choice--quiz"
+   },
+   "parentChain": [
+    {
+     "tag": "IMG",
+     "cls": "start-choice-img start-choice-img--quiz",
+     "op": "1",
+     "vis": "visible",
+     "disp": "block",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-choice-preview",
+     "op": "1",
+     "vis": "visible",
+     "disp": "flex",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-choice-card",
+     "op": "1",
+     "vis": "visible",
+     "disp": "flex",
+     "tf": "none"
+    },
+    {
+     "tag": "SECTION",
+     "cls": "start-choice start-choice--quiz",
+     "op": "1",
+     "vis": "visible",
+     "disp": "flex",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-choices",
+     "op": "1",
+     "vis": "visible",
+     "disp": "grid",
+     "tf": "none"
+    },
+    {
+     "tag": "DIV",
+     "cls": "start-content",
+     "op": "1",
+     "vis": "visible",
+     "disp": "block",
+     "tf": "none"
+    }
+   ]
+  },
+  "o": false,
+  "errs": [],
+  "fails": []
+ }
+}
