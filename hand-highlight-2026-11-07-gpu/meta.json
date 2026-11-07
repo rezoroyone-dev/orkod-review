@@ -1,0 +1,45 @@
+{
+  "renderer": {
+    "vendor": "Google Inc. (Intel)",
+    "renderer": "ANGLE (Intel, Intel(R) Iris(R) Xe Graphics (0x0000A7A0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+    "hasDbg": true
+  },
+  "is_software": false,
+  "viewport": "1440x900",
+  "assertions": [
+    {
+      "state": "both-hands-unselected",
+      "file": "hands-unselected-1440.png",
+      "asserted": true
+    },
+    {
+      "state": "left-hand-selected",
+      "detail": "Main gauche",
+      "pill": "Main gauche",
+      "file": "hand-left-selected-1440.png",
+      "asserted": true
+    },
+    {
+      "state": "right-hand-selected",
+      "detail": "Main droite",
+      "pill": "Main droite",
+      "file": "hand-right-selected-1440.png",
+      "asserted": true
+    },
+    {
+      "state": "heart-selected",
+      "detail": "C\u0153ur",
+      "pill": "C\u0153ur",
+      "file": "organ-heart-selected-1440.png",
+      "asserted": true
+    },
+    {
+      "state": "kidneys-selected",
+      "detail": "Reins",
+      "pill": "Reins",
+      "file": "organ-kidneys-selected-1440.png",
+      "asserted": true
+    }
+  ]
+}
