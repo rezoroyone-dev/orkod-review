@@ -1,0 +1,51 @@
+[
+  {
+    "state": "both-hands-unselected",
+    "detail": null,
+    "pill": null,
+    "file": "hands-unselected-1440.png",
+    "asserted": true
+  },
+  {
+    "state": "left-hand-selected",
+    "detail": "Main gauche",
+    "pill": "Main gauche",
+    "file": "hand-left-selected-1440.png",
+    "asserted": true
+  },
+  {
+    "state": "right-hand-selected",
+    "detail": "Main droite",
+    "pill": "Main droite",
+    "file": "hand-right-selected-1440.png",
+    "asserted": true
+  },
+  {
+    "state": "brain-selected",
+    "detail": "Cerveau",
+    "pill": "Cerveau",
+    "file": "organ-brain-selected-1440.png",
+    "asserted": true
+  },
+  {
+    "state": "heart-selected",
+    "detail": "C\u0153ur",
+    "pill": "C\u0153ur",
+    "file": "organ-heart-selected-1440.png",
+    "asserted": true
+  },
+  {
+    "state": "kidneys-selected",
+    "detail": "Reins",
+    "pill": "Reins",
+    "file": "organ-kidneys-selected-1440.png",
+    "asserted": true
+  },
+  {
+    "state": "liver-selected",
+    "detail": "Foie",
+    "pill": "Foie",
+    "file": "organ-liver-selected-1440.png",
+    "asserted": true
+  }
+]
