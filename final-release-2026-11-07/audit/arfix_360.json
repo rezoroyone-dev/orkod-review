@@ -1,0 +1,17 @@
+[
+ {
+  "batch": "arfix_360",
+  "route": "/conditions",
+  "vp": "360x800",
+  "final": "https://localhost/conditions",
+  "m": {
+   "sw": 360,
+   "cw": 360,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "raw": []
+ }
+]

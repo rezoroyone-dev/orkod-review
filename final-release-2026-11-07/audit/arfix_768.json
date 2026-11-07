@@ -1,0 +1,77 @@
+[
+ {
+  "batch": "arfix_768",
+  "route": "/",
+  "vp": "768x1024",
+  "final": "https://localhost/",
+  "m": {
+   "sw": 768,
+   "cw": 768,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "raw": []
+ },
+ {
+  "batch": "arfix_768",
+  "route": "/home",
+  "vp": "768x1024",
+  "final": "https://localhost/home",
+  "m": {
+   "sw": 768,
+   "cw": 768,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "raw": []
+ },
+ {
+  "batch": "arfix_768",
+  "route": "/start",
+  "vp": "768x1024",
+  "final": "https://localhost/start",
+  "m": {
+   "sw": 768,
+   "cw": 768,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "raw": []
+ },
+ {
+  "batch": "arfix_768",
+  "route": "/body",
+  "vp": "768x1024",
+  "final": "https://localhost/body",
+  "m": {
+   "sw": 768,
+   "cw": 768,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "raw": []
+ },
+ {
+  "batch": "arfix_768",
+  "route": "/conditions",
+  "vp": "768x1024",
+  "final": "https://localhost/conditions",
+  "m": {
+   "sw": 768,
+   "cw": 768,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "raw": []
+ }
+]

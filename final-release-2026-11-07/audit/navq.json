@@ -1,0 +1,134 @@
+[
+ {
+  "r": "/book",
+  "final": "https://localhost/book",
+  "err": [],
+  "ov": {
+   "o": false
+  },
+  "raw": [],
+  "status": 200,
+  "h1": "Les secrets d'Orkod"
+ },
+ {
+  "r": "/practitioners",
+  "final": "https://localhost/practitioners",
+  "err": [],
+  "ov": {
+   "o": false
+  },
+  "raw": [],
+  "status": 200,
+  "h1": "Praticiens et thérapeutes certifiés"
+ },
+ {
+  "r": "/doctors",
+  "final": "https://localhost/doctors",
+  "err": [],
+  "ov": {
+   "o": false
+  },
+  "raw": [],
+  "status": 200,
+  "h1": "Des médecins près de chez vous"
+ },
+ {
+  "r": "/academy",
+  "final": "https://localhost/academy",
+  "err": [],
+  "ov": {
+   "o": false
+  },
+  "raw": [],
+  "status": 200,
+  "h1": "Académie Orkod"
+ },
+ {
+  "r": "/community",
+  "final": "https://localhost/community",
+  "err": [],
+  "ov": {
+   "o": false
+  },
+  "raw": [],
+  "status": 200,
+  "h1": "Communauté de chercheurs et de praticiens"
+ },
+ {
+  "r": "/consultations",
+  "final": "https://localhost/consultations",
+  "err": [],
+  "ov": {
+   "o": false
+  },
+  "raw": [],
+  "status": 200,
+  "h1": "Consultations et exploration"
+ },
+ {
+  "r": "/assistant",
+  "final": "https://localhost/assistant",
+  "err": [],
+  "ov": {
+   "o": false
+  },
+  "raw": [],
+  "status": 200,
+  "h1": "Votre assistant bien-être"
+ },
+ {
+  "r": "/family",
+  "final": "https://localhost/family",
+  "err": [],
+  "ov": {
+   "o": false
+  },
+  "raw": [],
+  "status": 200,
+  "h1": "Nous pensons au bien-être de toute la famille"
+ },
+ {
+  "r": "/symptoms",
+  "final": "https://localhost/symptoms",
+  "err": [],
+  "ov": {
+   "o": false
+  },
+  "raw": [],
+  "status": 200,
+  "h1": "Explorer par zone du corps"
+ },
+ {
+  "r": "/donations",
+  "final": "https://localhost/donations",
+  "err": [],
+  "ov": {
+   "o": false
+  },
+  "raw": [],
+  "status": 200,
+  "h1": "Offrez une séance à ceux qui en ont besoin"
+ },
+ {
+  "r": "/contact",
+  "final": "https://localhost/contact",
+  "err": [],
+  "ov": {
+   "o": false
+  },
+  "raw": [],
+  "status": 200,
+  "h1": "Contactez-nous"
+ },
+ {
+  "r": "/login",
+  "final": "https://localhost/login",
+  "err": [],
+  "ov": {
+   "o": false
+  },
+  "raw": [],
+  "status": 200,
+  "h1": "Log in to Orkod"
+ }
+]

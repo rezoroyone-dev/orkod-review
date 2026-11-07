@@ -1,0 +1,112 @@
+[
+ {
+  "batch": "b1_390",
+  "vp": "390x844",
+  "locale": "en",
+  "route": "/",
+  "final": "https://localhost/",
+  "err": [],
+  "fail": [],
+  "raw": [],
+  "ov": {
+   "sw": 390,
+   "cw": 390,
+   "o": false,
+   "rtl": "ltr",
+   "docDir": "ltr",
+   "bh": 844
+  },
+  "ts": 1794058375.7172995,
+  "h1": "Bienvenue chez Orkod — commencez votre parcours de bien-être",
+  "overlap": 0,
+  "shot": "b1_390_gate.png"
+ },
+ {
+  "batch": "b1_390",
+  "vp": "390x844",
+  "locale": "en",
+  "route": "/home",
+  "final": "https://localhost/home",
+  "err": [],
+  "fail": [],
+  "raw": [],
+  "ov": {
+   "sw": 390,
+   "cw": 390,
+   "o": false,
+   "rtl": "ltr",
+   "docDir": "ltr",
+   "bh": 2431
+  },
+  "ts": 1794058382.6702707,
+  "h1": "Un soin en douceur pour l'énergie de votre corps",
+  "overlap": 0,
+  "shot": "b1_390_home.png"
+ },
+ {
+  "batch": "b1_390",
+  "vp": "390x844",
+  "locale": "en",
+  "route": "/start",
+  "final": "https://localhost/start",
+  "err": [],
+  "fail": [],
+  "raw": [],
+  "ov": {
+   "sw": 390,
+   "cw": 390,
+   "o": false,
+   "rtl": "ltr",
+   "docDir": "ltr",
+   "bh": 1281
+  },
+  "ts": 1794058392.462824,
+  "h1": "Commencez votre voyage de guérison aujourd'hui",
+  "overlap": 0,
+  "shot": "b1_390_start.png"
+ },
+ {
+  "batch": "b1_390",
+  "vp": "390x844",
+  "locale": "en",
+  "route": "/body",
+  "final": "https://localhost/body",
+  "err": [],
+  "fail": [],
+  "raw": [],
+  "ov": {
+   "sw": 390,
+   "cw": 390,
+   "o": false,
+   "rtl": "ltr",
+   "docDir": "ltr",
+   "bh": 844
+  },
+  "ts": 1794058402.8262744,
+  "h1": "Dites-nous où vous le ressentez",
+  "overlap": 3,
+  "shot": "b1_390_body.png"
+ },
+ {
+  "batch": "b1_390",
+  "vp": "390x844",
+  "locale": "en",
+  "route": "/conditions",
+  "final": "https://localhost/conditions",
+  "err": [],
+  "fail": [],
+  "raw": [],
+  "ov": {
+   "sw": 390,
+   "cw": 390,
+   "o": false,
+   "rtl": "ltr",
+   "docDir": "ltr",
+   "bh": 24241
+  },
+  "ts": 1794058413.886188,
+  "h1": "Organes et pathologies : repères",
+  "overlap": 0,
+  "shot": "b1_390_conditions.png"
+ }
+]

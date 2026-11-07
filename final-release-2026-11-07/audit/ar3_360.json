@@ -1,0 +1,253 @@
+[
+ {
+  "url": "https://localhost/",
+  "dir": "rtl",
+  "rtl": "rtl",
+  "lang": "ar",
+  "sw": 1440,
+  "cw": 1440,
+  "o": false,
+  "raw": [],
+  "batch": "ar3_1440",
+  "vp": "1440x900",
+  "route": "/ (gate)",
+  "shot": "ar3_1440_gate.png"
+ },
+ {
+  "batch": "ar3_1440",
+  "vp": "1440x900",
+  "locale": "ar",
+  "route": "/home",
+  "final": "https://localhost/home",
+  "err": [],
+  "raw": [],
+  "ov": {
+   "sw": 1440,
+   "cw": 1440,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "h1": "رعاية لطيفة لطاقة جسمك",
+  "shot": "ar3_1440_home.png"
+ },
+ {
+  "batch": "ar3_1440",
+  "vp": "1440x900",
+  "locale": "ar",
+  "route": "/start",
+  "final": "https://localhost/start",
+  "err": [],
+  "raw": [],
+  "ov": {
+   "sw": 1440,
+   "cw": 1440,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "h1": "ابدأ رحلة شفائك اليوم",
+  "shot": "ar3_1440_start.png"
+ },
+ {
+  "batch": "ar3_1440",
+  "vp": "1440x900",
+  "locale": "ar",
+  "route": "/body",
+  "final": "https://localhost/body",
+  "err": [],
+  "raw": [],
+  "ov": {
+   "sw": 1440,
+   "cw": 1440,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "h1": "أخبرنا أين تشعر به",
+  "shot": "ar3_1440_body.png"
+ },
+ {
+  "batch": "ar3_1440",
+  "vp": "1440x900",
+  "locale": "ar",
+  "route": "/conditions",
+  "final": "https://localhost/conditions",
+  "err": [],
+  "raw": [],
+  "ov": {
+   "sw": 1440,
+   "cw": 1440,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "h1": "الأعضاء والاعتلالات: مرجع",
+  "shot": "ar3_1440_conditions.png"
+ },
+ {
+  "url": "https://localhost/",
+  "dir": "rtl",
+  "rtl": "rtl",
+  "lang": "ar",
+  "sw": 390,
+  "cw": 390,
+  "o": false,
+  "raw": [],
+  "batch": "ar3_390",
+  "vp": "390x844",
+  "route": "/ (gate)",
+  "shot": "ar3_390_gate.png"
+ },
+ {
+  "batch": "ar3_390",
+  "vp": "390x844",
+  "locale": "ar",
+  "route": "/home",
+  "final": "https://localhost/home",
+  "err": [],
+  "raw": [],
+  "ov": {
+   "sw": 390,
+   "cw": 390,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "h1": "رعاية لطيفة لطاقة جسمك",
+  "shot": "ar3_390_home.png"
+ },
+ {
+  "batch": "ar3_390",
+  "vp": "390x844",
+  "locale": "ar",
+  "route": "/start",
+  "final": "https://localhost/start",
+  "err": [],
+  "raw": [],
+  "ov": {
+   "sw": 390,
+   "cw": 390,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "h1": "ابدأ رحلة شفائك اليوم",
+  "shot": "ar3_390_start.png"
+ },
+ {
+  "batch": "ar3_390",
+  "vp": "390x844",
+  "locale": "ar",
+  "route": "/body",
+  "final": "https://localhost/body",
+  "err": [],
+  "raw": [],
+  "ov": {
+   "sw": 390,
+   "cw": 390,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "h1": "أخبرنا أين تشعر به",
+  "shot": "ar3_390_body.png"
+ },
+ {
+  "batch": "ar3_390",
+  "vp": "390x844",
+  "locale": "ar",
+  "route": "/conditions",
+  "final": "https://localhost/conditions",
+  "err": [],
+  "raw": [],
+  "ov": {
+   "sw": 390,
+   "cw": 390,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "h1": "الأعضاء والاعتلالات: مرجع",
+  "shot": "ar3_390_conditions.png"
+ },
+ {
+  "url": "https://localhost/",
+  "dir": "rtl",
+  "rtl": "rtl",
+  "lang": "ar",
+  "sw": 360,
+  "cw": 360,
+  "o": false,
+  "raw": [],
+  "batch": "ar3_360",
+  "vp": "360x800",
+  "route": "/ (gate)",
+  "shot": "ar3_360_gate.png"
+ },
+ {
+  "batch": "ar3_360",
+  "vp": "360x800",
+  "locale": "ar",
+  "route": "/home",
+  "final": "https://localhost/home",
+  "err": [],
+  "raw": [],
+  "ov": {
+   "sw": 360,
+   "cw": 360,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "h1": "رعاية لطيفة لطاقة جسمك",
+  "shot": "ar3_360_home.png"
+ },
+ {
+  "batch": "ar3_360",
+  "vp": "360x800",
+  "locale": "ar",
+  "route": "/start",
+  "final": "https://localhost/start",
+  "err": [],
+  "raw": [],
+  "ov": {
+   "sw": 360,
+   "cw": 360,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "h1": "ابدأ رحلة شفائك اليوم",
+  "shot": "ar3_360_start.png"
+ },
+ {
+  "batch": "ar3_360",
+  "vp": "360x800",
+  "locale": "ar",
+  "route": "/body",
+  "final": "https://localhost/body",
+  "err": [],
+  "raw": [],
+  "ov": {
+   "sw": 360,
+   "cw": 360,
+   "o": false,
+   "dir": "rtl",
+   "rtl": "rtl",
+   "lang": "ar"
+  },
+  "h1": "أخبرنا أين تشعر به",
+  "shot": "ar3_360_body.png"
+ }
+]

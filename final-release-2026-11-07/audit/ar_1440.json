@@ -1,0 +1,102 @@
+[
+ {
+  "batch": "ar_1440",
+  "vp": "1440x900",
+  "locale": "ar",
+  "route": "/",
+  "final": "https://localhost/",
+  "err": [],
+  "fail": [],
+  "raw": [],
+  "ov": {
+   "sw": 1440,
+   "cw": 1440,
+   "o": false,
+   "rtl": "ltr",
+   "docDir": "ltr",
+   "lang": "fr"
+  },
+  "h1": "Bienvenue chez Orkod — commencez votre parcours de bien-être",
+  "shot": "ar_1440_gate.png"
+ },
+ {
+  "batch": "ar_1440",
+  "vp": "1440x900",
+  "locale": "ar",
+  "route": "/home",
+  "final": "https://localhost/home",
+  "err": [],
+  "fail": [],
+  "raw": [],
+  "ov": {
+   "sw": 1440,
+   "cw": 1440,
+   "o": false,
+   "rtl": "ltr",
+   "docDir": "ltr",
+   "lang": "fr"
+  },
+  "h1": "Un soin en douceur pour l'énergie de votre corps",
+  "shot": "ar_1440_home.png"
+ },
+ {
+  "batch": "ar_1440",
+  "vp": "1440x900",
+  "locale": "ar",
+  "route": "/start",
+  "final": "https://localhost/start",
+  "err": [],
+  "fail": [],
+  "raw": [],
+  "ov": {
+   "sw": 1440,
+   "cw": 1440,
+   "o": false,
+   "rtl": "ltr",
+   "docDir": "ltr",
+   "lang": "fr"
+  },
+  "h1": "Commencez votre voyage de guérison aujourd'hui",
+  "shot": "ar_1440_start.png"
+ },
+ {
+  "batch": "ar_1440",
+  "vp": "1440x900",
+  "locale": "ar",
+  "route": "/body",
+  "final": "https://localhost/body",
+  "err": [],
+  "fail": [],
+  "raw": [],
+  "ov": {
+   "sw": 1440,
+   "cw": 1440,
+   "o": false,
+   "rtl": "ltr",
+   "docDir": "ltr",
+   "lang": "fr"
+  },
+  "h1": "Dites-nous où vous le ressentez",
+  "shot": "ar_1440_body.png"
+ },
+ {
+  "batch": "ar_1440",
+  "vp": "1440x900",
+  "locale": "ar",
+  "route": "/conditions",
+  "final": "https://localhost/conditions",
+  "err": [],
+  "fail": [],
+  "raw": [],
+  "ov": {
+   "sw": 1440,
+   "cw": 1440,
+   "o": false,
+   "rtl": "ltr",
+   "docDir": "ltr",
+   "lang": "fr"
+  },
+  "h1": "Organes et pathologies : repères",
+  "shot": "ar_1440_conditions.png"
+ }
+]
