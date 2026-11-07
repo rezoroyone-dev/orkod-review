@@ -1,0 +1,83 @@
+[
+  {
+    "organ": "brain",
+    "selectorNth": 0,
+    "detail": "Cerveau",
+    "pill": "Cerveau",
+    "sel": "body-sel-Brain-1440.png",
+    "canvas": "body-canvas-Brain.png",
+    "asserted": true
+  },
+  {
+    "organ": "lungs",
+    "selectorNth": 1,
+    "detail": "Poumons et souffle",
+    "pill": "Poumons et souffle",
+    "sel": "body-sel-Lungs___breath-1440.png",
+    "canvas": "body-canvas-Lungs___breath.png",
+    "asserted": true
+  },
+  {
+    "organ": "heart",
+    "selectorNth": 2,
+    "detail": "Coeur",
+    "pill": "Coeur",
+    "sel": "body-sel-Heart-1440.png",
+    "canvas": "body-canvas-Heart.png",
+    "asserted": true
+  },
+  {
+    "organ": "liver",
+    "selectorNth": 3,
+    "detail": "Foie",
+    "pill": "Foie",
+    "sel": "body-sel-Liver-1440.png",
+    "canvas": "body-canvas-Liver.png",
+    "asserted": true
+  },
+  {
+    "organ": "stomach",
+    "selectorNth": 4,
+    "detail": "Estomac",
+    "pill": "Estomac",
+    "sel": "body-sel-Stomach-1440.png",
+    "canvas": "body-canvas-Stomach.png",
+    "asserted": true
+  },
+  {
+    "organ": "intestines",
+    "selectorNth": 5,
+    "detail": "Intestins",
+    "pill": "Intestins",
+    "sel": "body-sel-Intestines-1440.png",
+    "canvas": "body-canvas-Intestines.png",
+    "asserted": true
+  },
+  {
+    "organ": "kidneys",
+    "selectorNth": 6,
+    "detail": "Reins",
+    "pill": "Reins",
+    "sel": "body-sel-Kidneys-1440.png",
+    "canvas": "body-canvas-Kidneys.png",
+    "asserted": true
+  },
+  {
+    "organ": "leftHand",
+    "handNth": 0,
+    "detail": "Main gauche",
+    "pill": "Main gauche",
+    "sel": "body-sel-Left_Hand-1440.png",
+    "canvas": "body-canvas-Left_Hand.png",
+    "asserted": true
+  },
+  {
+    "organ": "rightHand",
+    "handNth": 1,
+    "detail": "Main droite",
+    "pill": "Main droite",
+    "sel": "body-sel-Right_Hand-1440.png",
+    "canvas": "body-canvas-Right_Hand.png",
+    "asserted": true
+  }
+]

@@ -7,6 +7,23 @@
 **Review branch:** `visual-review/nature-green-r16-2026-11-06` (orkod-review)  
 **Review commit (this correction):** see git history on review branch (published HEAD after push).
 
+## Correction (capture automation)
+R16 `body-sel-*` and `body-canvas-*` screenshots were re-captured with corrected automation. For each organ/hand the script clicks the corresponding `.bx-selector-item`/`.bx-selector-item--hand` in DOM order (organs: Brain, Lungs & breath, Heart, Liver, Stomach, Intestines, Kidneys; hands: Left, Right), waits for `.bx-detail-title` and `.bx-callout-pill`, asserts the displayed region name matches the requested region, then captures. Page reset (`.bx-selector-all`) between selections. No application code changed.
+
+| Target | Detail title (asserted) | Callout pill (asserted) | Selection file | Canvas file | Assert |
+|---|---|---|---|---|---|
+| brain | Cerveau | Cerveau | body-sel-Brain-1440.png | body-canvas-Brain.png | PASS |
+| lungs | Poumons et souffle | Poumons et souffle | body-sel-Lungs___breath-1440.png | body-canvas-Lungs___breath.png | PASS |
+| heart | Coeur | Coeur | body-sel-Heart-1440.png | body-canvas-Heart.png | PASS |
+| liver | Foie | Foie | body-sel-Liver-1440.png | body-canvas-Liver.png | PASS |
+| stomach | Estomac | Estomac | body-sel-Stomach-1440.png | body-canvas-Stomach.png | PASS |
+| intestines | Intestins | Intestins | body-sel-Intestines-1440.png | body-canvas-Intestines.png | PASS |
+| kidneys | Reins | Reins | body-sel-Kidneys-1440.png | body-canvas-Kidneys.png | PASS |
+| leftHand | Main gauche | Main gauche | body-sel-Left_Hand-1440.png | body-canvas-Left_Hand.png | PASS |
+| rightHand | Main droite | Main droite | body-sel-Right_Hand-1440.png | body-canvas-Right_Hand.png | PASS |
+
+Assertion log: `body-capture-assertions.json` ([raw](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/nature-green-r16-2026-11-06/r16-2026-11-06/body-capture-assertions.json))
+
 ## Scope
 1. `/body` organ + hand color assignments vs spec (source-of-truth) and rendered captures for human review.
 2. `/body` load/performance sanity (1440x900).
