@@ -1,0 +1,142 @@
+{
+  "A_catalogue_systems": 10,
+  "A_catalogue_organs_total": 90,
+  "A_catalogue_organs_by_system": {
+    "digestive": [
+      "Mouth",
+      "Teeth",
+      "Gums",
+      "Tongue",
+      "Esophagus",
+      "Stomach",
+      "Intestines",
+      "Colon",
+      "Small intestine",
+      "Cecum",
+      "Rectum",
+      "Anus",
+      "Liver",
+      "Pancreas",
+      "Peritoneum",
+      "Spleen"
+    ],
+    "respiratory": [
+      "Nose",
+      "Sinuses",
+      "Bronchi",
+      "Lungs",
+      "Trachea",
+      "Throat",
+      "Pharynx",
+      "Larynx",
+      "Vocal cords",
+      "Ears",
+      "Salivary glands",
+      "Respiratory tract"
+    ],
+    "circulation": [
+      "Heart",
+      "Arteries",
+      "Veins",
+      "Blood",
+      "Blood coagulation",
+      "Lymph nodes",
+      "Lymphatic system",
+      "Immune system"
+    ],
+    "nervous": [
+      "Brain",
+      "Brain and memory",
+      "Nervous system",
+      "Nerves",
+      "Sciatic nerve",
+      "Spinal cord",
+      "Muscles",
+      "Balance"
+    ],
+    "urinary": [
+      "Kidneys",
+      "Urinary tract",
+      "Bladder",
+      "Pelvic floor"
+    ],
+    "skin": [
+      "Skin",
+      "Hair",
+      "Scalp",
+      "Nails",
+      "Eyelids",
+      "Subcutaneous tissue"
+    ],
+    "eyes": [
+      "Eyes",
+      "Retina",
+      "Optic nerve",
+      "Eyelids"
+    ],
+    "musculoskeletal": [
+      "Bones",
+      "Spine",
+      "Back",
+      "Neck",
+      "Collarbone",
+      "Coccyx",
+      "Joints",
+      "Knees",
+      "Feet",
+      "Hands",
+      "Wrist",
+      "Elbows",
+      "Ankles",
+      "Muscles and tendons"
+    ],
+    "reproductive": [
+      "Breasts",
+      "Uterus",
+      "Ovaries",
+      "Vagina",
+      "Vulva and labia",
+      "Testicles",
+      "Prostate",
+      "Genital organs",
+      "Menstruation",
+      "Fallopian tubes"
+    ],
+    "endocrine": [
+      "Thyroid",
+      "Adrenal glands",
+      "Pancreas",
+      "Pituitary gland",
+      "Pineal gland",
+      "Thymus",
+      "Salivary glands",
+      "Lymph nodes"
+    ]
+  },
+  "B_3d_independently_selectable_organs": [
+    "brain",
+    "lungs",
+    "heart",
+    "liver",
+    "stomach",
+    "intestines",
+    "kidneys"
+  ],
+  "B_3d_independently_selectable_hands": [
+    "leftHand",
+    "rightHand"
+  ],
+  "B_3d_total_independent_selections": 9,
+  "C_catalogue_organs_with_anatomy_link": [
+    "brain",
+    "heart",
+    "intestines",
+    "kidneys",
+    "liver",
+    "lungs",
+    "stomach"
+  ],
+  "C_note": "No user-provided 91-structure source list found in repo (searched CUSTOMER_VISION.md/OPENCODE_PROJECT_MEMORY.md/filenames; volumes/db hits are data files). Comparison below uses requested catalogue (conditions.ts) vs 3D/anatomy implementation.",
+  "D_catalogue_organs_NOT_independent_3d_selections_count": 83,
+  "D_catalogue_organs_linked_to_shared_3d_selection": 7
+}

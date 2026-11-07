@@ -1,0 +1,836 @@
+[
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "ltr",
+  "lang": "en",
+  "o": false,
+  "sw": 1440,
+  "cw": 1440,
+  "cards": [
+   {
+    "badge": "01",
+    "w": 556,
+    "h": 572,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "nw": 610,
+     "nh": 813,
+     "alt": "ORKOD 3D body explorer showing the human body with selectable anatomical areas",
+     "dw": 512,
+     "dh": 268
+    },
+    "btn": {
+     "href": "/body",
+     "txt": "Start exploring ›"
+    }
+   },
+   {
+    "badge": "02",
+    "w": 556,
+    "h": 572,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "nw": 581,
+     "nh": 775,
+     "alt": "ORKOD questionnaire showing a health question and answer choices",
+     "dw": 512,
+     "dh": 268
+    },
+    "btn": {
+     "href": "/quiz",
+     "txt": "Start ›"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "en",
+  "vp": "1440x900",
+  "errs": [],
+  "fails": [],
+  "shot": "en_1440x900.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "ltr",
+  "lang": "en",
+  "o": false,
+  "sw": 768,
+  "cw": 768,
+  "cards": [
+   {
+    "badge": "01",
+    "w": 707,
+    "h": 538,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "nw": 790,
+     "nh": 1053,
+     "alt": "ORKOD 3D body explorer showing the human body with selectable anatomical areas",
+     "dw": 671,
+     "dh": 259
+    },
+    "btn": {
+     "href": "/body",
+     "txt": "Start exploring ›"
+    }
+   },
+   {
+    "badge": "02",
+    "w": 707,
+    "h": 538,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "nw": 753,
+     "nh": 1004,
+     "alt": "ORKOD questionnaire showing a health question and answer choices",
+     "dw": 671,
+     "dh": 259
+    },
+    "btn": {
+     "href": "/quiz",
+     "txt": "Start ›"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "en",
+  "vp": "768x1024",
+  "errs": [],
+  "fails": [],
+  "shot": "en_768x1024.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "ltr",
+  "lang": "en",
+  "o": false,
+  "sw": 390,
+  "cw": 390,
+  "cards": [
+   {
+    "badge": "01",
+    "w": 350,
+    "h": 512,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "nw": 375,
+     "nh": 500,
+     "alt": "ORKOD 3D body explorer showing the human body with selectable anatomical areas",
+     "dw": 322,
+     "dh": 216
+    },
+    "btn": {
+     "href": "/body",
+     "txt": "Start exploring ›"
+    }
+   },
+   {
+    "badge": "02",
+    "w": 350,
+    "h": 482,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "nw": 357,
+     "nh": 477,
+     "alt": "ORKOD questionnaire showing a health question and answer choices",
+     "dw": 322,
+     "dh": 216
+    },
+    "btn": {
+     "href": "/quiz",
+     "txt": "Start ›"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "en",
+  "vp": "390x844",
+  "errs": [],
+  "fails": [],
+  "shot": "en_390x844.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "ltr",
+  "lang": "en",
+  "o": false,
+  "sw": 360,
+  "cw": 360,
+  "cards": [
+   {
+    "badge": "01",
+    "w": 320,
+    "h": 494,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "nw": 342,
+     "nh": 456,
+     "alt": "ORKOD 3D body explorer showing the human body with selectable anatomical areas",
+     "dw": 292,
+     "dh": 200
+    },
+    "btn": {
+     "href": "/body",
+     "txt": "Start exploring ›"
+    }
+   },
+   {
+    "badge": "02",
+    "w": 320,
+    "h": 494,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "nw": 326,
+     "nh": 435,
+     "alt": "ORKOD questionnaire showing a health question and answer choices",
+     "dw": 292,
+     "dh": 200
+    },
+    "btn": {
+     "href": "/quiz",
+     "txt": "Start ›"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "en",
+  "vp": "360x800",
+  "errs": [],
+  "fails": [],
+  "shot": "en_360x800.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "ltr",
+  "lang": "fr",
+  "o": false,
+  "sw": 1440,
+  "cw": 1440,
+  "cards": [
+   {
+    "badge": "01",
+    "w": 556,
+    "h": 607,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "nw": 610,
+     "nh": 813,
+     "alt": "Explorateur corporel 3D ORKOD montrant le corps humain avec des zones anatomiques sélectionnables",
+     "dw": 512,
+     "dh": 268
+    },
+    "btn": {
+     "href": "/body",
+     "txt": "Commencer l'exploration ›"
+    }
+   },
+   {
+    "badge": "02",
+    "w": 556,
+    "h": 607,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "nw": 581,
+     "nh": 775,
+     "alt": "Questionnaire ORKOD affichant une question de santé et des choix de réponse",
+     "dw": 512,
+     "dh": 268
+    },
+    "btn": {
+     "href": "/quiz",
+     "txt": "Commencer ›"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "fr",
+  "vp": "1440x900",
+  "errs": [],
+  "fails": [],
+  "shot": "fr_1440x900.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "ltr",
+  "lang": "fr",
+  "o": false,
+  "sw": 768,
+  "cw": 768,
+  "cards": [
+   {
+    "badge": "01",
+    "w": 707,
+    "h": 538,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "nw": 790,
+     "nh": 1053,
+     "alt": "Explorateur corporel 3D ORKOD montrant le corps humain avec des zones anatomiques sélectionnables",
+     "dw": 671,
+     "dh": 259
+    },
+    "btn": {
+     "href": "/body",
+     "txt": "Commencer l'exploration ›"
+    }
+   },
+   {
+    "badge": "02",
+    "w": 707,
+    "h": 538,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "nw": 753,
+     "nh": 1004,
+     "alt": "Questionnaire ORKOD affichant une question de santé et des choix de réponse",
+     "dw": 671,
+     "dh": 259
+    },
+    "btn": {
+     "href": "/quiz",
+     "txt": "Commencer ›"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "fr",
+  "vp": "768x1024",
+  "errs": [],
+  "fails": [],
+  "shot": "fr_768x1024.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "ltr",
+  "lang": "fr",
+  "o": false,
+  "sw": 390,
+  "cw": 390,
+  "cards": [
+   {
+    "badge": "01",
+    "w": 350,
+    "h": 512,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "nw": 375,
+     "nh": 500,
+     "alt": "Explorateur corporel 3D ORKOD montrant le corps humain avec des zones anatomiques sélectionnables",
+     "dw": 322,
+     "dh": 216
+    },
+    "btn": {
+     "href": "/body",
+     "txt": "Commencer l'exploration ›"
+    }
+   },
+   {
+    "badge": "02",
+    "w": 350,
+    "h": 512,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "nw": 357,
+     "nh": 477,
+     "alt": "Questionnaire ORKOD affichant une question de santé et des choix de réponse",
+     "dw": 322,
+     "dh": 216
+    },
+    "btn": {
+     "href": "/quiz",
+     "txt": "Commencer ›"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "fr",
+  "vp": "390x844",
+  "errs": [],
+  "fails": [],
+  "shot": "fr_390x844.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "ltr",
+  "lang": "fr",
+  "o": false,
+  "sw": 360,
+  "cw": 360,
+  "cards": [
+   {
+    "badge": "01",
+    "w": 320,
+    "h": 494,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "nw": 342,
+     "nh": 456,
+     "alt": "Explorateur corporel 3D ORKOD montrant le corps humain avec des zones anatomiques sélectionnables",
+     "dw": 292,
+     "dh": 200
+    },
+    "btn": {
+     "href": "/body",
+     "txt": "Commencer l'exploration ›"
+    }
+   },
+   {
+    "badge": "02",
+    "w": 320,
+    "h": 494,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "nw": 326,
+     "nh": 435,
+     "alt": "Questionnaire ORKOD affichant une question de santé et des choix de réponse",
+     "dw": 292,
+     "dh": 200
+    },
+    "btn": {
+     "href": "/quiz",
+     "txt": "Commencer ›"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "fr",
+  "vp": "360x800",
+  "errs": [],
+  "fails": [],
+  "shot": "fr_360x800.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "rtl",
+  "lang": "ar",
+  "o": false,
+  "sw": 1440,
+  "cw": 1440,
+  "cards": [
+   {
+    "badge": "٠١",
+    "w": 556,
+    "h": 572,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "nw": 610,
+     "nh": 813,
+     "alt": "مستكشف الجسم ثلاثي الأبعاد من ORKOD يعرض جسم الإنسان مع مناطق تشريحية قابلة للاختيار",
+     "dw": 512,
+     "dh": 268
+    },
+    "btn": {
+     "href": "/body",
+     "txt": "ابدأ الاستكشاف ›"
+    }
+   },
+   {
+    "badge": "٠٢",
+    "w": 556,
+    "h": 572,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "nw": 581,
+     "nh": 775,
+     "alt": "استبيان ORKOD يعرض سؤالًا صحيًا وخيارات للإجابة",
+     "dw": 512,
+     "dh": 268
+    },
+    "btn": {
+     "href": "/quiz",
+     "txt": "ابدأ ›"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "ar",
+  "vp": "1440x900",
+  "errs": [],
+  "fails": [],
+  "shot": "ar_1440x900.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "rtl",
+  "lang": "ar",
+  "o": false,
+  "sw": 768,
+  "cw": 768,
+  "cards": [
+   {
+    "badge": "٠١",
+    "w": 707,
+    "h": 538,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "nw": 790,
+     "nh": 1053,
+     "alt": "مستكشف الجسم ثلاثي الأبعاد من ORKOD يعرض جسم الإنسان مع مناطق تشريحية قابلة للاختيار",
+     "dw": 671,
+     "dh": 259
+    },
+    "btn": {
+     "href": "/body",
+     "txt": "ابدأ الاستكشاف ›"
+    }
+   },
+   {
+    "badge": "٠٢",
+    "w": 707,
+    "h": 511,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "nw": 753,
+     "nh": 1004,
+     "alt": "استبيان ORKOD يعرض سؤالًا صحيًا وخيارات للإجابة",
+     "dw": 671,
+     "dh": 259
+    },
+    "btn": {
+     "href": "/quiz",
+     "txt": "ابدأ ›"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "ar",
+  "vp": "768x1024",
+  "errs": [],
+  "fails": [],
+  "shot": "ar_768x1024.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "rtl",
+  "lang": "ar",
+  "o": false,
+  "sw": 390,
+  "cw": 390,
+  "cards": [
+   {
+    "badge": "٠١",
+    "w": 350,
+    "h": 482,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "nw": 375,
+     "nh": 500,
+     "alt": "مستكشف الجسم ثلاثي الأبعاد من ORKOD يعرض جسم الإنسان مع مناطق تشريحية قابلة للاختيار",
+     "dw": 322,
+     "dh": 216
+    },
+    "btn": {
+     "href": "/body",
+     "txt": "ابدأ الاستكشاف ›"
+    }
+   },
+   {
+    "badge": "٠٢",
+    "w": 350,
+    "h": 456,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "nw": 357,
+     "nh": 477,
+     "alt": "استبيان ORKOD يعرض سؤالًا صحيًا وخيارات للإجابة",
+     "dw": 322,
+     "dh": 216
+    },
+    "btn": {
+     "href": "/quiz",
+     "txt": "ابدأ ›"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "ar",
+  "vp": "390x844",
+  "errs": [],
+  "fails": [],
+  "shot": "ar_390x844.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "rtl",
+  "lang": "ar",
+  "o": false,
+  "sw": 360,
+  "cw": 360,
+  "cards": [
+   {
+    "badge": "٠١",
+    "w": 320,
+    "h": 464,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "nw": 342,
+     "nh": 456,
+     "alt": "مستكشف الجسم ثلاثي الأبعاد من ORKOD يعرض جسم الإنسان مع مناطق تشريحية قابلة للاختيار",
+     "dw": 292,
+     "dh": 200
+    },
+    "btn": {
+     "href": "/body",
+     "txt": "ابدأ الاستكشاف ›"
+    }
+   },
+   {
+    "badge": "٠٢",
+    "w": 320,
+    "h": 439,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "nw": 326,
+     "nh": 435,
+     "alt": "استبيان ORKOD يعرض سؤالًا صحيًا وخيارات للإجابة",
+     "dw": 292,
+     "dh": 200
+    },
+    "btn": {
+     "href": "/quiz",
+     "txt": "ابدأ ›"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "ar",
+  "vp": "360x800",
+  "errs": [],
+  "fails": [],
+  "shot": "ar_360x800.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "ltr",
+  "lang": "id",
+  "o": false,
+  "sw": 1440,
+  "cw": 1440,
+  "cards": [
+   {
+    "badge": "01",
+    "w": 556,
+    "h": 607,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "nw": 610,
+     "nh": 813,
+     "alt": "Penjelajah tubuh 3D ORKOD menampilkan tubuh manusia dengan area anatomi yang dapat dipilih",
+     "dw": 512,
+     "dh": 268
+    },
+    "btn": {
+     "href": "/body",
+     "txt": "Mulai menjelajah ›"
+    }
+   },
+   {
+    "badge": "02",
+    "w": 556,
+    "h": 607,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "nw": 581,
+     "nh": 775,
+     "alt": "Kuesioner ORKOD menampilkan pertanyaan kesehatan dan pilihan jawaban",
+     "dw": 512,
+     "dh": 268
+    },
+    "btn": {
+     "href": "/quiz",
+     "txt": "Mulai ›"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "id",
+  "vp": "1440x900",
+  "errs": [],
+  "fails": [],
+  "shot": "id_1440x900.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "ltr",
+  "lang": "id",
+  "o": false,
+  "cards": [
+   {
+    "badge": "01",
+    "w": 707,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "alt": "Penjelajah tubuh 3D ORKOD menampilkan tubuh manusia dengan a",
+     "dw": 671,
+     "dh": 259
+    },
+    "btn": {
+     "href": "/body"
+    }
+   },
+   {
+    "badge": "02",
+    "w": 707,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "alt": "Kuesioner ORKOD menampilkan pertanyaan kesehatan dan pilihan",
+     "dw": 671,
+     "dh": 259
+    },
+    "btn": {
+     "href": "/quiz"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "id",
+  "vp": "768x1024",
+  "errs": [],
+  "fails": [],
+  "shot": "id_768x1024.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "ltr",
+  "lang": "id",
+  "o": false,
+  "cards": [
+   {
+    "badge": "01",
+    "w": 350,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "alt": "Penjelajah tubuh 3D ORKOD menampilkan tubuh manusia dengan a",
+     "dw": 322,
+     "dh": 216
+    },
+    "btn": {
+     "href": "/body"
+    }
+   },
+   {
+    "badge": "02",
+    "w": 350,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "alt": "Kuesioner ORKOD menampilkan pertanyaan kesehatan dan pilihan",
+     "dw": 322,
+     "dh": 216
+    },
+    "btn": {
+     "href": "/quiz"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "id",
+  "vp": "390x844",
+  "errs": [],
+  "fails": [],
+  "shot": "id_390x844.png"
+ },
+ {
+  "url": "http://localhost:5173/start",
+  "dir": "ltr",
+  "lang": "id",
+  "o": false,
+  "cards": [
+   {
+    "badge": "01",
+    "w": 320,
+    "vis": true,
+    "img": {
+     "src": "orkod-body-explorer-mobile.png",
+     "ok": true,
+     "alt": "Penjelajah tubuh 3D ORKOD menampilkan tubuh manusia dengan a",
+     "dw": 292,
+     "dh": 200
+    },
+    "btn": {
+     "href": "/body"
+    }
+   },
+   {
+    "badge": "02",
+    "w": 320,
+    "vis": true,
+    "img": {
+     "src": "orkod-quiz-preview-mobile.png",
+     "ok": true,
+     "alt": "Kuesioner ORKOD menampilkan pertanyaan kesehatan dan pilihan",
+     "dw": 292,
+     "dh": 200
+    },
+    "btn": {
+     "href": "/quiz"
+    }
+   }
+  ],
+  "skip": true,
+  "loc": "id",
+  "vp": "360x800",
+  "errs": [],
+  "fails": [],
+  "shot": "id_360x800.png"
+ }
+]
