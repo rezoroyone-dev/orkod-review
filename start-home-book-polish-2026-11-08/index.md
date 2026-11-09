@@ -1,12 +1,20 @@
 ﻿# ORKOD Start/Home/3D Book polish — evidence (2026-11-08)
 
-- App: `rezoroyone-dev/pranichealing`, branch `nature-green-final`. Baseline `3370cfc1d9dff66f551f741715604add98fb390b`; final commits `1c2b6d1` (brighten /start + 3D book depth), `aa39aa2` (Home chapter settle band + scrollIntoView), `c3c8e94` (ESLint `globalThis` globals).
-- Scope: `/start` visual brightness/color harmony (full-page), Home Chapter 1/2 scroll + visible scroll indicator, restore 3D book presentation on Home Chapter 2 and `/book` using real cover `/images/book/orkod-book-cover.png`.
+- App: `rezoroyone-dev/pranichealing`, branch `nature-green-final`. Baseline `3370cfc1d9dff66f551f741715604add98fb390b`; final commits `1c2b6d1` (brighten /start + 3D book depth), `aa39aa2` (Home chapter settle band + scrollIntoView), `c3c8e94` (ESLint `globalThis` globals), `fc983f1` (restore original 45c6f66 stylized 3D Orkod hardcover on /home Ch2 and /book).
+- Scope: `/start` visual brightness/color harmony (full-page), Home Chapter 1/2 scroll + visible scroll indicator, 3D book presentation on Home Chapter 2 and `/book`.
+- **Book design was restored to the original 45c6f66** (`fc983f1`): green stylized Orkod hardcover, `cover-cloth.png` weave, foil-stamped brand/title, rule, sub imprint, emblem, botanical sprig, 3D perspective, visible spine and page block. No photograph used as the cover texture. Start background, Home Chapter 2 pond/garden crop, Home scrolling, chapter indicators, localized text, Book availability status and responsive behavior all preserved.
 - Home Chapter 2 desktop crop/aspect preserved (`02-orkod-book-section-pond-golden-hour-home-desktop.webp`), no generic background book stack reintroduced. 3D body/auth gates/medical content unchanged.
 - **Agent visual pixel inspection: NOT performed.** Screenshots are genuine local Playwright captures (settled). DOM/runtime checks performed.
-- **3D book comparison:** original 3D book implementation from commit `45c6f66` (stylized CSS-drawn cover, `cover-cloth.png` + text overlay, no real cover texture) vs current `c3c8e94` (real Orkod cover as front texture, deeper spine, thicker page block, cover sheen, stage perspective). Captured with the same browser, viewport, locale and cover asset. The two are **not visually equivalent**; the current version is a different presentation (real cover texture + stronger 3D depth), not a pixel-equivalent restoration of the original stylized cover.
+- **3D book comparison:** original 3D book implementation from commit `45c6f66` (stylized CSS-drawn cover, `cover-cloth.png` + text overlay, no real cover texture) vs the intermediate `c3c8e94` (real Orkod cover as front texture, deeper spine, thicker page block, cover sheen, stage perspective). Captured with the same browser, viewport, locale and cover asset. The two are **not visually equivalent**; the intermediate version was a different presentation (real cover texture + stronger 3D depth), not a pixel-equivalent restoration of the original stylized cover. The user preferred the original, so `fc983f1` restored it.
 
-## 3D book comparison (original 45c6f66 vs current c3c8e94)
+## Restored 3D book (final fc983f1, matches 45c6f66 visual direction)
+Captured under identical conditions: Edge headless, same viewport, locale `en`, `orkod.langGate=1`, settled (fonts + images decoded, 2 RAF + 1200 ms). Desktop, tablet and mobile verified.
+| View | 1440×900 | 768×1024 | 390×844 |
+|---|---|---|---|
+| /book restored | [restore/book-1440x900.png](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/start-home-book-polish-2026-11-08/start-home-book-polish-2026-11-08/restore/book-1440x900.png) | [restore/book-768x1024.png](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/start-home-book-polish-2026-11-08/start-home-book-polish-2026-11-08/restore/book-768x1024.png) | [restore/book-390x844.png](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/start-home-book-polish-2026-11-08/start-home-book-polish-2026-11-08/restore/book-390x844.png) |
+| /home Ch2 restored | [restore/home-1440x900.png](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/start-home-book-polish-2026-11-08/start-home-book-polish-2026-11-08/restore/home-1440x900.png) | [restore/home-768x1024.png](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/start-home-book-polish-2026-11-08/start-home-book-polish-2026-11-08/restore/home-768x1024.png) | [restore/home-390x844.png](https://raw.githubusercontent.com/rezoroyone-dev/orkod-review/visual-review/start-home-book-polish-2026-11-08/start-home-book-polish-2026-11-08/restore/home-390x844.png) |
+
+## 3D book comparison (original 45c6f66 vs intermediate c3c8e94)
 Captured under identical conditions: Edge headless, same viewport, locale `en`, `orkod.langGate=1`, settled (fonts + images decoded, 2 RAF + 1200 ms).
 | View | 1440×900 | 390×844 |
 |---|---|---|
