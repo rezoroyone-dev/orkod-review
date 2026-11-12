@@ -1,4 +1,4 @@
-# ORKOD /start — Background & Edge Polish + Body Explorer Selection
+# ORKOD /start — Background & Edge Polish — Before & After Screenshots
 
 **Branch:** `visual-review/start-edge-body-selection-2026-11-11`  
 **Repository:** [rezoroyone-dev/orkod-review](https://github.com/rezoroyone-dev/orkod-review)  
@@ -24,11 +24,11 @@ Changed selected organ and hand emissive color from organ-color-tinted to pure w
 
 | Viewport | Before | After |
 |---|---|---|
-| 1440×900 | [before/en_1440x900_top.png](before/en_1440x900_top.png) / [after/en_1440x900_top.png](after/en_1440x900_top.png) | [before/en_1440x900_middle.png](before/en_1440x900_middle.png) / [after/en_1440x900_middle.png](after/en_1440x900_middle.png) | [before/en_1440x900_bottom.png](before/en_1440x900_bottom.png) / [after/en_1440x900_bottom.png](after/en_1440x900_bottom.png) |
-| 1366×768 | [before/en_1366x768_top.png](before/en_1366x768_top.png) / [after/en_1366x768_top.png](after/en_1366x768_top.png) | [before/en_1366x768_middle.png](before/en_1366x768_middle.png) / [after/en_1366x768_middle.png](after/en_1366x768_middle.png) | [before/en_1366x768_bottom.png](before/en_1366x768_bottom.png) / [after/en_1366x768_bottom.png](after/en_1366x768_bottom.png) |
-| 768×1024 | [before/en_768x1024_top.png](before/en_768x1024_top.png) / [after/en_768x1024_top.png](after/en_768x1024_top.png) | [before/en_768x1024_middle.png](before/en_768x1024_middle.png) / [after/en_768x1024_middle.png](after/en_768x1024_middle.png) | [before/en_768x1024_bottom.png](before/en_768x1024_bottom.png) / [after/en_768x1024_bottom.png](after/en_768x1024_bottom.png) |
-| 390×844 | [before/en_390x844_top.png](before/en_390x844_top.png) / [after/en_390x844_top.png](after/en_390x844_top.png) | [before/en_390x844_middle.png](before/en_390x844_middle.png) / [after/en_390x844_middle.png](after/en_390x844_middle.png) | [before/en_390x844_bottom.png](before/en_390x844_bottom.png) / [after/en_390x844_bottom.png](after/en_390x844_bottom.png) |
-| 360×800 | [before/en_360x800_top.png](before/en_360x800_top.png) / [after/en_360x800_top.png](after/en_360x800_top.png) | [before/en_360x800_middle.png](before/en_360x800_middle.png) / [after/en_360x800_middle.png](after/en_360x800_middle.png) | [before/en_360x800_bottom.png](before/en_360x800_bottom.png) / [after/en_360x800_bottom.png](after/en_360x800_bottom.png) |
+| 1440×900 | [en_1440x900_top.png](en_1440x900_top.png) / [after/en_1440x900_top.png](after/en_1440x900_top.png) | [en_1366x768_top.png](en_1366x768_top.png) / [after/en_1366x768_top.png](after/en_1366x768_top.png) |
+| 1366×768 | [en_1366x768_top.png](en_1366x768_top.png) / [after/en_1366x768_top.png](after/en_1366x768_top.png) | [en_1366x768_middle.png](en_1366x768_middle.png) / [after/en_1366x768_middle.png](after/en_1366x768_middle.png) |
+| 768×1024 | [en_768x1024_top.png](en_768x1024_top.png) / [after/en_768x1024_top.png](after/en_768x1024_top.png) | [en_768x1024_middle.png](en_768x1024_middle.png) / [after/en_768x1024_middle.png](after/en_768x1024_middle.png) |
+| 390×844 | [en_390x844_top.png](en_390x844_top.png) / [after/en_390x844_top.png](after/en_390x844_top.png) | [en_390x844_middle.png](en_390x844_middle.png) / [after/en_390x844_middle.png](after/en_390x844_middle.png) |
+| 360×800 | [en_360x800_top.png](en_360x800_top.png) / [after/en_360x800_top.png](after/en_360x800_top.png) | [en_360x800_middle.png](en_360x800_middle.png) / [after/en_360x800_middle.png](after/en_360x800_middle.png) |
 
 ### Body Explorer — Selected Organ/Hands
 
@@ -41,8 +41,8 @@ Changed selected organ and hand emissive color from organ-color-tinted to pure w
 | Stomach | [body_stomach_desktop.png](body_stomach_desktop.png) | [body_stomach_mobile.png](body_stomach_mobile.png) |
 | Intestines | [body_intestines_desktop.png](body_intestines_desktop.png) | [body_intestines_mobile.png](body_intestines_mobile.png) |
 | Kidneys | [body_kidneys_desktop.png](body_kidneys_desktop.png) | [body_kidneys_mobile.png](body_kidneys_mobile.png) |
-| Left Hand | [body_leftHand_desktop.png](body_leftHand_desktop.png) | [body_leftHand_mobile.png](body_leftHand_mobile.png) |
-| Right Hand | [body_rightHand_desktop.png](body_rightHand_desktop.png) | [body_rightHand_mobile.png](body_rightHand_mobile.png) |
+| Left Hand | [body_leftHand_desktop_selected.png](body_leftHand_desktop_selected.png) | [body_leftHand_mobile.png](body_leftHand_mobile.png) |
+| Right Hand | [body_rightHand_desktop_selected.png](body_rightHand_desktop_selected.png) | [body_rightHand_mobile.png](body_rightHand_mobile.png) |
 
 ## Contact Sheet
 
